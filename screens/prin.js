@@ -12,7 +12,7 @@ function normalize(size) {
     return Math.round(PixelRatio.roundToNearestPixel(newSize));
 }
 
-export default function PantallaPrincipal({ setPantalla }) {
+export default function Prin({ setPantalla }) {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <ImageBackground
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         height: '100%',
+
     },
     container: {
         flex: 1,

@@ -1,7 +1,5 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import prin from './screens/prin';
+import React, { useState } from 'react';
+import Prin from './screens/prin'; // Corregido: con mayúscula al usar el componente
 
 // Fonts
 import { useFonts } from 'expo-font';
@@ -11,8 +9,6 @@ import { OpenSans_400Regular, OpenSans_400Italic } from '@expo-google-fonts/open
 import { PlayfairDisplay_400Italic } from '@expo-google-fonts/playfair-display';
 import { Raleway_400Italic } from '@expo-google-fonts/raleway';
 import { Merriweather_400Italic } from '@expo-google-fonts/merriweather';
-
-const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -25,17 +21,12 @@ export default function App() {
     Montserrat_500Medium_Italic: Montserrat_500Medium_Italic
   });
 
-  if (!fontsLoaded) return null;
+  const [pantalla, setPantalla] = useState('prin');
 
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="prin">
-        <Stack.Screen
-          name="prin"
-          component={prin}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+
+  if (pantalla === 'prin') {
+    return <Prin setPantalla={setPantalla} />; // Corregido: Componente con mayúscula
+  }
+
+  return null;
 }
