@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Prin from './screens/prin';
 import Inicio from './screens/Inicio';
 import Signup from './screens/Signup';
+import Home from './screens/Home';
 
 
 // Fonts
