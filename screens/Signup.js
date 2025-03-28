@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Montserrat_500Medium_Italic } from '@expo-google-fonts/montserrat';
+import { signUp } from '../FB/auth_app'; // Ya corregido el nombre
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const scale = SCREEN_WIDTH / 375;
@@ -27,19 +28,24 @@ export default function Signup({ setPantalla }) {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSignUp = () => {
+  const handleSignUp = async () => {
     if (!babyName || !birthDate || !parentName || !email || !password || !confirmPassword) {
       Alert.alert('Error', 'Por favor, completa todos los campos.');
       return;
     }
+  
     if (password !== confirmPassword) {
       Alert.alert('Error', 'Las contraseñas no coinciden.');
       return;
     }
-
-    Alert.alert('Éxito', 'Cuenta creada correctamente.');
-    setPantalla('Inicio');
+  
+    const resultado = await signUp(email, password);
+    if (resultado) {
+      
+      setPantalla('Inicio');
+    }
   };
+  
 
   const { width: wW, height: wH } = useWindowDimensions();
 
