@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import Prin from './screens/prin'; // Corregido: con mayúscula al usar el componente
+import Prin from './screens/prin';
+import Inicio from './screens/Inicio';
+import Signup from './screens/Signup';
+
 
 // Fonts
 import { useFonts } from 'expo-font';
@@ -18,15 +21,25 @@ export default function App() {
     Playfair_Italic: PlayfairDisplay_400Italic,
     Raleway_Italic: Raleway_400Italic,
     Merriweather_Italic: Merriweather_400Italic,
-    Montserrat_500Medium_Italic: Montserrat_500Medium_Italic
+    Montserrat_500Medium_Italic: Montserrat_500Medium_Italic,
   });
 
-  const [pantalla, setPantalla] = useState('prin');
-
-
-  if (pantalla === 'prin') {
-    return <Prin setPantalla={setPantalla} />; // Corregido: Componente con mayúscula
+ const [pantalla, setPantalla] = useState('prin');
+  
+  let contenido = <Prin setPantalla={setPantalla} />;
+  
+  if (pantalla === 'Home') {
+    contenido = <Home setPantalla={setPantalla} />;
+  } else if (pantalla === 'Signup') {
+    contenido = <Signup setPantalla={setPantalla} />;
+  } else if (pantalla === 'Inicio') {
+    contenido = <Inicio setPantalla={setPantalla} />;
   }
-
-  return null;
+  
+  return (
+    <>
+      {contenido}
+    </>
+  );
+ 
 }
