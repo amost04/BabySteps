@@ -21,7 +21,22 @@ async function signUp(correo, contraseña) {
     return null;
   }
 }
-
+async function signIn(correo, contraseña) {
+    var confirmacion= await signInWithEmailAndPassword(authInstance, correo, contraseña).then((user)=>{
+        if (user.user.emailVerified){
+            alert('Verifica tu cuenta para iniciar sesión')
+            return(user.user)
+        }else{
+            return(false)
+        }
+        return(user.user)
+    }).catch((error)=>{
+        alert("❌ " + error.message);
+        return(false)
+    })
+    return(confirmacion)
+}
 export {
-  signUp
+  signUp,
+  signIn
 };

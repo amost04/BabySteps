@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { KeyboardAvoidingView, ScrollView, View, Text, StyleSheet, TouchableOpacity, TextInput, Alert, useWindowDimensions, ImageBackground, Image, Dimensions, PixelRatio, Platform } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Montserrat_500Medium_Italic } from '@expo-google-fonts/montserrat';
+import { signIn } from '../FB/auth_app'; 
 
 // Función para normalizar tamaños según la pantalla
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -20,14 +21,20 @@ export default function Inicio({ setPantalla }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = () => {
-        if (email && password) {
-            setPantalla('Home');
-        } else {
-            Alert.alert('Error', 'Por favor, ingresa tu correo y contraseña.');
+    const handleLogin = async () => {
+        if (!email || !password) {
+          Alert.alert('Error', 'Por favor, ingresa tu correo y contraseña.');
+          return;
         }
-    };
-
+      
+        const user = await signIn(email, password);
+        if (user) {
+          setPantalla('Home');
+        } else {
+          // Ya muestra el error desde la función signIn
+        }
+      };
+      
     const { width: wW, height: wH } = useWindowDimensions();
 
     return (
