@@ -36,7 +36,7 @@ export default function Home({ setPantalla }) {
               key={index}
               style={[styles.buttonContainer, btn.nombre === 'Perfil' && styles.perfil ]}
               onPress={() =>{   
-                 //console.log("Presionaste:", btn.pantalla);
+                 console.log("Presionaste:", btn.pantalla);
                  setPantalla(btn.pantalla);}}
             >
               <Image source={btn.icono} style={styles.icono} resizeMode="contain" />
@@ -46,10 +46,10 @@ export default function Home({ setPantalla }) {
         </View>
 
         <Image
-          source={require('../assets/bslogo.png')}
-          style={styles.logo}
-          resizeMode="contain"
-          pointerEvents="none" // 👈 Esto permite que los toques pasen a lo de abajo
+          //source={require('../assets/bslogo.png')}
+          //style={styles.logo}
+          //resizeMode="contain"
+          //pointerEvents="none" // 👈 Esto permite que los toques pasen a lo de abajo
         />
       </View>
     </ImageBackground>
@@ -92,8 +92,8 @@ const styles = StyleSheet.create({
   logo: {
     width: normalize(500),
     height: normalize(500),
-    position: 'absolute', 
-    left: normalize(0),
+    //position: 'center', 
+    left: normalize(-50),
     top: normalize(150),
     bottom: normalize(50),
     right: normalize(30),
