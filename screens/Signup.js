@@ -7,6 +7,8 @@ import {
 import { useFonts } from 'expo-font';
 import { Montserrat_500Medium_Italic } from '@expo-google-fonts/montserrat';
 import { signUp } from '../FB/auth_app'; // Ya corregido el nombre
+import { guardarCuenta } from '../FB/db_api';
+
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const scale = SCREEN_WIDTH / 375;
@@ -41,7 +43,8 @@ export default function Signup({ setPantalla }) {
   
     const resultado = await signUp(email, password);
     if (resultado) {
-      
+      await guardarCuenta(resultado.uid, babyName, birthDate, parentName, email);
+      Alert.alert('Éxito', 'Cuenta creada y datos guardados.');
       setPantalla('Inicio');
     }
   };

@@ -1,4 +1,3 @@
-// auth_app.js
 import app from "./Firebase";
 import {
   getAuth,
@@ -10,6 +9,7 @@ import {
 
 const authInstance = getAuth(app);
 
+// Registro de usuario y verificación por correo
 async function signUp(correo, contraseña) {
   try {
     const response = await createUserWithEmailAndPassword(authInstance, correo, contraseña);
@@ -21,21 +21,24 @@ async function signUp(correo, contraseña) {
     return null;
   }
 }
+
+// Inicio de sesión solo si el correo fue verificado
 async function signIn(correo, contraseña) {
-    var confirmacion= await signInWithEmailAndPassword(authInstance, correo, contraseña).then((user)=>{
-        if (user.user.emailVerified){
-            alert('Verifica tu cuenta para iniciar sesión')
-            return(user.user)
-        }else{
-            return(false)
-        }
-        return(user.user)
-    }).catch((error)=>{
-        alert("❌ " + error.message);
-        return(false)
-    })
-    return(confirmacion)
+  try {
+    const user = await signInWithEmailAndPassword(authInstance, correo, contraseña);
+
+    if (user.user.emailVerified) {
+      return user.user; // ✅ Verificado
+    } else {
+      alert('⚠️ Verifica tu cuenta antes de iniciar sesión.');
+      return false;
+    }
+  } catch (error) {
+    alert("❌ " + error.message);
+    return false;
+  }
 }
+
 export {
   signUp,
   signIn

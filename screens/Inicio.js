@@ -3,6 +3,8 @@ import { KeyboardAvoidingView, ScrollView, View, Text, StyleSheet, TouchableOpac
 import { useFonts } from 'expo-font';
 import { Montserrat_500Medium_Italic } from '@expo-google-fonts/montserrat';
 import { signIn } from '../FB/auth_app'; 
+import { leerCuenta } from '../FB/db_api';
+
 
 // Función para normalizar tamaños según la pantalla
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -26,12 +28,16 @@ export default function Inicio({ setPantalla }) {
           Alert.alert('Error', 'Por favor, ingresa tu correo y contraseña.');
           return;
         }
-      
-        const user = await signIn(email, password);
+        const cleanEmail = email.trim();
+        const cleanPassword = password.trim();
+        const user = await signIn(cleanEmail, cleanPassword);
         if (user) {
+          const datosCuenta = await leerCuenta(user.uid);
+          if (datosCuenta) {
+            console.log("📦 Datos del usuario:", datosCuenta);
+            // Aquí puedes pasarlos a Home, guardarlos en estado global, etc.
+          }
           setPantalla('Home');
-        } else {
-          // Ya muestra el error desde la función signIn
         }
       };
       
