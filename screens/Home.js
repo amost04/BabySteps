@@ -34,8 +34,10 @@ export default function Home({ setPantalla }) {
           {botones.map((btn, index) => (
             <TouchableOpacity
               key={index}
-              style={[styles.buttonContainer, btn.nombre === 'Perfil' && styles.perfil]}
-              onPress={() => setPantalla(btn.pantalla)}
+              style={[styles.buttonContainer, btn.nombre === 'Perfil' && styles.perfil ]}
+              onPress={() =>{   
+                 //console.log("Presionaste:", btn.pantalla);
+                 setPantalla(btn.pantalla);}}
             >
               <Image source={btn.icono} style={styles.icono} resizeMode="contain" />
               <Text style={styles.buttonText}>{btn.nombre}</Text>
@@ -47,6 +49,7 @@ export default function Home({ setPantalla }) {
           source={require('../assets/bslogo.png')}
           style={styles.logo}
           resizeMode="contain"
+          pointerEvents="none" // 👈 Esto permite que los toques pasen a lo de abajo
         />
       </View>
     </ImageBackground>
