@@ -3,7 +3,11 @@ import Prin from './screens/prin';
 import Inicio from './screens/Inicio';
 import Signup from './screens/Signup';
 import Home from './screens/Home';
-
+import Nutricion from './screens/Nutricion';
+import Sueno from './screens/Sueno';
+import Perfil from './screens/Perfil';
+import CitasCartilla from './screens/CitasCartilla';
+import FAQ from './screens/FAQ';
 
 // Fonts
 import { useFonts } from 'expo-font';
@@ -25,22 +29,19 @@ export default function App() {
     Montserrat_500Medium_Italic: Montserrat_500Medium_Italic,
   });
 
- const [pantalla, setPantalla] = useState('prin');
-  
+  const [pantalla, setPantalla] = useState('prin');
+
+
   let contenido = <Prin setPantalla={setPantalla} />;
-  
-  if (pantalla === 'Home') {
-    contenido = <Home setPantalla={setPantalla} />;
-  } else if (pantalla === 'Signup') {
-    contenido = <Signup setPantalla={setPantalla} />;
-  } else if (pantalla === 'Inicio') {
-    contenido = <Inicio setPantalla={setPantalla} />;
-  }
-  
-  return (
-    <>
-      {contenido}
-    </>
-  );
- 
+
+  if (pantalla === 'Inicio') contenido = <Inicio setPantalla={setPantalla} />;
+  else if (pantalla === 'Signup') contenido = <Signup setPantalla={setPantalla} />;
+  else if (pantalla === 'Home') contenido = <Home setPantalla={setPantalla} />;
+  else if (pantalla === 'Nutricion') contenido = <Nutricion setPantalla={setPantalla} />;
+  else if (pantalla === 'Sueno') contenido = <Sueno setPantalla={setPantalla} />;
+  else if (pantalla === 'Perfil') contenido = <Perfil setPantalla={setPantalla} />;
+  else if (pantalla === 'CitasCartilla') contenido = <CitasCartilla setPantalla={setPantalla} />;
+  else if (pantalla === 'FAQ') contenido = <FAQ setPantalla={setPantalla} />;
+
+  return <>{contenido}</>;
 }
