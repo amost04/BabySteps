@@ -8,6 +8,7 @@ import Sueno from './screens/Sueno';
 import Perfil from './screens/Perfil';
 import CitasCartilla from './screens/CitasCartilla';
 import FAQ from './screens/FAQ';
+import SuenoBebe from './screens/SuenoBebe';  
 
 // Fonts
 import { useFonts } from 'expo-font';
@@ -42,6 +43,7 @@ export default function App() {
   else if (pantalla === 'Perfil') contenido = <Perfil setPantalla={setPantalla} />;
   else if (pantalla === 'CitasCartilla') contenido = <CitasCartilla setPantalla={setPantalla} />;
   else if (pantalla === 'FAQ') contenido = <FAQ setPantalla={setPantalla} />;
+  else if (pantalla === 'SuenoBebe') contenido = <SuenoBebe setPantalla={setPantalla} />;
 
   return <>{contenido}</>;
 }

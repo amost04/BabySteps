@@ -17,7 +17,7 @@ export default function Home({ setPantalla }) {
 
   const botones = [
     { nombre: 'Nutrición', pantalla: 'Nutricion', icono: require('../assets/nutri.png') },
-    { nombre: 'Sueño', pantalla: 'Sueno', icono: require('../assets/sueno.png') },
+    { nombre: 'Sueño', pantalla: 'SuenoBebe', icono: require('../assets/sueno.png') },
     { nombre: 'Perfil', pantalla: 'Perfil', icono: require('../assets/perfil.png') },
     { nombre: 'Cartilla', pantalla: 'CitasCartilla', icono: require('../assets/cita.png') },
     { nombre: 'FAQ', pantalla: 'FAQ', icono: require('../assets/faq.png') },
