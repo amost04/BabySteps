@@ -70,4 +70,30 @@ const guardarSuenoAvanzado = async (uid, fecha, horaDormir, horaDespertar, notas
     return false;
   }
 };
-export { createRef, guardarCuenta, leerCuenta, guardarSuenoAvanzado };
+
+// Actualizar datos específicos de la cuenta
+const updateCuenta = async (uid, nuevosDatos) => {
+  try {
+    const userRef = createRef('usuarios/' + uid);
+    await set(userRef, {
+      ...(await leerCuenta(uid)),
+      ...nuevosDatos
+    });
+    console.log("✅ Datos actualizados correctamente");
+  } catch (error) {
+    console.error("❌ Error al actualizar datos:", error);
+  }
+};
+
+// Eliminar un campo específico de la cuenta
+const removeCampo = async (uid, campo) => {
+  try {
+    const campoRef = createRef(`usuarios/${uid}/${campo}`);
+    await set(campoRef, null);
+    console.log(`🗑️ Campo '${campo}' eliminado correctamente`);
+  } catch (error) {
+    console.error("❌ Error al eliminar campo:", error);
+  }
+};
+
+export { createRef, guardarCuenta, leerCuenta, guardarSuenoAvanzado,updateCuenta, removeCampo };

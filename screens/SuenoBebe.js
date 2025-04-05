@@ -68,15 +68,19 @@ export default function SuenoBebe({ setPantalla }) {
         <Text style={styles.title}>Sueño de mi Bebé</Text>
 
         <ScrollView style={styles.scroll}>
-          {registros.map((item, index) => (
-            <View key={index} style={styles.card}>
-              <Text style={styles.text}>📅 Fecha: {item.fecha}</Text>
-              <Text style={styles.text}>🕓 Hora de dormir: {item.horaDormir}</Text>
-              <Text style={styles.text}>🕘 Hora de despertar: {item.horaDespertar}</Text>
-              <Text style={styles.text}>💤 Duración: {parseFloat(item.duracion).toFixed(2)} horas</Text>
-              <Text style={styles.text}>📝 Notas: {item.notas}</Text>
-            </View>
-          ))}
+            {registros.map((item, index) => {
+               const duracion = parseFloat(item.duracion);
+               const icono = duracion < 6 ? '⚠️' : duracion < 8 ? '😌' : '🌟';
+
+               return (
+                 <View key={index} style={styles.card}>
+                     <Text style={styles.text}>📅 Fecha: {item.fecha}</Text>
+                     <Text style={styles.text}>🕓 Hora de dormir: {item.horaDormir}</Text>
+                     <Text style={styles.text}>🕘 Hora de despertar: {item.horaDespertar}</Text>
+                     <Text style={styles.text}>{icono} Duración: {duracion.toFixed(2)} horas</Text>
+                     <Text style={styles.text}>📝 Notas: {item.notas}</Text>
+                 </View>);
+                })}
         </ScrollView>
 
         <TouchableOpacity style={styles.button} onPress={() => setPantalla('Sueno')}>
