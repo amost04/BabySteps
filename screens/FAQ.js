@@ -31,6 +31,10 @@ const categoriaImagenes = {
   juegos: require('../assets/faq/juegos.png'),
   lactancia: require('../assets/faq/lactancia.png'),
   estimulación_temprana: require('../assets/faq/estimulacion.png'),
+  citas_medicas: require('../assets/faq/citas.png'),
+  estimulación_sensorial: require('../assets/faq/sensorial.png'),
+  sueño_seguro: require('../assets/faq/suenoss.png'),
+  dentición: require('../assets/faq/dentincion.png')
 };
 
 export default function FAQ({ setPantalla }) {

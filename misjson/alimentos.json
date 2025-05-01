@@ -1,0 +1,942 @@
+{
+    "papaya": {
+      "edad": "6 meses",
+      "beneficios": "Rica en vitamina C y fibra, ayuda a la digestión del bebé y fortalece el sistema inmune.",
+      "advertencias": "Darla en puré, sin semillas. Evitar si hay antecedentes de alergia al látex."
+    },
+    "zanahoria": {
+      "edad": "6 meses",
+      "beneficios": "Buena fuente de vitamina A y betacarotenos para la vista y el desarrollo celular.",
+      "advertencias": "Ofrecer cocida y triturada para evitar riesgo de asfixia."
+    },
+    "huevo": {
+      "edad": "9 meses",
+      "beneficios": "Alto en proteínas y grasas saludables esenciales para el crecimiento.",
+      "advertencias": "Introducir primero la yema. Cocido completamente. Monitorear por alergias."
+    },
+    "manzana": {
+      "edad": "6 meses",
+      "beneficios": "Buena fuente de fibra soluble. Suaviza las heces, ideal para el tránsito intestinal.",
+      "advertencias": "Ofrecer cocida y sin cáscara al principio. Evitar en trozos crudos por asfixia."
+    },
+    "pera": {
+      "edad": "6 meses",
+      "beneficios": "Hidratante y suave para el sistema digestivo. Alta en fibra.",
+      "advertencias": "Ofrecer en puré o cocida. Evitar trozos duros."
+    },
+    "plátano": {
+      "edad": "6 meses",
+      "beneficios": "Fuente de potasio, energía rápida y fácil de digerir.",
+      "advertencias": "Aplastar bien para evitar riesgo de atragantamiento."
+    },
+    "brócoli": {
+      "edad": "8 meses",
+      "beneficios": "Aporta vitamina C, K y folato. Favorece el desarrollo celular.",
+      "advertencias": "Ofrecer cocido al vapor y triturado para evitar asfixia."
+    },
+    "arroz": {
+      "edad": "6 meses",
+      "beneficios": "Buena fuente de energía y fácil de digerir.",
+      "advertencias": "Cocido completamente. Preferir arroz blanco o integral suave."
+    },
+    "pollo": {
+      "edad": "7 meses",
+      "beneficios": "Fuente de proteína magra, esencial para el crecimiento muscular.",
+      "advertencias": "Desmenuzar bien, sin huesos ni piel. Cocido completamente."
+    },
+    "calabaza": {
+      "edad": "6 meses",
+      "beneficios": "Alta en vitamina A y potasio. Fácil de digerir y textura suave.",
+      "advertencias": "Ofrecer cocida en puré."
+    },
+    "avena": {
+      "edad": "6 meses",
+      "beneficios": "Rica en fibra soluble. Suave para el sistema digestivo.",
+      "advertencias": "Cocinar bien y mezclar con leche materna o fórmula."
+    },
+    "camote": {
+      "edad": "6 meses",
+      "beneficios": "Fuente de betacarotenos y carbohidratos complejos.",
+      "advertencias": "Cocido y triturado."
+    },
+    "lentejas": {
+      "edad": "9 meses",
+      "beneficios": "Buena fuente de hierro vegetal y proteína.",
+      "advertencias": "Remojar y cocer bien. Servir en puré para evitar atragantamiento."
+    },
+    "yogur natural": {
+      "edad": "9 meses",
+      "beneficios": "Fuente de calcio y probióticos para la flora intestinal.",
+      "advertencias": "Debe ser sin azúcar ni saborizantes."
+    },
+    "pescado blanco": {
+      "edad": "9 meses",
+      "beneficios": "Rico en proteínas, bajo en grasa. Aporta omega-3.",
+      "advertencias": "Evitar espinas. Cocido completamente. Introducir con precaución por alergias."
+    },
+    "sandía": {
+      "edad": "10 meses",
+      "beneficios": "Alto contenido en agua. Ideal para hidratar y refrescar.",
+      "advertencias": "Sin semillas. Ofrecer en trozos blandos supervisados."
+    },
+    "pan integral": {
+      "edad": "9 meses",
+      "beneficios": "Fuente de fibra, energía y vitaminas del complejo B.",
+      "advertencias": "Evitar trozos grandes. Supervisar su ingestión."
+    },
+    "pepino": {
+      "edad": "10 meses",
+      "beneficios": "Hidratante y bajo en calorías. Ideal para días calurosos.",
+      "advertencias": "Pelar y quitar semillas. Ofrecer en tiras blandas."
+    },
+    "queso fresco": {
+      "edad": "10 meses",
+      "beneficios": "Fuente de calcio y proteínas.",
+      "advertencias": "Evitar quesos salados o curados. Introducir con moderación."
+    },
+    "ciruela": {
+      "edad": "6 meses",
+      "beneficios": "Favorece el tránsito intestinal. Rica en antioxidantes.",
+      "advertencias": "Ofrecer cocida y en puré."
+    },
+    "espinaca": {
+      "edad": "10 meses",
+      "beneficios": "Fuente de hierro, folato y antioxidantes.",
+      "advertencias": "Cocida y bien triturada. No abusar por contenido de nitratos."
+    },
+    "durazno": {
+      "edad": "6 meses",
+      "beneficios": "Rico en vitamina C, suave para el estómago.",
+      "advertencias": "Ofrecer en puré. Pelar para evitar irritaciones."
+    },
+    "berenjena": {
+      "edad": "10 meses",
+      "beneficios": "Fuente de antioxidantes y fibra.",
+      "advertencias": "Cocinar bien. Retirar piel si es gruesa."
+    },
+    "betabel": {
+      "edad": "8 meses",
+      "beneficios": "Aporta hierro y folatos. Apoya formación de glóbulos rojos.",
+      "advertencias": "Ofrecer cocido. No abusar por su dulzor."
+    },
+    "chícharos": {
+      "edad": "9 meses",
+      "beneficios": "Fuente vegetal de proteínas, fibra y vitamina K.",
+      "advertencias": "Triturar o aplastar bien. Evitar ofrecer enteros por riesgo de asfixia."
+    },
+    "fresas": {
+      "edad": "10 meses",
+      "beneficios": "Ricas en vitamina C y antioxidantes.",
+      "advertencias": "Cortar en trozos pequeños. Introducir con precaución por posibles alergias."
+    },
+    "aguacate": {
+      "edad": "6 meses",
+      "beneficios": "Rico en grasas saludables para el desarrollo cerebral.",
+      "advertencias": "Servir machacado o en trozos suaves supervisados."
+    },
+    "uva": {
+      "edad": "12 meses",
+      "beneficios": "Buena fuente de antioxidantes y vitamina K.",
+      "advertencias": "Siempre partir en cuartos y retirar semillas para evitar asfixia."
+    },
+    "mango": {
+      "edad": "8 meses",
+      "beneficios": "Alto contenido en vitamina A y C.",
+      "advertencias": "Pelar y triturar. Introducir poco a poco por su dulzura."
+    },
+    "quinoa": {
+      "edad": "9 meses",
+      "beneficios": "Fuente de proteína vegetal completa.",
+      "advertencias": "Lavar bien antes de cocer. Ofrecer en papilla."
+    },
+    "papa": {
+      "edad": "6 meses",
+      "beneficios": "Aporta carbohidratos y energía. Muy fácil de digerir.",
+      "advertencias": "Servir bien cocida y machacada."
+    },
+    "pepino cocido": {
+      "edad": "8 meses",
+      "beneficios": "Más suave y digerible que crudo. Hidratante.",
+      "advertencias": "Servir sin piel ni semillas."
+    },
+    "pera asiática": {
+      "edad": "10 meses",
+      "beneficios": "Hidratante, textura crocante y rica en fibra.",
+      "advertencias": "Cocinar si está muy dura. Servir en trozos pequeños."
+    },
+    "arándanos": {
+      "edad": "9 meses",
+      "beneficios": "Antioxidantes naturales y vitamina C.",
+      "advertencias": "Ofrecer partidos o machacados."
+    },
+    "requesón": {
+      "edad": "10 meses",
+      "beneficios": "Buena fuente de calcio y proteína.",
+      "advertencias": "Evitar si contiene mucha sal."
+    },
+    "zanahoria rallada cocida": {
+      "edad": "7 meses",
+      "beneficios": "Mejora la masticación temprana con texturas suaves.",
+      "advertencias": "No ofrecer cruda."
+    },
+    "piña": {
+      "edad": "10 meses",
+      "beneficios": "Contiene bromelina que ayuda a la digestión.",
+      "advertencias": "Pelar completamente. Puede causar irritación si es ácida."
+    },
+    "mandarina": {
+      "edad": "10 meses",
+      "beneficios": "Fuente de vitamina C y agua.",
+      "advertencias": "Ofrecer sin semillas y en trozos pequeños."
+    },
+    "panque de avena casero": {
+      "edad": "10 meses",
+      "beneficios": "Buena alternativa de snack sin azúcar.",
+      "advertencias": "Evitar endulzantes. Supervisar por textura."
+    },
+    "sopa de fideos": {
+      "edad": "10 meses",
+      "beneficios": "Fácil de tragar. Aporta energía e hidratación.",
+      "advertencias": "Evitar sal. Servir tibia y sin trozos grandes."
+    },
+    "gelatina sin azúcar": {
+      "edad": "11 meses",
+      "beneficios": "Textura divertida. Ayuda con hidratación.",
+      "advertencias": "Evitar azúcares y colorantes artificiales."
+    },
+    "cebolla cocida": {
+      "edad": "10 meses",
+      "beneficios": "Estimula la digestión. Contiene antioxidantes.",
+      "advertencias": "Solo cocida y en pequeñas cantidades para evitar gases."
+    },
+    "nabo": {
+      "edad": "8 meses",
+      "beneficios": "Buena fuente de vitamina C y fibra.",
+      "advertencias": "Ofrecer cocido en puré. Evitar en grandes cantidades por nitratos."
+    },
+    "tofu": {
+      "edad": "9 meses",
+      "beneficios": "Alto en proteína vegetal y calcio. Fácil de digerir.",
+      "advertencias": "Usar versiones sin condimentos. Introducir lentamente por alergias a la soya."
+    },
+    "granada": {
+      "edad": "12 meses",
+      "beneficios": "Rica en antioxidantes y vitamina C.",
+      "advertencias": "Evitar semillas enteras. Usar el jugo o hacer puré."
+    },
+    "coliflor cocida": {
+      "edad": "8 meses",
+      "beneficios": "Fuente de fibra y vitamina C.",
+      "advertencias": "Ofrecer en puré o trozos suaves cocidos al vapor."
+    },
+    "panque de plátano sin azúcar": {
+      "edad": "10 meses",
+      "beneficios": "Aporta energía y fibra. Buen snack casero.",
+      "advertencias": "Evitar endulzantes. Supervisar textura."
+    },
+    "gelatina de frutas natural": {
+      "edad": "11 meses",
+      "beneficios": "Aporta hidratación y variedad de textura.",
+      "advertencias": "Evitar colorantes artificiales y azúcares."
+    },
+    "higo": {
+      "edad": "10 meses",
+      "beneficios": "Rico en fibra y antioxidantes naturales.",
+      "advertencias": "Ofrecer sin piel ni semillas. Puede causar gases si se abusa."
+    },
+    "papilla de arroz con leche materna": {
+      "edad": "6 meses",
+      "beneficios": "Fácil de digerir y nutritiva para iniciar sólidos.",
+      "advertencias": "No usar leche de vaca antes del año."
+    },
+    "chayote": {
+      "edad": "6 meses",
+      "beneficios": "Bajo en calorías, rico en fibra y fácil de digerir.",
+      "advertencias": "Cocer bien y ofrecer en puré."
+    },
+    "nectarina": {
+      "edad": "10 meses",
+      "beneficios": "Alta en vitamina C y fibra, buena para digestión.",
+      "advertencias": "Pelar y cortar en trozos pequeños para evitar atragantamiento."
+    },
+    "col morada cocida": {
+      "edad": "10 meses",
+      "beneficios": "Contiene antioxidantes y fibra.",
+      "advertencias": "Ofrecer bien cocida. Puede causar gases si se abusa."
+    },
+    "pollo desmenuzado con calabaza": {
+      "edad": "7 meses",
+      "beneficios": "Combinación rica en proteínas y betacarotenos.",
+      "advertencias": "Evitar trozos grandes. Cocinar bien ambos ingredientes."
+    },
+    "arroz con lentejas": {
+      "edad": "9 meses",
+      "beneficios": "Comida completa con proteína vegetal y energía.",
+      "advertencias": "Ofrecer en puré o machacado al principio."
+    },
+    "puré de manzana y pera": {
+      "edad": "6 meses",
+      "beneficios": "Doble fuente de fibra y suavidad para digestión.",
+      "advertencias": "Sin azúcar añadida. Bien cocidos ambos."
+    },
+    "yogur griego natural": {
+      "edad": "9 meses",
+      "beneficios": "Más proteína que yogur normal. Contiene probióticos.",
+      "advertencias": "Debe ser sin azúcar ni sabores."
+    },
+    "gelatina de zanahoria": {
+      "edad": "10 meses",
+      "beneficios": "Aporta textura y betacarotenos.",
+      "advertencias": "Preparar casera y sin azúcar añadida."
+    },
+    "ensalada de frutas cocida": {
+      "edad": "10 meses",
+      "beneficios": "Combinación rica en vitaminas y fibra.",
+      "advertencias": "Cocer las frutas para facilitar digestión y masticación."
+    },
+    "hígado de pollo": {
+      "edad": "9 meses",
+      "beneficios": "Fuente rica en hierro y vitamina A.",
+      "advertencias": "Cocinar completamente. Introducir en pequeñas cantidades."
+    },
+    "masa de maíz cocida": {
+      "edad": "9 meses",
+      "beneficios": "Fuente de energía y fibra. Parte de la dieta tradicional.",
+      "advertencias": "Evitar condimentos. Usar cocida como base de puré."
+    },
+    "pasta de trigo cocida": {
+      "edad": "9 meses",
+      "beneficios": "Fuente de carbohidratos complejos para energía.",
+      "advertencias": "Evitar salsas comerciales. Usar sin sal y bien cocida."
+    },
+    "pan de avena sin azúcar": {
+      "edad": "10 meses",
+      "beneficios": "Aporta fibra y energía en forma de snack saludable.",
+      "advertencias": "Evitar trozos grandes. Supervisar su ingestión."
+    },
+    "frijoles cocidos": {
+      "edad": "9 meses",
+      "beneficios": "Ricos en hierro y proteína vegetal.",
+      "advertencias": "Remojar, cocer y aplastar bien para evitar gases y atragantamiento."
+    },
+    "zanahoria cocida con manzana": {
+      "edad": "6 meses",
+      "beneficios": "Combinación suave rica en betacarotenos y fibra.",
+      "advertencias": "Cocer bien y ofrecer como puré."
+    },
+    "licuado de plátano con avena": {
+      "edad": "10 meses",
+      "beneficios": "Energético, nutritivo y fácil de tragar.",
+      "advertencias": "Evitar leche de vaca antes del año. Usar agua o leche materna."
+    },
+    "coliflor": {
+      "edad": "8 meses",
+      "beneficios": "Buena fuente de vitamina C, K y fibra.",
+      "advertencias": "Ofrecer cocida y bien triturada para evitar gases."
+    },
+    "kiwi": {
+      "edad": "10 meses",
+      "beneficios": "Rico en vitamina C y antioxidantes.",
+      "advertencias": "Pelar completamente. Introducir con precaución por posible acidez."
+    },
+    "trigo inflado sin azúcar": {
+      "edad": "12 meses",
+      "beneficios": "Fuente de carbohidratos y energía.",
+      "advertencias": "Supervisar para evitar atragantamiento. Sin azúcar ni miel."
+    },
+    "nopal cocido": {
+      "edad": "12 meses",
+      "beneficios": "Rico en fibra y minerales como calcio y magnesio.",
+      "advertencias": "Cocido y sin espinas. Textura babosa puede ser rechazada."
+    },
+    "melón": {
+      "edad": "8 meses",
+      "beneficios": "Alto contenido de agua. Hidrata y refresca.",
+      "advertencias": "Servir en trozos pequeños y blandos."
+    },
+    "pan de centeno": {
+      "edad": "12 meses",
+      "beneficios": "Aporta fibra y vitaminas del grupo B.",
+      "advertencias": "Evitar con semillas. Supervisar la masticación."
+    },
+    "frijoles negros": {
+      "edad": "10 meses",
+      "beneficios": "Fuente de hierro vegetal y proteínas.",
+      "advertencias": "Remojar, cocer y machacar bien antes de ofrecer."
+    },
+    "jamaica cocida": {
+      "edad": "12 meses",
+      "beneficios": "Fuente de antioxidantes. Ayuda a la digestión.",
+      "advertencias": "Ofrecer en poca cantidad y bien cocida, sin azúcar."
+    },
+    "papilla de maíz": {
+      "edad": "6 meses",
+      "beneficios": "Aporta energía y es fácil de digerir.",
+      "advertencias": "Preparar sin sal ni azúcares añadidos."
+    },
+    "pepitas de calabaza molidas": {
+      "edad": "12 meses",
+      "beneficios": "Ricas en zinc, hierro y grasas saludables.",
+      "advertencias": "Ofrecer molidas para evitar atragantamiento."
+    },
+    "pera roja": {
+      "edad": "6 meses",
+      "beneficios": "Hidratante, rica en fibra y antioxidantes.",
+      "advertencias": "Cocer si está muy firme. Pelar y triturar."
+    },
+    "tomate cocido": {
+      "edad": "9 meses",
+      "beneficios": "Fuente de licopeno y vitamina C.",
+      "advertencias": "Evitar piel y semillas. Cocinar para reducir acidez."
+    },
+    "carne de res magra": {
+      "edad": "9 meses",
+      "beneficios": "Alto contenido en hierro hemo y proteínas.",
+      "advertencias": "Ofrecer cocida y bien desmenuzada."
+    },
+    "tortilla de maíz": {
+      "edad": "9 meses",
+      "beneficios": "Fuente de energía, calcio y fibra.",
+      "advertencias": "Ofrecer en trocitos suaves, sin sal ni grasa añadida."
+    },
+    "leche materna": {
+      "edad": "0 meses",
+      "beneficios": "Nutrición ideal. Protege contra enfermedades.",
+      "advertencias": "Debe ser exclusiva hasta los 6 meses."
+    },
+    "col rizada (kale)": {
+      "edad": "10 meses",
+      "beneficios": "Fuente de vitamina K, calcio y antioxidantes.",
+      "advertencias": "Cocer y triturar. Evitar en grandes cantidades por oxalatos."
+    },
+    "apio cocido": {
+      "edad": "10 meses",
+      "beneficios": "Rico en agua y fibra.",
+      "advertencias": "Cocido y bien triturado. Evitar fibras largas."
+    },
+    "maíz tierno": {
+      "edad": "9 meses",
+      "beneficios": "Aporta fibra, folato y energía.",
+      "advertencias": "Desgranar y triturar bien antes de ofrecer."
+    },
+    "garbanzo cocido": {
+      "edad": "10 meses",
+      "beneficios": "Rico en proteínas, hierro y fibra.",
+      "advertencias": "Remojar, cocer y triturar para facilitar digestión."
+    },
+    "tomatillo cocido": {
+      "edad": "10 meses",
+      "beneficios": "Aporta vitamina C y antioxidantes.",
+      "advertencias": "Sin piel ni semillas. Cocer antes de ofrecer."
+    },
+    "crema de cacahuate natural": {
+      "edad": "12 meses",
+      "beneficios": "Fuente de grasas saludables y proteínas.",
+      "advertencias": "Debe ser 100% natural y ofrecer en capa delgada para evitar asfixia."
+    },
+    "cebollín cocido": {
+      "edad": "12 meses",
+      "beneficios": "Aporta sabor, fibra y antioxidantes.",
+      "advertencias": "Cocinar bien y servir en trozos pequeños."
+    },
+    "arándanos deshidratados sin azúcar": {
+      "edad": "12 meses",
+      "beneficios": "Buena fuente de antioxidantes y fibra.",
+      "advertencias": "Ofrecer picados finamente y en poca cantidad. Sin azúcar añadida."
+    },
+    "alcachofa": {
+      "edad": "10 meses",
+      "beneficios": "Buena fuente de fibra y antioxidantes, apoya la salud digestiva.",
+      "advertencias": "Cocer bien y ofrecer en puré. Retirar hojas duras."
+    },
+    "alga nori": {
+      "edad": "12 meses",
+      "beneficios": "Contiene yodo y minerales esenciales.",
+      "advertencias": "Ofrecer triturada en pequeñas cantidades. Supervisar su introducción."
+    },
+    "coco tierno": {
+      "edad": "12 meses",
+      "beneficios": "Hidratante y fuente de grasas saludables.",
+      "advertencias": "Solo la parte blanda. Supervisar por posibles alergias."
+    },
+    "hinojo cocido": {
+      "edad": "10 meses",
+      "beneficios": "Ayuda a aliviar gases. Rico en fibra y vitamina C.",
+      "advertencias": "Cocinar bien y ofrecer en puré o trozos blandos."
+    },
+    "col de Bruselas": {
+      "edad": "10 meses",
+      "beneficios": "Rica en vitamina K, C y ácido fólico.",
+      "advertencias": "Cocer al vapor y triturar. Puede causar gases si se abusa."
+    },
+    "rúcula cocida": {
+      "edad": "10 meses",
+      "beneficios": "Fuente de vitamina K, hierro y antioxidantes.",
+      "advertencias": "Cocinar y triturar. Evitar en exceso por su sabor fuerte."
+    },
+    "acelga cocida": {
+      "edad": "9 meses",
+      "beneficios": "Contiene hierro, vitamina A y C.",
+      "advertencias": "Cocer bien y no ofrecer en grandes cantidades por nitratos."
+    },
+    "almendra molida": {
+      "edad": "12 meses",
+      "beneficios": "Buena fuente de calcio y grasas saludables.",
+      "advertencias": "Ofrecer solo molida o en crema 100% natural. Vigilar alergias."
+    },
+    "avellana molida": {
+      "edad": "12 meses",
+      "beneficios": "Rica en vitamina E y grasas saludables.",
+      "advertencias": "Ofrecer molida. Introducir lentamente por alergias."
+    },
+    "mamey": {
+      "edad": "9 meses",
+      "beneficios": "Alto en vitamina A, energía y fibra.",
+      "advertencias": "Servir en puré. Evitar semillas."
+    },
+    "chirimoya": {
+      "edad": "10 meses",
+      "beneficios": "Muy dulce y rica en vitamina C y B6.",
+      "advertencias": "Ofrecer sin semillas y en trozos blandos."
+    },
+    "cereza sin hueso": {
+      "edad": "12 meses",
+      "beneficios": "Fuente de antioxidantes y vitamina C.",
+      "advertencias": "Retirar hueso. Cortar o machacar bien."
+    },
+    "lychee": {
+      "edad": "12 meses",
+      "beneficios": "Alto contenido en vitamina C y antioxidantes.",
+      "advertencias": "Pelar y quitar semilla. Introducir con moderación por dulzura."
+    },
+    "duraznillo cocido": {
+      "edad": "10 meses",
+      "beneficios": "Rico en fibra y vitaminas. Suave al digerir.",
+      "advertencias": "Ofrecer cocido, sin cáscara ni semilla."
+    },
+    "pepino europeo cocido": {
+      "edad": "9 meses",
+      "beneficios": "Más suave y con menos semillas. Hidratante.",
+      "advertencias": "Cocinar ligeramente para mayor digestibilidad."
+    },
+    "rábano cocido": {
+      "edad": "12 meses",
+      "beneficios": "Aporta fibra, potasio y vitamina C.",
+      "advertencias": "Solo cocido. Evitar en crudo por textura dura."
+    },
+    "palmito": {
+      "edad": "12 meses",
+      "beneficios": "Rico en fibra y bajo en grasas. Textura suave.",
+      "advertencias": "Cortar en tiras finas. Supervisar masticación."
+    },
+    "calabacita": {
+      "edad": "6 meses",
+      "beneficios": "Suave, fácil de digerir y rica en agua y vitamina C.",
+      "advertencias": "Cocer bien y ofrecer en puré."
+    },
+    "zarzamora": {
+      "edad": "10 meses",
+      "beneficios": "Antioxidantes, fibra y vitamina C.",
+      "advertencias": "Ofrecer machacada o en puré. Supervisar por semillas."
+    },
+    "nuez de macadamia molida": {
+      "edad": "12 meses",
+      "beneficios": "Fuente de grasas monoinsaturadas y energía.",
+      "advertencias": "Solo molida o en crema sin azúcares. Introducir con precaución."
+    },
+    "pistache molido": {
+      "edad": "12 meses",
+      "beneficios": "Contiene proteínas, fibra y grasas buenas.",
+      "advertencias": "Ofrecer solo molido. Vigilar por riesgo alérgico."
+    },
+    "ají dulce cocido": {
+      "edad": "10 meses",
+      "beneficios": "Alto en vitamina C y carotenoides.",
+      "advertencias": "Ofrecer cocido y sin piel. Evitar variedades picantes."
+    },
+    "calabaza espagueti cocida": {
+      "edad": "10 meses",
+      "beneficios": "Buena textura para masticar. Aporta fibra y betacarotenos.",
+      "advertencias": "Cocer bien y desmenuzar para facilitar la digestión."
+    },
+    "pimiento morrón amarillo cocido": {
+      "edad": "9 meses",
+      "beneficios": "Rico en vitamina C y antioxidantes.",
+      "advertencias": "Cocer y retirar piel. Evitar si causa gases."
+    },
+    "níspero": {
+      "edad": "10 meses",
+      "beneficios": "Alto en fibra y vitamina A. Suave al digerir.",
+      "advertencias": "Quitar semilla y piel gruesa."
+    },
+    "mora azul": {
+      "edad": "10 meses",
+      "beneficios": "Rica en antioxidantes, vitamina C y fibra.",
+      "advertencias": "Ofrecer machacada o partida. Supervisar por riesgo de asfixia."
+    },
+    "pepino japonés cocido": {
+      "edad": "9 meses",
+      "beneficios": "Más suave y sin semillas grandes. Hidratante.",
+      "advertencias": "Cocer ligeramente. Retirar piel si es gruesa."
+    },
+    "endivia cocida": {
+      "edad": "10 meses",
+      "beneficios": "Baja en calorías, rica en fibra y vitamina K.",
+      "advertencias": "Cocer y ofrecer en puré o tiras suaves."
+    },
+    "calabaza moscada": {
+      "edad": "6 meses",
+      "beneficios": "Rica en vitamina A, textura muy suave.",
+      "advertencias": "Ofrecer cocida y en puré. Retirar cáscara y semillas."
+    },
+    "ajo cocido": {
+      "edad": "10 meses",
+      "beneficios": "Propiedades antibacterianas y digestivas.",
+      "advertencias": "Ofrecer en mínimas cantidades y siempre cocido."
+    },
+    "escarola cocida": {
+      "edad": "10 meses",
+      "beneficios": "Fuente de ácido fólico y vitamina A.",
+      "advertencias": "Cocer bien. Textura cruda puede ser difícil de masticar."
+    },
+    "arándano rojo fresco": {
+      "edad": "12 meses",
+      "beneficios": "Contiene antioxidantes y vitamina C.",
+      "advertencias": "Ofrecer machacado. Evitar enteros por riesgo de asfixia."
+    },
+    "frambuesa": {
+      "edad": "10 meses",
+      "beneficios": "Alta en fibra, antioxidantes y vitamina C.",
+      "advertencias": "Ofrecer en puré o troceada. Supervisar por semillas."
+    },
+    "cúrcuma fresca cocida": {
+      "edad": "12 meses",
+      "beneficios": "Propiedades antiinflamatorias naturales.",
+      "advertencias": "Usar en pequeñas cantidades cocida. Introducir con cuidado."
+    },
+    "papaloquelite cocido": {
+      "edad": "10 meses",
+      "beneficios": "Fuente de antioxidantes y fibra.",
+      "advertencias": "Cocer bien. Puede tener sabor fuerte."
+    },
+    "verdolaga cocida": {
+      "edad": "10 meses",
+      "beneficios": "Contiene omega-3 vegetal y minerales.",
+      "advertencias": "Ofrecer cocida. Supervisar si es la primera vez que se introduce."
+    },
+    "berenjena blanca": {
+      "edad": "10 meses",
+      "beneficios": "Similar a la morada, más suave. Rica en fibra.",
+      "advertencias": "Cocinar bien. Retirar piel si es gruesa."
+    },
+    "guayaba": {
+      "edad": "10 meses",
+      "beneficios": "Rica en vitamina C, fibra y antioxidantes.",
+      "advertencias": "Quitar semillas y piel gruesa. Ofrecer en puré o trozos blandos."
+    },
+    "toronja": {
+      "edad": "12 meses",
+      "beneficios": "Fuente de vitamina C y agua.",
+      "advertencias": "Retirar piel y semillas. Supervisar por su acidez."
+    },
+    "pepino persa cocido": {
+      "edad": "9 meses",
+      "beneficios": "Hidratante, de textura suave y sin semillas grandes.",
+      "advertencias": "Cocer ligeramente. Retirar piel si es dura."
+    },
+    "tomate cherry cocido": {
+      "edad": "10 meses",
+      "beneficios": "Aporta licopeno y vitamina C.",
+      "advertencias": "Ofrecer cocido y partido en cuartos para evitar asfixia."
+    },
+    "alubias blancas": {
+      "edad": "10 meses",
+      "beneficios": "Ricas en hierro, calcio y fibra vegetal.",
+      "advertencias": "Remojar, cocer y machacar bien para evitar atragantamiento."
+    },
+    "chayote con cáscara cocido": {
+      "edad": "10 meses",
+      "beneficios": "Más fibra que sin cáscara. Hidratante.",
+      "advertencias": "Cocer muy bien. Asegurar textura suave para el bebé."
+    },
+    "caqui maduro": {
+      "edad": "10 meses",
+      "beneficios": "Rico en antioxidantes, vitamina A y C.",
+      "advertencias": "Pelar y ofrecer solo pulpa madura y suave."
+    },
+    "ají amarillo cocido sin picante": {
+      "edad": "11 meses",
+      "beneficios": "Fuente de vitamina C y carotenoides.",
+      "advertencias": "Debe estar cocido y sin semillas. Confirmar que no pique."
+    },
+    "lechuga romana cocida": {
+      "edad": "10 meses",
+      "beneficios": "Hidratante y fuente de folatos.",
+      "advertencias": "Cocer brevemente. Cruda no se recomienda aún."
+    },
+    "zanahoria blanca cocida": {
+      "edad": "8 meses",
+      "beneficios": "Suave y rica en fibra. Similar a la zanahoria común.",
+      "advertencias": "Ofrecer cocida y machacada para evitar atragantamiento."
+    },
+    "yaca madura": {
+      "edad": "12 meses",
+      "beneficios": "Alto contenido en carbohidratos y vitamina A.",
+      "advertencias": "Ofrecer sin semillas. Introducir con precaución por su dulzura."
+    },
+    "jícama cocida": {
+      "edad": "12 meses",
+      "beneficios": "Rica en agua y fibra, refrescante.",
+      "advertencias": "Ofrecer cocida. Cruda puede ser difícil de masticar."
+    },
+    "uva pasa sin azúcar": {
+      "edad": "12 meses",
+      "beneficios": "Fuente de energía, fibra y antioxidantes.",
+      "advertencias": "Ofrecer picadas finamente. Supervisar por riesgo de asfixia."
+    },
+    "camote morado": {
+      "edad": "6 meses",
+      "beneficios": "Rico en antioxidantes y fibra, buena alternativa al camote naranja.",
+      "advertencias": "Ofrecer cocido y en puré."
+    },
+    "perón cocido": {
+      "edad": "6 meses",
+      "beneficios": "Rico en agua y fibra. Suave al digerir.",
+      "advertencias": "Ofrecer cocido y sin piel."
+    },
+    "trigo cocido": {
+      "edad": "9 meses",
+      "beneficios": "Fuente de energía, proteínas vegetales y fibra.",
+      "advertencias": "Cocer bien. Ofrecer en papilla o puré."
+    },
+    "berenjena rayada cocida": {
+      "edad": "10 meses",
+      "beneficios": "Similar a otras variedades, rica en fibra y antioxidantes.",
+      "advertencias": "Retirar piel si es gruesa y cocer bien."
+    },
+    "habas cocidas": {
+      "edad": "10 meses",
+      "beneficios": "Ricas en proteínas, hierro y fibra.",
+      "advertencias": "Remojar, cocer y triturar bien antes de ofrecer."
+    },
+    "plátano macho cocido": {
+      "edad": "9 meses",
+      "beneficios": "Aporta energía, potasio y fibra.",
+      "advertencias": "Ofrecer cocido y machacado. No ofrecer frito."
+    },
+    "cacao natural en polvo": {
+      "edad": "12 meses",
+      "beneficios": "Antioxidante natural. Fuente leve de hierro y magnesio.",
+      "advertencias": "Usar solo pequeñas cantidades. Sin azúcar ni leche entera."
+    },
+    "brotes de alfalfa cocidos": {
+      "edad": "10 meses",
+      "beneficios": "Ricos en vitamina K, C y minerales.",
+      "advertencias": "Ofrecer cocidos. Nunca crudos por riesgo de bacterias."
+    },
+    "cebada cocida": {
+      "edad": "10 meses",
+      "beneficios": "Buena fuente de fibra soluble y energía.",
+      "advertencias": "Remojar y cocer bien. Ofrecer en papilla."
+    },
+    "semillas de girasol molidas": {
+      "edad": "12 meses",
+      "beneficios": "Fuente de grasas saludables, vitamina E y zinc.",
+      "advertencias": "Ofrecer molidas finamente. Evitar enteras."
+    },
+    "trigo sarraceno cocido": {
+      "edad": "9 meses",
+      "beneficios": "Libre de gluten. Rico en proteínas, hierro y fibra.",
+      "advertencias": "Cocer bien. Ofrecer en forma de papilla."
+    },
+    "manzana verde cocida": {
+      "edad": "6 meses",
+      "beneficios": "Mayor acidez, buena fuente de fibra y antioxidantes.",
+      "advertencias": "Ofrecer cocida y sin piel. Introducir con precaución por acidez."
+    },
+    "mandarina sin piel ni semillas": {
+      "edad": "10 meses",
+      "beneficios": "Rica en vitamina C e hidratante.",
+      "advertencias": "Ofrecer en trozos sin piel ni semillas para evitar atragantamiento."
+    },
+    "remolacha amarilla cocida": {
+      "edad": "8 meses",
+      "beneficios": "Fuente de antioxidantes y hierro. Menos dulce que la morada.",
+      "advertencias": "Cocer bien. Ofrecer en puré o triturada."
+    },
+    "huevo de codorniz cocido": {
+      "edad": "9 meses",
+      "beneficios": "Fuente de proteína y micronutrientes.",
+      "advertencias": "Cocer completamente. Introducir con precaución por alergias."
+    },
+    "cáscara de calabaza cocida": {
+      "edad": "10 meses",
+      "beneficios": "Buena fuente de fibra si se cocina bien.",
+      "advertencias": "Debe estar muy cocida y sin partes duras."
+    },
+    "uvas peladas y partidas": {
+      "edad": "12 meses",
+      "beneficios": "Antioxidantes y vitamina K.",
+      "advertencias": "Siempre sin piel ni semillas y partidas en cuartos."
+    },
+    "pera cocida con canela": {
+      "edad": "9 meses",
+      "beneficios": "Aporta sabor suave. Buena para digestión.",
+      "advertencias": "Canela en muy pequeñas cantidades y sin azúcar añadida."
+    },
+    "naranja cocida en compota": {
+      "edad": "10 meses",
+      "beneficios": "Buena fuente de vitamina C. Mejora textura para el bebé.",
+      "advertencias": "Evitar semillas y ofrecer sin piel. Sin azúcar añadida."
+    },
+    "cebollín tierno cocido": {
+      "edad": "10 meses",
+      "beneficios": "Fibra suave, ayuda a la digestión.",
+      "advertencias": "Ofrecer cocido en trozos pequeños."
+    },
+    "mazorca tierna cocida": {
+      "edad": "10 meses",
+      "beneficios": "Aporta energía, fibra y minerales.",
+      "advertencias": "Ofrecer desgranada y triturada. No entera."
+    },
+    "germen de trigo": {
+      "edad": "12 meses",
+      "beneficios": "Alto en vitamina E, B y minerales.",
+      "advertencias": "Espolvorear en pequeñas cantidades en papillas."
+    },
+    "hojas de espinaca baby cocidas": {
+      "edad": "9 meses",
+      "beneficios": "Suaves, buena fuente de hierro y folato.",
+      "advertencias": "Cocer y triturar. Evitar en exceso por nitratos."
+    },
+    "zanahoria morada cocida": {
+      "edad": "8 meses",
+      "beneficios": "Rica en antioxidantes, similar a la zanahoria común.",
+      "advertencias": "Cocer bien y ofrecer en puré."
+    },
+    "cebollas caramelizadas sin azúcar": {
+      "edad": "12 meses",
+      "beneficios": "Ricas en antioxidantes y sabor natural dulce.",
+      "advertencias": "Evitar azúcares añadidos. Ofrecer en pequeñas cantidades."
+    },
+    "col china cocida": {
+      "edad": "10 meses",
+      "beneficios": "Fuente de vitamina C y fibra suave.",
+      "advertencias": "Cocer bien para facilitar la digestión."
+    },
+    "semillas de chía hidratadas": {
+      "edad": "12 meses",
+      "beneficios": "Ricas en omega-3 y fibra soluble.",
+      "advertencias": "Siempre ofrecer hidratadas para evitar atragantamiento."
+    },
+    "arroz salvaje cocido": {
+      "edad": "10 meses",
+      "beneficios": "Aporta fibra, hierro y antioxidantes.",
+      "advertencias": "Cocer muy bien. Textura firme requiere supervisión."
+    },
+    "pepino armenio cocido": {
+      "edad": "9 meses",
+      "beneficios": "Hidratante y más digestivo cocido.",
+      "advertencias": "Cocer y quitar piel si es gruesa."
+    },
+    "hojas de betabel cocidas": {
+      "edad": "10 meses",
+      "beneficios": "Ricas en hierro, vitamina A y antioxidantes.",
+      "advertencias": "Evitar grandes cantidades por contenido de oxalatos."
+    },
+    "espárragos cocidos": {
+      "edad": "10 meses",
+      "beneficios": "Ricos en ácido fólico y fibra.",
+      "advertencias": "Cocer hasta que estén muy suaves. Ofrecer en trozos pequeños."
+    },
+    "zanahoria baby cocida": {
+      "edad": "7 meses",
+      "beneficios": "Textura ideal para la introducción temprana de sólidos.",
+      "advertencias": "Cocer bien y triturar si es necesario."
+    },
+    "col blanca cocida": {
+      "edad": "10 meses",
+      "beneficios": "Fuente de vitamina C y fibra suave.",
+      "advertencias": "Evitar en exceso por posibilidad de gases."
+    },
+    "bulbo de hinojo cocido": {
+      "edad": "10 meses",
+      "beneficios": "Ayuda con los cólicos y digestión. Contiene antioxidantes.",
+      "advertencias": "Cocer y ofrecer en puré."
+    },
+    "tamarindo natural sin azúcar": {
+      "edad": "12 meses",
+      "beneficios": "Fuente de antioxidantes y fibra.",
+      "advertencias": "Quitar semillas. Introducir con moderación por su acidez."
+    },
+    "hojas de mostaza cocidas": {
+      "edad": "12 meses",
+      "beneficios": "Ricas en calcio, antioxidantes y vitamina K.",
+      "advertencias": "Cocer bien. Sabor fuerte puede no gustar."
+    },
+    "té de manzanilla (sin azúcar)": {
+      "edad": "12 meses",
+      "beneficios": "Ayuda a calmar el sistema digestivo y promover el sueño.",
+      "advertencias": "Solo en pequeñas cantidades y bajo supervisión pediátrica."
+    },
+    "guaje cocido": {
+      "edad": "12 meses",
+      "beneficios": "Rico en proteína vegetal y fibra.",
+      "advertencias": "Cocer muy bien. Textura y sabor fuerte requieren adaptación."
+    },
+    "hojas de chaya cocidas": {
+      "edad": "12 meses",
+      "beneficios": "Ricas en hierro, calcio y antioxidantes.",
+      "advertencias": "Nunca cruda. Cocer al menos 15 minutos."
+    },
+    "cebada perlada cocida": {
+      "edad": "10 meses",
+      "beneficios": "Buena fuente de carbohidratos y fibra soluble.",
+      "advertencias": "Cocer bien. Ofrecer en forma de papilla o mezcla."
+    },
+    "semillas de calabaza cocidas y molidas": {
+      "edad": "12 meses",
+      "beneficios": "Aportan zinc, hierro y grasas saludables.",
+      "advertencias": "Solo molidas finamente. Nunca enteras."
+    },
+    "yogur de cabra natural": {
+      "edad": "9 meses",
+      "beneficios": "Alternativa al yogur de vaca, con menos lactosa.",
+      "advertencias": "Debe ser sin azúcar ni saborizantes."
+    },
+    "nuez pecana molida": {
+      "edad": "12 meses",
+      "beneficios": "Rica en grasas saludables y antioxidantes.",
+      "advertencias": "Ofrecer solo molida. Vigilar por alergias."
+    },
+    "guayaba rosada cocida": {
+      "edad": "10 meses",
+      "beneficios": "Más suave que cruda. Aporta vitamina C y fibra.",
+      "advertencias": "Quitar piel y semillas. Cocer bien."
+    },
+    "hojas de albahaca cocidas": {
+      "edad": "10 meses",
+      "beneficios": "Contienen antioxidantes y compuestos digestivos.",
+      "advertencias": "Usar en pequeñas cantidades como condimento natural."
+    },
+    "puerro cocido": {
+      "edad": "10 meses",
+      "beneficios": "Fuente de fibra suave, vitaminas y sabor natural.",
+      "advertencias": "Cocer bien. Ofrecer en puré o trozos pequeños."
+    },
+    "raíz de apio cocida": {
+      "edad": "10 meses",
+      "beneficios": "Aporta fibra y sabor. Suave al cocerse.",
+      "advertencias": "Cocer y triturar antes de ofrecer."
+    },
+    "batata cocida": {
+      "edad": "6 meses",
+      "beneficios": "Fuente de energía, fibra y betacarotenos.",
+      "advertencias": "Ofrecer cocida y triturada como puré."
+    },
+    "melocotón cocido": {
+      "edad": "6 meses",
+      "beneficios": "Textura suave y rica en vitamina C.",
+      "advertencias": "Pelar, cocer y ofrecer en puré."
+    }
+  }

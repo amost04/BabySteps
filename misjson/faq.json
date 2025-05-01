@@ -60,6 +60,66 @@
       "14": {
         "pregunta": "¿Es peligroso que mi bebé duerma boca abajo?",
         "respuesta": "Sí. Para prevenir el síndrome de muerte súbita, siempre ponlo boca arriba para dormir."
+      },
+      "15": {
+        "pregunta": "¿Qué hago si mi bebé tiene sarpullido?",
+        "respuesta": "Consulta al pediatra. Puede ser dermatitis del pañal o alergia. Mantén la zona limpia y seca."
+      },
+      "16": {
+        "pregunta": "¿Es normal que mi bebé tenga gases?",
+        "respuesta": "Sí, es común. Puedes ayudarlo a expulsarlos con masajes suaves en la pancita."
+      },
+      "17": {
+        "pregunta": "¿Qué hago si mi bebé tiene diarrea?",
+        "respuesta": "Manténlo hidratado y consulta al pediatra si dura más de 24 horas o hay sangre."
+      },
+      "18": {
+        "pregunta": "¿Es normal que mi bebé tenga manchas en la piel?",
+        "respuesta": "Algunas son comunes, como manchas de nacimiento. Consulta al pediatra si tienes dudas."
+      },
+      "19": {
+        "pregunta": "¿Qué hago si mi bebé tiene fiebre alta?",
+        "respuesta": "Consulta al pediatra. Manténlo hidratado y dale medicamentos solo si lo indica el médico."
+      },
+      "20": {
+        "pregunta": "¿Es normal que mi bebé tenga el estómago duro?",
+        "respuesta": "Puede ser normal, pero si hay llanto o malestar, consulta al pediatra."
+      },
+      "21": {
+        "pregunta": "¿Qué hago si mi bebé tiene tos?",
+        "respuesta": "Consulta al pediatra. Manténlo hidratado y evita el humo de tabaco."
+      },
+      "22": {
+        "pregunta": "¿Es normal que mi bebé tenga el aliento con olor?",
+        "respuesta": "Puede ser normal, pero si persiste o es fuerte, consulta al pediatra."
+      },
+      "23": {
+        "pregunta": "¿Qué hago si mi bebé tiene manchas blancas en la boca?",
+        "respuesta": "Puede ser candidiasis oral. Consulta al pediatra para tratamiento adecuado."
+      },
+      "24": {
+        "pregunta": "¿Es normal que mi bebé tenga el llanto fuerte?",
+        "respuesta": "Sí, cada bebé tiene su forma de llorar. Aprende a diferenciar sus llantos."
+      },
+      "25": {
+        "pregunta": "¿Qué hago si mi bebé tiene la piel seca?",
+        "respuesta": "Aplica crema hidratante específica para bebés y consulta al pediatra si persiste."
+      },
+      "26": {
+        "pregunta": "¿Es normal que mi bebé tenga el cabello fino?",
+        "respuesta": "Sí, el cabello de los bebés puede ser fino y cambiar con el tiempo."
+      },
+      "27": {
+        "pregunta": "¿Qué hago si mi bebé tiene el aliento con olor a acetona?",
+        "respuesta": "Puede ser normal en algunos casos, pero consulta al pediatra si persiste o hay otros síntomas."
+      },
+      "28": {
+        "pregunta": "¿Es normal que mi bebé tenga el llanto intermitente?",
+        "respuesta": "Sí, los bebés lloran por diferentes razones. Aprende a identificar sus necesidades."
+      },
+      "29": {
+        "pregunta": "¿Qué hago si mi bebé tiene la piel amarillenta?",
+        "respuesta": "Puede ser ictericia. Consulta al pediatra para evaluación y tratamiento."
       }
     },
     "alimentacion": {
@@ -122,6 +182,66 @@
       "14": {
         "pregunta": "¿Puede comer huevo antes del año?",
         "respuesta": "Sí, pero introdúcelo cocido y de forma gradual. Consulta a tu pediatra si hay antecedentes de alergias."
+      },
+      "15": {
+        "pregunta": "¿Qué hacer si mi bebé tiene cólicos?",
+        "respuesta": "Masajes suaves en la pancita, cambios de posición y calor local pueden ayudar. Consulta al pediatra si persisten."
+      },
+      "16": {
+        "pregunta": "¿Es normal que mi bebé no quiera comer carne?",
+        "respuesta": "Sí, algunos bebés tienen preferencias. Ofrece variedad y consulta al pediatra si persiste."
+      },
+      "17": {
+        "pregunta": "¿Cuándo puedo introducir pescado en su dieta?",
+        "respuesta": "A partir de los 9-12 meses, siempre cocido y sin espinas. Consulta al pediatra."
+      },
+      "18": {
+        "pregunta": "¿Es seguro usar biberón para agua?",
+        "respuesta": "Sí, pero evita el uso prolongado para prevenir caries. Usa vaso o taza a partir de los 6 meses."
+      },
+      "19": {
+        "pregunta": "¿Qué hacer si mi bebé tiene diarrea?",
+        "respuesta": "Manténlo hidratado y consulta al pediatra si dura más de 24 horas o hay sangre."
+      },
+      "20": {
+        "pregunta": "¿Es normal que mi bebé tenga el estómago hinchado?",
+        "respuesta": "Puede ser normal, pero si hay llanto o malestar, consulta al pediatra."
+      },
+      "21": {
+        "pregunta": "¿Qué hacer si mi bebé tiene estreñimiento?",
+        "respuesta": "Aumenta la ingesta de líquidos y fibra. Consulta al pediatra si persiste."
+      },
+      "22": {
+        "pregunta": "¿Es normal que mi bebé tenga el aliento con olor?",
+        "respuesta": "Puede ser normal, pero si persiste o es fuerte, consulta al pediatra."
+      },
+      "23": {
+        "pregunta": "¿Qué hacer si mi bebé tiene sarpullido por alimentos?",
+        "respuesta": "Consulta al pediatra. Mantén la zona limpia y seca. Evita el alimento que causó la reacción."
+      },
+      "24": {
+        "pregunta": "¿Es normal que mi bebé tenga el llanto fuerte?",
+        "respuesta": "Sí, cada bebé tiene su forma de llorar. Aprende a diferenciar sus llantos."
+      },
+      "25": {
+        "pregunta": "¿Qué hacer si mi bebé tiene la piel seca?",
+        "respuesta": "Aplica crema hidratante específica para bebés y consulta al pediatra si persiste."
+      },
+      "26": {
+        "pregunta": "¿Es normal que mi bebé tenga el cabello fino?",
+        "respuesta": "Sí, el cabello de los bebés puede ser fino y cambiar con el tiempo."
+      },
+      "27": {
+        "pregunta": "¿Qué hacer si mi bebé tiene el aliento con olor a acetona?",
+        "respuesta": "Puede ser normal en algunos casos, pero consulta al pediatra si persiste o hay otros síntomas."
+      },
+      "28": {
+        "pregunta": "¿Es normal que mi bebé tenga el llanto intermitente?",
+        "respuesta": "Sí, los bebés lloran por diferentes razones. Aprende a identificar sus necesidades."
+      },
+      "29": {
+        "pregunta": "¿Qué hacer si mi bebé tiene la piel amarillenta?",
+        "respuesta": "Puede ser ictericia. Consulta al pediatra para evaluación y tratamiento."
       }
     },
     "sueño": {
@@ -184,6 +304,66 @@
       "14": {
         "pregunta": "¿Qué hacer si mi bebé se despierta llorando en la noche?",
         "respuesta": "Cálmalo con tu voz o caricias, evita levantarlo de inmediato para que aprenda a autorregularse."
+      },
+      "15": {
+        "pregunta": "¿Es normal que mi bebé duerma con los ojos abiertos?",
+        "respuesta": "Sí, algunos bebés lo hacen. No es peligroso, pero consulta al pediatra si te preocupa."
+      },
+      "16": {
+        "pregunta": "¿Qué hago si mi bebé tiene pesadillas?",
+        "respuesta": "Consuélalo y háblale suavemente. Asegúrate de que se sienta seguro y protegido."
+      },
+      "17": {
+        "pregunta": "¿Es normal que mi bebé duerma con las manos en puño?",
+        "respuesta": "Sí, es un reflejo normal. Con el tiempo, abrirá las manos más a menudo."
+      },
+      "18": {
+        "pregunta": "¿Cuándo debo dejar de usar el moisés?",
+        "respuesta": "Cuando tu bebé empiece a girarse o sentarse solo, generalmente entre los 4 y 6 meses."
+      },
+      "19": {
+        "pregunta": "¿Cuándo debo pasar a mi bebé a una cuna más grande?",
+        "respuesta": "Cuando crezca demasiado para el moisés o se mueva mucho durante el sueño, usualmente entre los 4 y 6 meses."
+      },
+      "20": {
+        "pregunta": "¿Cómo influye la alimentación en el sueño del bebé?",
+        "respuesta": "Una buena alimentación ayuda a mantener ciclos de sueño más estables, pero evita alimentarlo justo antes de dormir."
+      },
+      "21": {
+        "pregunta": "¿Los bebés sueñan?",
+        "respuesta": "Se cree que los bebés experimentan un tipo de actividad onírica, pero no se sabe con certeza qué sueñan."
+      },
+      "22": {
+        "pregunta": "¿Qué temperatura debe tener la habitación del bebé?",
+        "respuesta": "Idealmente entre 20 y 22 °C para evitar el sobrecalentamiento."
+      },
+      "23": {
+        "pregunta": "¿Cuánto tiempo debe durar una siesta?",
+        "respuesta": "Depende de la edad, pero en general entre 30 minutos y 2 horas."
+      },
+      "24": {
+        "pregunta": "¿Es recomendable utilizar chupón para dormir?",
+        "respuesta": "Sí, puede reducir el riesgo de muerte súbita, pero debe usarse de manera segura y adecuada."
+      },
+      "25": {
+        "pregunta": "¿Puede afectar el exceso de estimulación al sueño?",
+        "respuesta": "Sí, demasiada estimulación antes de dormir puede dificultar que el bebé se relaje y duerma bien."
+      },
+      "26": {
+        "pregunta": "¿Qué hacer si mi bebé tiene el sueño muy ligero?",
+        "respuesta": "Crea un ambiente tranquilo, oscuro y usa sonidos suaves para favorecer un sueño más profundo."
+      },
+      "27": {
+        "pregunta": "¿Es bueno tener una rutina de despedida antes de dormir?",
+        "respuesta": "Sí, ayuda a que el bebé anticipe que es hora de dormir y se sienta más seguro."
+      },
+      "28": {
+        "pregunta": "¿Puede un resfriado afectar el sueño del bebé?",
+        "respuesta": "Sí, la congestión nasal y el malestar pueden interrumpir su descanso."
+      },
+      "29": {
+        "pregunta": "¿Qué ropa es adecuada para dormir?",
+        "respuesta": "Ropa ligera, transpirable y acorde a la temperatura ambiente para evitar el sobrecalentamiento."
       }
     },
     "vacunas": {
@@ -217,7 +397,7 @@
       },
       "7": {
         "pregunta": "¿Qué es la vacuna Pentavalente?",
-        "respuesta": "Es una vacuna combinada que protege contra 5 enfermedades: difteria, tosferina, tétanos, hepatitis B y Haemophilus influenzae tipo B."
+        "respuesta": "Es una vacuna combinada que protege contra difteria, tosferina, tétanos, hepatitis B y Haemophilus influenzae tipo B."
       },
       "8": {
         "pregunta": "¿Qué hago si se me pasa una vacuna?",
@@ -246,6 +426,66 @@
       "14": {
         "pregunta": "¿Pueden vacunarse si están tomando antibióticos?",
         "respuesta": "Sí, siempre y cuando no tengan fiebre ni estén muy enfermos. Consulta al pediatra."
+      },
+      "15": {
+        "pregunta": "¿Qué hacer si mi bebé tiene una reacción alérgica a una vacuna?",
+        "respuesta": "Consulta al pediatra de inmediato. Las reacciones graves son raras, pero es importante actuar rápido."
+      },
+      "16": {
+        "pregunta": "¿Qué vacunas son recomendadas para el primer año?",
+        "respuesta": "BCG, Hepatitis B, Pentavalente, Neumococo, Rotavirus y SRP. Consulta el calendario de tu país."
+      },
+      "17": {
+        "pregunta": "¿Es necesario vacunar a mi bebé si ya tuvo la enfermedad?",
+        "respuesta": "Sí, las vacunas ofrecen protección adicional y pueden prevenir complicaciones."
+      },
+      "18": {
+        "pregunta": "¿Las vacunas pueden causar autismo?",
+        "respuesta": "No. Numerosos estudios científicos han demostrado que las vacunas no causan autismo."
+      },
+      "19": {
+        "pregunta": "¿Qué hacer si la zona de la vacuna se hincha mucho?",
+        "respuesta": "Aplica compresas frías y observa. Consulta al pediatra si empeora o si aparece enrojecimiento excesivo."
+      },
+      "20": {
+        "pregunta": "¿Qué contiene una vacuna?",
+        "respuesta": "Generalmente contiene una forma inactivada o atenuada del virus o bacteria, junto con estabilizantes y conservantes."
+      },
+      "21": {
+        "pregunta": "¿Qué pasa si rechazo una vacuna?",
+        "respuesta": "El bebé queda vulnerable a enfermedades graves que pueden prevenirse fácilmente con la vacunación."
+      },
+      "22": {
+        "pregunta": "¿Qué es la vacuna SRP?",
+        "respuesta": "Es una vacuna que protege contra sarampión, rubéola y parotiditis."
+      },
+      "23": {
+        "pregunta": "¿Qué es la vacuna contra rotavirus?",
+        "respuesta": "Es una vacuna oral que protege contra infecciones graves de diarrea por rotavirus."
+      },
+      "24": {
+        "pregunta": "¿Por qué algunas vacunas son orales y otras inyectadas?",
+        "respuesta": "Depende de cómo el cuerpo responda mejor a cada tipo de infección."
+      },
+      "25": {
+        "pregunta": "¿Se pueden aplicar varias vacunas el mismo día?",
+        "respuesta": "Sí, es seguro y recomendado para cumplir el calendario de vacunación."
+      },
+      "26": {
+        "pregunta": "¿Qué hacer si mi bebé vomita después de una vacuna oral?",
+        "respuesta": "Consulta al pediatra. Puede ser necesario repetir la dosis si el vómito ocurre inmediatamente."
+      },
+      "27": {
+        "pregunta": "¿Qué pasa si mi bebé tiene alergia al huevo y necesita la vacuna de influenza?",
+        "respuesta": "Consulta al pediatra. Muchas vacunas modernas son seguras para alérgicos al huevo."
+      },
+      "28": {
+        "pregunta": "¿Qué cuidados debo tener después de la vacunación?",
+        "respuesta": "Observar si hay fiebre, hinchazón o irritabilidad, y ofrecer líquidos y descanso."
+      },
+      "29": {
+        "pregunta": "¿Debo vacunar a mi bebé si estamos en pandemia?",
+        "respuesta": "Sí. Mantener el esquema de vacunación protege al bebé de otras enfermedades graves."
       }
     },
     "desarrollo": {
@@ -308,6 +548,66 @@
       "14": {
         "pregunta": "¿Puede aprender más de un idioma desde bebé?",
         "respuesta": "Sí, los bebés tienen gran capacidad para aprender varios idiomas desde el nacimiento."
+      },
+      "15": {
+        "pregunta": "¿Es normal que no le gusten los extraños?",
+        "respuesta": "Sí, es parte del desarrollo emocional. Con el tiempo, se acostumbrará a nuevas personas."
+      },
+      "16": {
+        "pregunta": "¿Cuándo empieza a reconocer su imagen en el espejo?",
+        "respuesta": "Alrededor de los 6 meses, aunque no entenderá que es él mismo hasta más tarde."
+      },
+      "17": {
+        "pregunta": "¿Cuándo debe empezar a aplaudir o saludar con la mano?",
+        "respuesta": "Generalmente entre los 9 y 12 meses como parte de su desarrollo social."
+      },
+      "18": {
+        "pregunta": "¿Cómo estimular la motricidad fina?",
+        "respuesta": "Ofreciendo juguetes pequeños seguros, actividades de agarrar y soltar, y juegos de encaje."
+      },
+      "19": {
+        "pregunta": "¿Qué hacer si mi bebé no rueda de espalda a barriga?",
+        "respuesta": "Estimúlalo con juegos boca abajo. Si no rueda a los 6 meses, consulta al pediatra."
+      },
+      "20": {
+        "pregunta": "¿Cuándo puede empezar a usar una cuchara?",
+        "respuesta": "Entre los 9 y 12 meses puede empezar a intentar comer con cuchara, aunque con mucha ayuda."
+      },
+      "21": {
+        "pregunta": "¿Qué actividades favorecen su equilibrio?",
+        "respuesta": "Juegos de sentarse, pararse con apoyo y moverse en superficies acolchonadas favorecen su equilibrio."
+      },
+      "22": {
+        "pregunta": "¿Es normal que mi bebé camine en puntas?",
+        "respuesta": "Puede ser normal en los primeros pasos, pero si persiste, consulta al pediatra."
+      },
+      "23": {
+        "pregunta": "¿Cuándo empieza a señalar objetos?",
+        "respuesta": "Entre los 9 y 14 meses es normal que empiece a señalar para comunicar deseos."
+      },
+      "24": {
+        "pregunta": "¿Cómo estimular su comprensión de palabras?",
+        "respuesta": "Nómbrale objetos, usa frases simples y repite palabras durante actividades diarias."
+      },
+      "25": {
+        "pregunta": "¿Cuándo empieza a entender órdenes simples?",
+        "respuesta": "Entre los 12 y 18 meses, como 'dame el juguete' o 'ven aquí'."
+      },
+      "26": {
+        "pregunta": "¿Es normal que mi bebé prefiera un solo juguete?",
+        "respuesta": "Sí, es parte de su proceso de apego y concentración en lo que le interesa."
+      },
+      "27": {
+        "pregunta": "¿Cuándo empieza a hacer juegos de imitación?",
+        "respuesta": "Desde los 9 meses puede imitar gestos, y después imitar acciones simples como aplaudir o saludar."
+      },
+      "28": {
+        "pregunta": "¿Cómo saber si está socializando bien con otros niños?",
+        "respuesta": "Entre el primer y segundo año muestra curiosidad, aunque aún juegue en paralelo sin interactuar mucho."
+      },
+      "29": {
+        "pregunta": "¿Qué hacer si mi bebé es muy tímido con desconocidos?",
+        "respuesta": "Respeta su ritmo, no lo obligues a interactuar. Dale tiempo y seguridad para adaptarse."
       }
     },
     "higiene": {
@@ -370,6 +670,66 @@
       "14": {
         "pregunta": "¿Es normal que mi bebé tenga olor corporal?",
         "respuesta": "Sí, pero si es fuerte o inusual, consulta al pediatra para descartar problemas."
+      },
+      "15": {
+        "pregunta": "¿Cómo debo limpiar la lengua de mi bebé?",
+        "respuesta": "Usa un paño húmedo o un dedal de silicona. No uses pasta dental hasta que tenga dientes."
+      },
+      "16": {
+        "pregunta": "¿Cómo debo cuidar el cabello de mi bebé?",
+        "respuesta": "Lávalo con champú suave para bebés 2-3 veces por semana y peina suavemente."
+      },
+      "17": {
+        "pregunta": "¿Qué hacer si mi bebé babea mucho?",
+        "respuesta": "Es normal. Limpia frecuentemente con un paño suave para evitar irritaciones."
+      },
+      "18": {
+        "pregunta": "¿Cómo proteger la piel de mi bebé en invierno?",
+        "respuesta": "Hidrata la piel con cremas especiales para bebés y evita baños muy calientes."
+      },
+      "19": {
+        "pregunta": "¿Qué jabón debo usar para lavar su ropa?",
+        "respuesta": "Usa detergente hipoalergénico, sin fragancias ni colorantes fuertes."
+      },
+      "20": {
+        "pregunta": "¿Cómo cuidar la zona del pañal en bebés con diarrea?",
+        "respuesta": "Cambia el pañal frecuentemente, limpia con agua tibia y aplica crema protectora."
+      },
+      "21": {
+        "pregunta": "¿Debo limpiar las encías de mi bebé antes de que salgan dientes?",
+        "respuesta": "Sí, limpia suavemente con un paño húmedo o dedal de silicona."
+      },
+      "22": {
+        "pregunta": "¿Cómo saber si la piel de mi bebé es demasiado seca?",
+        "respuesta": "Si notas descamación o aspereza, hidrátala y consulta al pediatra si persiste."
+      },
+      "23": {
+        "pregunta": "¿Debo limpiar el cuello de mi bebé diariamente?",
+        "respuesta": "Sí, límpialo suavemente, especialmente en los pliegues donde se acumula humedad."
+      },
+      "24": {
+        "pregunta": "¿Cómo tratar la irritación por babero o pañuelo?",
+        "respuesta": "Mantén la zona seca, cambia frecuentemente el babero y aplica una crema hidratante suave."
+      },
+      "25": {
+        "pregunta": "¿Es importante limpiar entre los dedos de manos y pies?",
+        "respuesta": "Sí, la humedad acumulada puede causar irritaciones o infecciones."
+      },
+      "26": {
+        "pregunta": "¿Qué hacer si mi bebé se rasca mucho la piel?",
+        "respuesta": "Consulta al pediatra; puede ser resequedad, dermatitis o alergias."
+      },
+      "27": {
+        "pregunta": "¿Cómo mantener limpia la zona del cuello si mi bebé tiene pliegues profundos?",
+        "respuesta": "Limpia diariamente con un paño húmedo, seca bien y aplica crema ligera si es necesario."
+      },
+      "28": {
+        "pregunta": "¿Debo aplicar loción corporal a diario?",
+        "respuesta": "Solo si la piel de tu bebé es seca. Usa productos hipoalergénicos."
+      },
+      "29": {
+        "pregunta": "¿Cómo prevenir rozaduras en el pañal?",
+        "respuesta": "Cambia frecuentemente, deja que la piel se seque bien y aplica una capa protectora de crema."
       }
     },
     "emociones": {
@@ -403,7 +763,7 @@
       },
       "7": {
         "pregunta": "¿Qué juegos ayudan a su desarrollo emocional?",
-        "respuesta": "Juegos de imitación, cuentos con emociones, peluches, y escondidas fortalecen el vínculo y empatía."
+        "respuesta": "Juegos de imitación, cuentos con emociones, peluches y escondidas fortalecen el vínculo y empatía."
       },
       "8": {
         "pregunta": "¿Por qué se frustra fácilmente?",
@@ -411,15 +771,15 @@
       },
       "9": {
         "pregunta": "¿Debe ver mis emociones o debo esconderlas?",
-        "respuesta": "Verte expresar emociones sanas (tristeza, alegría, enojo) le enseña a normalizarlas y gestionarlas."
+        "respuesta": "Verte expresar emociones sanas le enseña a normalizarlas y gestionarlas."
       },
       "10": {
         "pregunta": "¿Qué hago si lanza cosas al enojarse?",
-        "respuesta": "Mantén la calma, ponle límites claros y enséñale otras formas de expresar enojo con palabras o gestos."
+        "respuesta": "Mantén la calma, ponle límites claros y enséñale otras formas de expresar enojo."
       },
       "11": {
         "pregunta": "¿Cómo fomentar su autoestima desde pequeño?",
-        "respuesta": "Reafirma lo que hace bien, abrázalo, escúchalo y responde con atención a sus logros y necesidades."
+        "respuesta": "Reafirma lo que hace bien, abrázalo, escúchalo y responde con atención a sus logros."
       },
       "12": {
         "pregunta": "¿Puede sentir celos a tan corta edad?",
@@ -431,7 +791,67 @@
       },
       "14": {
         "pregunta": "¿Qué hago si mi bebé está muy apegado a mí?",
-        "respuesta": "Es normal, sobre todo el primer año. Dale confianza con rutinas y presencia gradual de otras personas queridas."
+        "respuesta": "Es normal, sobre todo el primer año. Dale confianza con rutinas y presencia gradual de otras personas."
+      },
+      "15": {
+        "pregunta": "¿Cómo puedo ayudarlo a socializar con otros bebés?",
+        "respuesta": "Organiza encuentros con otros bebés y fomenta el juego compartido de forma tranquila."
+      },
+      "16": {
+        "pregunta": "¿Qué hacer si le da miedo la separación?",
+        "respuesta": "Despídete de forma breve y amorosa, y mantén rutinas predecibles para darle seguridad."
+      },
+      "17": {
+        "pregunta": "¿Cómo ayudarlo si tiene pesadillas?",
+        "respuesta": "Abrázalo, tranquilízalo y mantén un ambiente relajado para volver a dormir."
+      },
+      "18": {
+        "pregunta": "¿Puede sentir tristeza aunque sea pequeño?",
+        "respuesta": "Sí, desde muy temprana edad puede sentir tristeza ante cambios o separaciones."
+      },
+      "19": {
+        "pregunta": "¿Cómo incentivar emociones positivas en casa?",
+        "respuesta": "Crea un ambiente tranquilo, con juegos, abrazos, sonrisas y palabras de cariño constantes."
+      },
+      "20": {
+        "pregunta": "¿Qué hacer si mi bebé muerde de frustración?",
+        "respuesta": "Explícale con calma que morder no es adecuado y ofrécele alternativas para descargar su enojo."
+      },
+      "21": {
+        "pregunta": "¿Cómo reconocer señales de ansiedad en bebés?",
+        "respuesta": "Llanto intenso, irritabilidad, miedo a separarse o alteraciones del sueño pueden ser señales."
+      },
+      "22": {
+        "pregunta": "¿Qué libros infantiles ayudan al desarrollo emocional?",
+        "respuesta": "Libros con historias sencillas sobre emociones y empatía son muy útiles desde el primer año."
+      },
+      "23": {
+        "pregunta": "¿Cómo reforzar el vínculo afectivo día a día?",
+        "respuesta": "A través de caricias, contacto visual, risas compartidas y tiempo exclusivo juntos."
+      },
+      "24": {
+        "pregunta": "¿Es normal que mi bebé imite mis gestos emocionales?",
+        "respuesta": "Sí, los bebés aprenden emociones observando a sus cuidadores principales."
+      },
+      "25": {
+        "pregunta": "¿Puede sentir vergüenza siendo tan pequeño?",
+        "respuesta": "Sí, entre los 18 y 24 meses empiezan a mostrar vergüenza ante situaciones sociales nuevas."
+      },
+      "26": {
+        "pregunta": "¿Qué hago si mi bebé es muy tímido?",
+        "respuesta": "Respeta su ritmo, no lo obligues y celebra pequeños logros de interacción social."
+      },
+      "27": {
+        "pregunta": "¿Cuándo empieza a mostrar afecto espontáneo?",
+        "respuesta": "Desde los 6 meses puede abrazar, sonreír o buscar contacto para mostrar cariño."
+      },
+      "28": {
+        "pregunta": "¿Cómo lo ayudo a manejar su enojo sin gritos?",
+        "respuesta": "Ponle palabras a sus emociones, enséñale a respirar o abrazar un peluche cuando se sienta enojado."
+      },
+      "29": {
+        "pregunta": "¿Qué emociones predominan en el primer año de vida?",
+        "respuesta": "Alegría, miedo y sorpresa son las más frecuentes mientras desarrolla su identidad emocional."
       }
     },
     "seguridad": {
@@ -476,24 +896,84 @@
         "respuesta": "No, evita almohadas, mantas y peluches en la cuna para prevenir el riesgo de asfixia."
       },
       "10": {
-        "pregunta": "¿Qué hacer si mi bebé se enferma?",
-        "respuesta": "Consulta al pediatra. Mantén un registro de síntomas y sigue sus recomendaciones."
+        "pregunta": "¿Qué hacer si mi bebé se enferma de gravedad?",
+        "respuesta": "Consulta al pediatra de inmediato y sigue sus indicaciones médicas sin automedicar."
       },
       "11": {
         "pregunta": "¿Cómo prevenir accidentes en la bañera?",
-        "respuesta": "Nunca lo dejes solo, usa alfombrillas antideslizantes y verifica la temperatura del agua."
+        "respuesta": "Nunca lo dejes solo, usa alfombrillas antideslizantes y verifica siempre la temperatura del agua."
       },
       "12": {
-        "pregunta": "¿Es seguro usar juguetes de baño?",
-        "respuesta": "Sí, pero asegúrate de que sean apropiados para su edad y sin piezas pequeñas que puedan tragarse."
+        "pregunta": "¿Qué debo revisar en los juguetes para que sean seguros?",
+        "respuesta": "Que no tengan piezas pequeñas, bordes filosos, ni partes que se desprendan fácilmente."
       },
       "13": {
-        "pregunta": "¿Cómo evitar que mi bebé se lastime con los muebles?",
-        "respuesta": "Usa protectores de esquina y mantén objetos afilados o peligrosos fuera de su alcance."
+        "pregunta": "¿Cómo proteger enchufes y cables eléctricos?",
+        "respuesta": "Utiliza protectores de enchufes y esconde los cables fuera de su alcance."
       },
       "14": {
-        "pregunta": "¿Qué hacer si mi bebé tiene fiebre alta?",
-        "respuesta": "Consulta al pediatra. Manténlo hidratado y dale medicamentos solo si lo indica el médico."
+        "pregunta": "¿Es peligroso el uso de andadores?",
+        "respuesta": "Sí, los andadores aumentan el riesgo de caídas y accidentes. Mejor usa centros de actividad fijos."
+      },
+      "15": {
+        "pregunta": "¿Qué hacer si mi bebé sufre una caída leve?",
+        "respuesta": "Observa su comportamiento. Si vomita, está somnoliento o se comporta raro, acude al médico."
+      },
+      "16": {
+        "pregunta": "¿Cómo prevenir intoxicaciones en casa?",
+        "respuesta": "Guarda medicamentos, productos de limpieza y tóxicos en lugares altos y cerrados con seguro."
+      },
+      "17": {
+        "pregunta": "¿Cómo asegurar ventanas y balcones?",
+        "respuesta": "Instala rejas o seguros para ventanas, y nunca dejes muebles cerca de ellas."
+      },
+      "18": {
+        "pregunta": "¿Qué ropa es más segura para dormir?",
+        "respuesta": "Ropa ajustada sin cordones ni accesorios sueltos que puedan representar peligro de asfixia."
+      },
+      "19": {
+        "pregunta": "¿Qué precauciones tomar en paseos al aire libre?",
+        "respuesta": "Usa sombreros, protector solar para bebés mayores de 6 meses y mantén hidratado a tu bebé."
+      },
+      "20": {
+        "pregunta": "¿Cómo actuar en caso de intoxicación accidental?",
+        "respuesta": "Llama de inmediato a emergencias. No provoques el vómito salvo indicación médica."
+      },
+      "21": {
+        "pregunta": "¿Cómo evitar golpes con puertas?",
+        "respuesta": "Instala topes de puertas o protecciones de goma para evitar que se cierren bruscamente."
+      },
+      "22": {
+        "pregunta": "¿Es seguro dormir con el bebé en la misma cama?",
+        "respuesta": "Se recomienda dormir en la misma habitación pero en superficies separadas para reducir riesgos."
+      },
+      "23": {
+        "pregunta": "¿Qué hacer si mi bebé presenta una convulsión?",
+        "respuesta": "Acuéstalo de lado, protege su cabeza, no intentes meter nada en su boca y llama a emergencias."
+      },
+      "24": {
+        "pregunta": "¿Cómo prevenir accidentes con mascotas en casa?",
+        "respuesta": "Supervisa siempre las interacciones y enseña a tu mascota a respetar el espacio del bebé."
+      },
+      "25": {
+        "pregunta": "¿Es seguro usar calentadores o estufas cerca del bebé?",
+        "respuesta": "No. Mantén calentadores fuera de su alcance y nunca los dejes encendidos sin vigilancia."
+      },
+      "26": {
+        "pregunta": "¿Qué hacer si mi bebé ingiere un objeto pequeño?",
+        "respuesta": "Consulta de inmediato al médico, incluso si no presenta síntomas."
+      },
+      "27": {
+        "pregunta": "¿Cómo proteger escaleras en casa?",
+        "respuesta": "Instala puertas de seguridad en la parte superior e inferior de las escaleras."
+      },
+      "28": {
+        "pregunta": "¿Cómo identificar un golpe en la cabeza grave?",
+        "respuesta": "Observa si hay pérdida de conciencia, vómito, letargo o cambios en su comportamiento. Acude al médico."
+      },
+      "29": {
+        "pregunta": "¿Qué precauciones tomar al viajar con un bebé?",
+        "respuesta": "Usa asiento de seguridad, lleva botiquín básico, hidratación y mantas para el confort del bebé."
       }
     },
     "juegos": {
@@ -519,7 +999,7 @@
       },
       "5": {
         "pregunta": "¿Cómo puedo jugar con mi bebé de 9 meses?",
-        "respuesta": "Juega a esconder objetos, juegos de imitación, y canciones con movimientos. Usa juguetes seguros."
+        "respuesta": "Juega a esconder objetos, juegos de imitación y canciones con movimientos. Usa juguetes seguros."
       },
       "6": {
         "pregunta": "¿Es bueno dejar que mi bebé juegue solo?",
@@ -531,11 +1011,11 @@
       },
       "8": {
         "pregunta": "¿Cómo puedo estimular su lenguaje jugando?",
-        "respuesta": "Canta canciones, lee cuentos, y juega a imitar sonidos. Usa palabras simples y claras."
+        "respuesta": "Canta canciones, lee cuentos y juega a imitar sonidos. Usa palabras simples y claras."
       },
       "9": {
         "pregunta": "¿Qué juegos son buenos para el desarrollo social?",
-        "respuesta": "Juegos de imitación, compartir juguetes, y actividades grupales con otros bebés."
+        "respuesta": "Juegos de imitación, compartir juguetes y actividades grupales con otros bebés."
       },
       "10": {
         "pregunta": "¿Es bueno jugar con agua?",
@@ -543,11 +1023,11 @@
       },
       "11": {
         "pregunta": "¿Qué juegos son adecuados para un bebé de 18 meses?",
-        "respuesta": "Juegos de construcción, rompecabezas sencillos, y actividades al aire libre como correr y saltar."
+        "respuesta": "Juegos de construcción, rompecabezas sencillos y actividades al aire libre como correr y saltar."
       },
       "12": {
         "pregunta": "¿Cómo puedo jugar con mi bebé en casa?",
-        "respuesta": "Usa cajas, mantas, y objetos cotidianos para crear juegos de exploración y descubrimiento."
+        "respuesta": "Usa cajas, mantas y objetos cotidianos para crear juegos de exploración y descubrimiento."
       },
       "13": {
         "pregunta": "¿Es bueno jugar con otros bebés?",
@@ -555,7 +1035,67 @@
       },
       "14": {
         "pregunta": "¿Qué juegos son buenos para estimular la creatividad?",
-        "respuesta": "Dibujo con crayones, modelado con plastilina, y juegos de imitación como cocinar o cuidar muñecos."
+        "respuesta": "Dibujo con crayones, modelado con plastilina y juegos de imitación como cocinar o cuidar muñecos."
+      },
+      "15": {
+        "pregunta": "¿Cómo ayuda el juego de escondidas al desarrollo?",
+        "respuesta": "Ayuda a desarrollar la permanencia del objeto, enseñando que las cosas siguen existiendo aunque no las vean."
+      },
+      "16": {
+        "pregunta": "¿Qué canciones son buenas para jugar con bebés?",
+        "respuesta": "Canciones tradicionales de gestos como 'Los cinco lobitos' o 'Estrellita, ¿dónde estás?'."
+      },
+      "17": {
+        "pregunta": "¿Qué juguetes musicales son recomendables?",
+        "respuesta": "Xilófonos, tambores suaves y juguetes que emitan sonidos sencillos son ideales para bebés."
+      },
+      "18": {
+        "pregunta": "¿Es bueno que gatee persiguiendo una pelota?",
+        "respuesta": "Sí, ayuda a fortalecer la motricidad gruesa, la coordinación y la curiosidad."
+      },
+      "19": {
+        "pregunta": "¿Qué tipo de libros son mejores para bebés?",
+        "respuesta": "Libros de cartón duro, con imágenes grandes, colores vivos y texturas."
+      },
+      "20": {
+        "pregunta": "¿Puedo hacer juegos de imitación aunque no hable aún?",
+        "respuesta": "Sí, la imitación de sonidos y movimientos favorece el desarrollo del lenguaje y la empatía."
+      },
+      "21": {
+        "pregunta": "¿Qué tipo de plastilina es segura para bebés?",
+        "respuesta": "Plastilina no tóxica y comestible (casera o especial para menores de 3 años)."
+      },
+      "22": {
+        "pregunta": "¿Cómo organizar una zona segura de juegos en casa?",
+        "respuesta": "Elige un espacio libre de objetos peligrosos, pon alfombras antideslizantes y juguetes adecuados a su edad."
+      },
+      "23": {
+        "pregunta": "¿Son buenos los juegos de arrastre?",
+        "respuesta": "Sí, estimulan el equilibrio, la fuerza de piernas y la coordinación cuando empiezan a caminar."
+      },
+      "24": {
+        "pregunta": "¿Cómo usar cajas de cartón para jugar?",
+        "respuesta": "Pueden ser casas, túneles o carros improvisados, fomentando la creatividad y el juego simbólico."
+      },
+      "25": {
+        "pregunta": "¿Cómo saber si un juguete es adecuado para su edad?",
+        "respuesta": "Debe ser grande, no contener piezas pequeñas, y estar etiquetado según la edad recomendada."
+      },
+      "26": {
+        "pregunta": "¿Qué actividades puedo hacer para fortalecer el equilibrio?",
+        "respuesta": "Juegos de subir y bajar, caminar sobre cojines o gatear sobre obstáculos blandos."
+      },
+      "27": {
+        "pregunta": "¿Qué juegos de motricidad gruesa puedo hacer al aire libre?",
+        "respuesta": "Empujar carritos, correr tras una pelota, caminar sobre césped o jugar en areneros seguros."
+      },
+      "28": {
+        "pregunta": "¿Qué juegos ayudan a enseñar causa y efecto?",
+        "respuesta": "Juguetes que emitan sonidos al presionar botones, juegos de 'tocar y escuchar', o 'esconder y encontrar'."
+      },
+      "29": {
+        "pregunta": "¿Qué beneficios tiene jugar en el piso?",
+        "respuesta": "Fortalece músculos, estimula el gateo, favorece el equilibrio y la percepción espacial."
       }
     },
     "lactancia": {
@@ -618,68 +1158,676 @@
       "14": {
         "pregunta": "¿Qué posiciones son mejores para amamantar?",
         "respuesta": "Las más comunes son: en cuna, balón de fútbol americano, acostada de lado y posición vertical. Usa la que sea más cómoda para ti y tu bebé."
+      },
+      "15": {
+        "pregunta": "¿Qué señales indican que el bebé tiene hambre?",
+        "respuesta": "Buscar el pecho, succionar las manos, mover la cabeza o emitir sonidos suaves."
+      },
+      "16": {
+        "pregunta": "¿Cómo saber si mi bebé hace un buen agarre?",
+        "respuesta": "Debe abarcar gran parte de la areola, no solo el pezón, y succionar de forma rítmica."
+      },
+      "17": {
+        "pregunta": "¿Qué hago si tengo congestión mamaria?",
+        "respuesta": "Amamanta frecuentemente, aplica compresas frías y masajea suavemente el pecho."
+      },
+      "18": {
+        "pregunta": "¿Puedo tomar medicamentos durante la lactancia?",
+        "respuesta": "Algunos sí y otros no. Consulta siempre al médico antes de tomar cualquier medicamento."
+      },
+      "19": {
+        "pregunta": "¿Qué es la crisis de lactancia?",
+        "respuesta": "Son periodos en que el bebé pide pecho más seguido para estimular la producción. Son normales y temporales."
+      },
+      "20": {
+        "pregunta": "¿Puedo amamantar si tengo mastitis?",
+        "respuesta": "Sí, y es recomendable seguir amamantando. Consulta a tu médico para tratamiento adecuado."
+      },
+      "21": {
+        "pregunta": "¿Cuánto tiempo dura una toma nocturna?",
+        "respuesta": "Puede durar entre 10 y 20 minutos. Algunos bebés maman más rápido de noche."
+      },
+      "22": {
+        "pregunta": "¿Cómo almacenar correctamente la leche materna?",
+        "respuesta": "En frascos limpios, etiquetados con fecha, refrigerada hasta 4 días o congelada hasta 6 meses."
+      },
+      "23": {
+        "pregunta": "¿Es normal que mi bebé use el pecho para consolarse?",
+        "respuesta": "Sí, el pecho brinda nutrición y también consuelo emocional."
+      },
+      "24": {
+        "pregunta": "¿Cómo destetar de manera respetuosa?",
+        "respuesta": "Reduciendo tomas de forma gradual, ofreciendo alternativas de consuelo y respetando los ritmos del bebé."
+      },
+      "25": {
+        "pregunta": "¿La lactancia ayuda al sistema inmune del bebé?",
+        "respuesta": "Sí, la leche materna aporta anticuerpos y defensas naturales contra infecciones."
+      },
+      "26": {
+        "pregunta": "¿Cómo afecta el estrés a la producción de leche?",
+        "respuesta": "El estrés puede disminuir la producción. Relajarte y descansar favorece una buena lactancia."
+      },
+      "27": {
+        "pregunta": "¿Qué alimentos favorecen la producción de leche?",
+        "respuesta": "Avena, almendras, verduras de hoja verde y buena hidratación pueden ayudar."
+      },
+      "28": {
+        "pregunta": "¿Puedo donar mi leche materna?",
+        "respuesta": "Sí, si cumples con requisitos de salud. Consulta bancos de leche certificados."
+      },
+      "29": {
+        "pregunta": "¿Qué hacer si el bebé se duerme al pecho sin terminar la toma?",
+        "respuesta": "Estimula suavemente su mejilla o cambia de pecho para animarlo a seguir succionando."
       }
     },
     "estimulación_temprana": {
-      "1": {
+      "0": {
         "pregunta": "¿Qué es la estimulación temprana?",
         "respuesta": "Es un conjunto de actividades que buscan desarrollar las capacidades físicas, cognitivas y emocionales del bebé desde los primeros meses de vida."
       },
-      "2": {
+      "1": {
         "pregunta": "¿Por qué es importante estimular a un bebé?",
         "respuesta": "Porque ayuda al desarrollo del cerebro, mejora su aprendizaje y fortalece el vínculo afectivo con sus cuidadores."
       },
-      "3": {
+      "2": {
         "pregunta": "¿A qué edad se puede comenzar la estimulación temprana?",
         "respuesta": "Desde el nacimiento. Incluso los recién nacidos pueden beneficiarse con estímulos visuales, auditivos y táctiles."
       },
-      "4": {
+      "3": {
         "pregunta": "¿Cómo puedo estimular a mi bebé de 3 meses?",
         "respuesta": "Puedes usar móviles, canciones suaves, hablarle, sonreírle y dejarlo observar colores y movimientos."
       },
-      "5": {
+      "4": {
         "pregunta": "¿Qué juegos puedo hacer con mi bebé de 6 meses?",
         "respuesta": "Juegos con espejos, juguetes sonoros, gateo guiado y cantos con palmadas son ideales."
       },
-      "6": {
+      "5": {
         "pregunta": "¿La estimulación temprana reemplaza al juego libre?",
         "respuesta": "No, ambos son importantes. La estimulación debe ser guiada y complementarse con el juego libre."
       },
-      "7": {
+      "6": {
         "pregunta": "¿Es necesario usar materiales especiales para estimular al bebé?",
         "respuesta": "No necesariamente. Puedes usar objetos del hogar seguros como cucharas de colores, telas suaves o pelotas blandas."
       },
-      "8": {
+      "7": {
         "pregunta": "¿Cuánto tiempo al día debo estimular a mi bebé?",
         "respuesta": "Con sesiones cortas de 10 a 15 minutos varias veces al día es suficiente, dependiendo de su edad y estado de ánimo."
       },
-      "9": {
+      "8": {
         "pregunta": "¿Qué tipo de música es buena para mi bebé?",
         "respuesta": "La música suave como la clásica, de cuna o instrumental estimula su audición y tranquilidad."
       },
-      "10": {
+      "9": {
         "pregunta": "¿Cómo sé si mi bebé está disfrutando la estimulación?",
         "respuesta": "Si sonríe, balbucea, mueve su cuerpo con entusiasmo o te mira con atención, está disfrutando."
       },
-      "11": {
+      "10": {
         "pregunta": "¿Puede causar daño una estimulación excesiva?",
         "respuesta": "Sí, si se fuerza al bebé o se estimula por demasiado tiempo puede generar estrés. Siempre debe respetarse su ritmo."
       },
-      "12": {
+      "11": {
         "pregunta": "¿Puedo estimular a mi bebé mientras lo baño?",
         "respuesta": "¡Sí! Hablarle, salpicar agua suavemente y mostrarle juguetes flotantes es una excelente forma de estimulación."
       },
-      "13": {
+      "12": {
         "pregunta": "¿Qué estimulación es buena para bebés prematuros?",
         "respuesta": "Deben seguir un plan adecuado a su edad corregida. Masajes suaves, contacto piel con piel y sonidos suaves son recomendables."
       },
-      "14": {
+      "13": {
         "pregunta": "¿Es necesario llevar a mi bebé a un centro de estimulación?",
         "respuesta": "No es obligatorio. Muchos ejercicios se pueden hacer en casa, aunque algunos centros ofrecen guía especializada."
       },
-      "15": {
+      "14": {
         "pregunta": "¿La estimulación temprana mejora el desarrollo del lenguaje?",
         "respuesta": "Sí, hablarle, leerle cuentos y repetir sonidos estimula su comprensión y producción del lenguaje."
+      },
+      "15": {
+        "pregunta": "¿Qué ejercicios físicos puedo hacer con mi bebé de 4 meses?",
+        "respuesta": "Ejercicios suaves como ponerlo boca abajo, ayudarlo a girar y mover sus piernas suavemente favorecen su desarrollo motor."
+      },
+      "16": {
+        "pregunta": "¿Cómo estimular la visión de mi bebé?",
+        "respuesta": "Usa objetos de colores vivos y muévelos lentamente frente a su rostro para que los siga con la mirada."
+      },
+      "17": {
+        "pregunta": "¿Qué actividades fortalecen el vínculo afectivo?",
+        "respuesta": "El contacto piel con piel, las caricias, miradas y juegos interactivos fortalecen el apego seguro."
+      },
+      "18": {
+        "pregunta": "¿Cómo estimular la audición de mi bebé?",
+        "respuesta": "Háblale mucho, ponle música suave y utiliza juguetes que emitan sonidos agradables."
+      },
+      "19": {
+        "pregunta": "¿Qué importancia tiene el gateo en la estimulación?",
+        "respuesta": "El gateo favorece la coordinación, el equilibrio, la fuerza muscular y el desarrollo cerebral cruzado."
+      },
+      "20": {
+        "pregunta": "¿Qué juegos de estimulación favorecen la memoria?",
+        "respuesta": "Juegos de repetición, canciones con movimientos y juegos de esconder y encontrar objetos ayudan a estimular la memoria temprana."
+      },
+      "21": {
+        "pregunta": "¿Cómo estimular el sentido del tacto?",
+        "respuesta": "Ofrece objetos de diferentes texturas como telas, peluches suaves y juguetes de goma."
+      },
+      "22": {
+        "pregunta": "¿Es importante el contacto piel con piel?",
+        "respuesta": "Sí, promueve la regulación emocional, el desarrollo del cerebro y refuerza el vínculo afectivo."
+      },
+      "23": {
+        "pregunta": "¿Qué hacer si mi bebé no muestra interés en los estímulos?",
+        "respuesta": "Respeta su ritmo, ofrece nuevas actividades y consulta con un especialista si persiste la falta de respuesta."
+      },
+      "24": {
+        "pregunta": "¿Cómo adaptar la estimulación si mi bebé tiene discapacidad?",
+        "respuesta": "Consulta con especialistas. La estimulación adaptada puede favorecer mucho su desarrollo y bienestar."
+      },
+      "25": {
+        "pregunta": "¿Qué actividades favorecen el desarrollo emocional?",
+        "respuesta": "Cantarle, responder a sus gestos, abrazarlo y realizar juegos de imitación fortalece su seguridad emocional."
+      },
+      "26": {
+        "pregunta": "¿Qué juegos ayudan a mejorar la coordinación ojo-mano?",
+        "respuesta": "Juegos de alcanzar y agarrar objetos, golpear tambores o apilar bloques son ideales."
+      },
+      "27": {
+        "pregunta": "¿Qué pasa si no hago estimulación temprana?",
+        "respuesta": "Puede desarrollarse bien de todas formas, pero la estimulación oportuna optimiza su potencial en varias áreas."
+      },
+      "28": {
+        "pregunta": "¿Cómo estimular el lenguaje en un bebé de 8 meses?",
+        "respuesta": "Repite sílabas simples, imita sus sonidos y responde siempre a sus balbuceos como si fueran conversaciones."
+      },
+      "29": {
+        "pregunta": "¿Cuándo debo preocuparme si no responde a la estimulación?",
+        "respuesta": "Si a los 6-9 meses no sigue objetos, no sonríe o no reacciona a sonidos, consulta a un pediatra o especialista."
+      }
+    },
+    "dentición": {
+      "0": {
+        "pregunta": "¿Cuándo salen los primeros dientes del bebé?",
+        "respuesta": "Generalmente entre los 4 y 7 meses, aunque puede variar en cada niño."
+      },
+      "1": {
+        "pregunta": "¿Cuál es el primer diente que suele salir?",
+        "respuesta": "Los incisivos centrales inferiores suelen salir primero."
+      },
+      "2": {
+        "pregunta": "¿Qué síntomas indican que están saliendo los dientes?",
+        "respuesta": "Babeo excesivo, encías inflamadas, irritabilidad y ganas de morder objetos."
+      },
+      "3": {
+        "pregunta": "¿Es normal que tenga fiebre durante la dentición?",
+        "respuesta": "Puede tener una ligera subida de temperatura, pero no fiebre alta. Consulta al pediatra si pasa de 38°C."
+      },
+      "4": {
+        "pregunta": "¿Puede causar diarrea la salida de dientes?",
+        "respuesta": "No directamente. El aumento de saliva y objetos en la boca pueden alterar la digestión, pero no debe ser constante."
+      },
+      "5": {
+        "pregunta": "¿Qué puedo hacer para aliviar el dolor de encías?",
+        "respuesta": "Ofrece mordederas frías, masajea sus encías suavemente o consulta al pediatra sobre geles específicos."
+      },
+      "6": {
+        "pregunta": "¿Qué mordederas son seguras?",
+        "respuesta": "Las de silicona sin BPA, fáciles de lavar y adecuadas a su edad."
+      },
+      "7": {
+        "pregunta": "¿Debo cepillar los dientes desde que salen?",
+        "respuesta": "Sí, con un cepillo suave y agua. Sin pasta dental hasta que aprenda a escupir."
+      },
+      "8": {
+        "pregunta": "¿A qué edad debe tener todos sus dientes de leche?",
+        "respuesta": "Alrededor de los 2 años y medio a 3 años."
+      },
+      "9": {
+        "pregunta": "¿Es normal que los dientes salgan torcidos?",
+        "respuesta": "Sí, es común al principio. La mayoría se alinean solos con el tiempo."
+      },
+      "10": {
+        "pregunta": "¿La salida de dientes afecta el sueño?",
+        "respuesta": "Sí, puede despertarse más seguido por molestias o dolor."
+      },
+      "11": {
+        "pregunta": "¿Cuántos dientes tiene un bebé al final del proceso?",
+        "respuesta": "20 dientes temporales o dientes de leche."
+      },
+      "12": {
+        "pregunta": "¿Qué alimentos ayudan durante la dentición?",
+        "respuesta": "Verduras frías cocidas, frutas refrigeradas o pan duro supervisado pueden calmar las encías."
+      },
+      "13": {
+        "pregunta": "¿Se puede usar paracetamol para el dolor?",
+        "respuesta": "Solo si lo indica el pediatra, en la dosis adecuada para su edad y peso."
+      },
+      "14": {
+        "pregunta": "¿Qué es la erupción dentaria?",
+        "respuesta": "Es el proceso por el cual los dientes atraviesan las encías para salir al exterior."
+      },
+      "15": {
+        "pregunta": "¿Qué no debo hacer durante la dentición?",
+        "respuesta": "No uses collares de ámbar, alcohol, ni objetos duros que puedan lastimarlo."
+      },
+      "16": {
+        "pregunta": "¿Es normal que tenga menos apetito?",
+        "respuesta": "Sí, el malestar puede hacer que coma menos temporalmente."
+      },
+      "17": {
+        "pregunta": "¿Debo llevarlo al dentista aunque tenga pocos dientes?",
+        "respuesta": "Sí, se recomienda la primera visita antes del año o al salir el primer diente."
+      },
+      "18": {
+        "pregunta": "¿Por qué babea tanto durante la dentición?",
+        "respuesta": "La estimulación de las encías activa la producción de saliva como protección natural."
+      },
+      "19": {
+        "pregunta": "¿Puede salir sangre en las encías al salir un diente?",
+        "respuesta": "Sí, puede haber un poco de sangrado leve o hematomas. Consulta si es excesivo."
+      },
+      "20": {
+        "pregunta": "¿Cómo prevenir caries desde el primer diente?",
+        "respuesta": "Evita azúcar, limpia los dientes a diario y no dejes el biberón con leche durante la noche."
+      },
+      "21": {
+        "pregunta": "¿Puede empezar a morderme mientras toma pecho?",
+        "respuesta": "Sí, algunos bebés lo hacen. Retíralo suavemente y dile que eso no se hace."
+      },
+      "22": {
+        "pregunta": "¿Todos los bebés tienen molestias al salir los dientes?",
+        "respuesta": "No. Algunos apenas notan la salida, otros lo sienten con más intensidad."
+      },
+      "23": {
+        "pregunta": "¿Puede tener sarpullido alrededor de la boca?",
+        "respuesta": "Sí, el exceso de saliva puede irritar la piel. Límpiala con suavidad y aplica crema protectora."
+      },
+      "24": {
+        "pregunta": "¿Qué hacer si no le han salido dientes al año?",
+        "respuesta": "Consulta al pediatra o dentista infantil. Puede ser normal, pero debe evaluarse."
+      },
+      "25": {
+        "pregunta": "¿Cómo sé qué diente está saliendo?",
+        "respuesta": "La encía se inflama y puede verse blanca o más dura donde se aproxima el diente."
+      },
+      "26": {
+        "pregunta": "¿Puedo usar geles para las encías?",
+        "respuesta": "Consulta al pediatra. Algunos geles no se recomiendan en menores de 2 años."
+      },
+      "27": {
+        "pregunta": "¿Qué hacer si mi bebé rechina los dientes?",
+        "respuesta": "Es común y suele ser temporal. Consulta si persiste o es muy ruidoso."
+      },
+      "28": {
+        "pregunta": "¿Puede la dentición causar mocos?",
+        "respuesta": "Puede aumentar la salivación y congestión leve, pero si hay fiebre o tos, consulta al pediatra."
+      },
+      "29": {
+        "pregunta": "¿Los dientes de leche necesitan cuidados si se van a caer?",
+        "respuesta": "Sí, son fundamentales para la masticación, el habla y la correcta formación de los dientes permanentes."
+      }
+    },
+    "sueño_seguro": {
+      "0": {
+        "pregunta": "¿Qué es el sueño seguro en bebés?",
+        "respuesta": "Es un conjunto de prácticas para reducir el riesgo de asfixia y muerte súbita durante el sueño infantil."
+      },
+      "1": {
+        "pregunta": "¿Qué es el síndrome de muerte súbita del lactante (SMSL)?",
+        "respuesta": "Es la muerte repentina e inexplicada de un bebé sano mientras duerme, generalmente antes del año de vida."
+      },
+      "2": {
+        "pregunta": "¿Cuál es la mejor posición para dormir a mi bebé?",
+        "respuesta": "Siempre boca arriba, sobre una superficie firme y plana."
+      },
+      "3": {
+        "pregunta": "¿Es peligroso que duerma de lado?",
+        "respuesta": "Sí, es menos seguro que dormir boca arriba y puede llevar a girarse boca abajo fácilmente."
+      },
+      "4": {
+        "pregunta": "¿Puedo poner almohadas o peluches en la cuna?",
+        "respuesta": "No. La cuna debe estar libre de objetos blandos para evitar riesgos de asfixia."
+      },
+      "5": {
+        "pregunta": "¿Qué tipo de colchón debo usar para el bebé?",
+        "respuesta": "Un colchón firme, que se ajuste perfectamente a la cuna, sin espacios entre el borde y la estructura."
+      },
+      "6": {
+        "pregunta": "¿Se recomienda el colecho?",
+        "respuesta": "Se recomienda compartir habitación, pero no la misma cama. El colecho aumenta el riesgo de asfixia."
+      },
+      "7": {
+        "pregunta": "¿A qué temperatura debe estar la habitación del bebé?",
+        "respuesta": "Entre 20 y 22°C. Evita sobreabrigarlo o usar mantas pesadas."
+      },
+      "8": {
+        "pregunta": "¿Qué tipo de ropa debe usar mi bebé para dormir?",
+        "respuesta": "Pijamas cómodos de una sola pieza. No necesita manta si está bien vestido."
+      },
+      "9": {
+        "pregunta": "¿Se puede usar saco de dormir?",
+        "respuesta": "Sí, es una opción segura si es de la talla adecuada y diseñado para bebés."
+      },
+      "10": {
+        "pregunta": "¿Cuándo puedo dejar de preocuparme por el SMSL?",
+        "respuesta": "El riesgo disminuye significativamente después de los 6 meses, pero se recomienda mantener medidas hasta el año."
+      },
+      "11": {
+        "pregunta": "¿Es seguro dormir con el bebé en un sofá?",
+        "respuesta": "No. Es uno de los lugares más peligrosos para dormir con un bebé debido al riesgo de caída o asfixia."
+      },
+      "12": {
+        "pregunta": "¿Es recomendable usar monitores para dormir?",
+        "respuesta": "Pueden dar tranquilidad, pero no reemplazan la supervisión y las medidas de sueño seguro."
+      },
+      "13": {
+        "pregunta": "¿Qué tipo de cuna es más segura?",
+        "respuesta": "Una cuna certificada, sin barrotes sueltos ni protectores acolchados."
+      },
+      "14": {
+        "pregunta": "¿Cuánto tiempo puede dormir un recién nacido?",
+        "respuesta": "Entre 14 y 17 horas al día, distribuidas entre siestas y sueño nocturno."
+      },
+      "15": {
+        "pregunta": "¿Es seguro dejarlo dormir en un portabebé o sillita de carro?",
+        "respuesta": "No por períodos prolongados. Trasládalo a una superficie plana y firme si ya está dormido."
+      },
+      "16": {
+        "pregunta": "¿Puedo mecerlo para dormir?",
+        "respuesta": "Sí, mientras esté supervisado. Pero al dormir debe colocarse en su cuna, boca arriba."
+      },
+      "17": {
+        "pregunta": "¿Es seguro el uso de cunas colecho?",
+        "respuesta": "Sí, si están bien instaladas, unidas firmemente a la cama y con altura adecuada."
+      },
+      "18": {
+        "pregunta": "¿Qué pasa si el bebé se voltea solo mientras duerme?",
+        "respuesta": "Si ya logra girarse por sí solo, puedes dejarlo, siempre y cuando lo hayas acostado inicialmente boca arriba."
+      },
+      "19": {
+        "pregunta": "¿Debo levantarme si llora mientras duerme?",
+        "respuesta": "Observa primero si se calma solo. Si el llanto continúa, revisa si necesita algo o tiene molestias."
+      },
+      "20": {
+        "pregunta": "¿Es útil el ruido blanco para dormir?",
+        "respuesta": "Sí, puede ayudar a calmar al bebé, siempre a bajo volumen y lejos de su cabeza."
+      },
+      "21": {
+        "pregunta": "¿Puedo dejarlo dormir con chupón?",
+        "respuesta": "Sí, se ha visto que puede reducir el riesgo de SMSL. Asegúrate de que esté limpio y en buen estado."
+      },
+      "22": {
+        "pregunta": "¿Qué hacer si se destapa mientras duerme?",
+        "respuesta": "Usa un saco de dormir o pijama adecuado para evitar el uso de mantas."
+      },
+      "23": {
+        "pregunta": "¿Cuándo puede dormir en su propia habitación?",
+        "respuesta": "Después de los 6 a 12 meses, cuando disminuye el riesgo de muerte súbita."
+      },
+      "24": {
+        "pregunta": "¿Está bien dormir con una luz nocturna?",
+        "respuesta": "Sí, pero debe ser tenue y no directa al rostro del bebé."
+      },
+      "25": {
+        "pregunta": "¿Puedo cubrir el cochecito con una manta para que duerma?",
+        "respuesta": "No se recomienda. Puede dificultar la ventilación y aumentar el riesgo de sobrecalentamiento."
+      },
+      "26": {
+        "pregunta": "¿Es peligroso que el bebé sude mientras duerme?",
+        "respuesta": "El sudor excesivo puede indicar sobrecalentamiento. Revisa su ropa y temperatura ambiental."
+      },
+      "27": {
+        "pregunta": "¿Puede dormir con el gorrito puesto?",
+        "respuesta": "No. Los gorros pueden salirse y causar asfixia. Solo deben usarse mientras está despierto y vigilado."
+      },
+      "28": {
+        "pregunta": "¿Qué pasa si se cubre la cara con una manta?",
+        "respuesta": "Existe riesgo de asfixia. Por eso, no deben usarse mantas sueltas en la cuna."
+      },
+      "29": {
+        "pregunta": "¿Qué signos indican que duerme en un entorno inseguro?",
+        "respuesta": "Superficies blandas, objetos sueltos en la cuna, calor excesivo o dormir fuera de la cuna son señales de alerta."
+      }
+    },
+    "citas_medicas": {
+      "0": {
+        "pregunta": "¿Cada cuánto debo llevar a mi bebé al pediatra?",
+        "respuesta": "Durante el primer año se recomienda una revisión mensual, luego cada 2-3 meses o según indique el pediatra."
+      },
+      "1": {
+        "pregunta": "¿Qué se revisa en una consulta de control sano?",
+        "respuesta": "Peso, talla, desarrollo, reflejos, alimentación, vacunas y estado general del bebé."
+      },
+      "2": {
+        "pregunta": "¿Qué preguntas debo hacer al pediatra en una consulta?",
+        "respuesta": "Consulta sobre crecimiento, alimentación, desarrollo, sueño, evacuaciones, vacunas y cualquier inquietud."
+      },
+      "3": {
+        "pregunta": "¿Debo llevar a mi bebé al médico si tiene solo mocos?",
+        "respuesta": "Sí, especialmente si es menor de 3 meses o si los síntomas persisten o empeoran."
+      },
+      "4": {
+        "pregunta": "¿Qué llevar a una consulta médica del bebé?",
+        "respuesta": "Cartilla de vacunación, pañales, ropa de cambio, lista de dudas y observaciones sobre su estado."
+      },
+      "5": {
+        "pregunta": "¿Cómo preparar a mi bebé para una vacuna?",
+        "respuesta": "Llévalo cómodo, aliméntalo antes y tranquilízalo. Puedes cargarlo durante la aplicación para mayor seguridad."
+      },
+      "6": {
+        "pregunta": "¿Es normal que llore mucho durante una consulta?",
+        "respuesta": "Sí, es una reacción común al entorno nuevo o manipulación. Tranquilízalo con tu voz y contacto."
+      },
+      "7": {
+        "pregunta": "¿Cuándo debo acudir al médico de urgencia?",
+        "respuesta": "Si tiene fiebre alta, dificultad para respirar, somnolencia extrema, convulsiones o no come."
+      },
+      "8": {
+        "pregunta": "¿Qué hago si mi bebé tiene fiebre antes de su cita?",
+        "respuesta": "Avisa al pediatra antes de ir. Puede que sea necesario reprogramarla dependiendo del cuadro clínico."
+      },
+      "9": {
+        "pregunta": "¿Se puede vacunar si tiene tos o gripa?",
+        "respuesta": "Depende de la intensidad. Si no tiene fiebre ni está decaído, normalmente sí puede vacunarse."
+      },
+      "10": {
+        "pregunta": "¿Qué especialistas debe visitar un bebé además del pediatra?",
+        "respuesta": "Odontopediatra, oftalmólogo, nutriólogo o neurólogo si lo indica el pediatra."
+      },
+      "11": {
+        "pregunta": "¿Es necesario medir la cabeza en cada cita?",
+        "respuesta": "Sí, el perímetro cefálico es un indicador importante del desarrollo cerebral."
+      },
+      "12": {
+        "pregunta": "¿Qué vacunas se aplican en las primeras consultas?",
+        "respuesta": "BCG, hepatitis B, pentavalente, rotavirus, neumococo, influenza y otras según el esquema nacional."
+      },
+      "13": {
+        "pregunta": "¿Cuándo se hace la primera revisión auditiva?",
+        "respuesta": "Idealmente al nacer, con pruebas en el hospital o durante las primeras semanas de vida."
+      },
+      "14": {
+        "pregunta": "¿Es obligatorio asistir a todas las consultas de control?",
+        "respuesta": "No es obligatorio, pero sí muy recomendable para detectar a tiempo cualquier problema de desarrollo."
+      },
+      "15": {
+        "pregunta": "¿Qué pasa si me salto una consulta?",
+        "respuesta": "Es mejor reprogramarla lo antes posible para no retrasar vacunas ni evaluaciones importantes."
+      },
+      "16": {
+        "pregunta": "¿Pueden hacerle análisis de sangre a un bebé?",
+        "respuesta": "Sí, si hay indicación médica. Puede ser para revisar anemia, infecciones u otras condiciones."
+      },
+      "17": {
+        "pregunta": "¿Cómo sé si el pediatra es adecuado para mi bebé?",
+        "respuesta": "Debe escucharte, resolver tus dudas con claridad, respetar tus decisiones y tener buena empatía con el bebé."
+      },
+      "18": {
+        "pregunta": "¿Qué hacer si mi bebé vomita justo antes de la cita?",
+        "respuesta": "Limpia y tranquiliza al bebé. Menciona el episodio al médico, puede ser relevante clínicamente."
+      },
+      "19": {
+        "pregunta": "¿Se puede llevar al pediatra con fiebre?",
+        "respuesta": "Sí, de hecho es recomendable si tiene fiebre persistente o no hay causa clara."
+      },
+      "20": {
+        "pregunta": "¿Cada cuándo se hace revisión de peso y talla?",
+        "respuesta": "En cada consulta de control sano se revisan estos parámetros y se anotan en su cartilla."
+      },
+      "21": {
+        "pregunta": "¿Qué debo observar antes de ir a consulta?",
+        "respuesta": "Cambios en alimentación, sueño, evacuaciones, comportamiento o síntomas nuevos."
+      },
+      "22": {
+        "pregunta": "¿Puedo acudir al pediatra solo por dudas aunque esté sano?",
+        "respuesta": "Sí, los controles sanos están diseñados precisamente para prevenir problemas y orientar a los padres."
+      },
+      "23": {
+        "pregunta": "¿Puede el pediatra detectar retrasos en el desarrollo?",
+        "respuesta": "Sí, durante la consulta evalúa hitos del desarrollo físico, motor, social y del lenguaje."
+      },
+      "24": {
+        "pregunta": "¿Qué hacer si mi bebé llora mucho en la sala de espera?",
+        "respuesta": "Tranquilízalo con su chupón, juguetes o canciones. Lleva algo que lo entretenga mientras espera."
+      },
+      "25": {
+        "pregunta": "¿Se puede posponer una vacuna si está enfermo?",
+        "respuesta": "Sí, si tiene fiebre alta o está muy decaído. El pediatra decidirá si conviene esperar."
+      },
+      "26": {
+        "pregunta": "¿Debo llevar la cartilla de vacunación a todas las consultas?",
+        "respuesta": "Sí, es importante para registrar avances, vacunas y peso-talla en cada visita."
+      },
+      "27": {
+        "pregunta": "¿Cómo registrar las consultas en casa?",
+        "respuesta": "Puedes anotar la fecha, peso, talla, observaciones del médico y próximos pasos recomendados."
+      },
+      "28": {
+        "pregunta": "¿Qué pasa si mi bebé se enferma justo antes de una vacuna?",
+        "respuesta": "Comunícalo al médico. Evaluará si es mejor posponer o si puede aplicarse sin riesgos."
+      },
+      "29": {
+        "pregunta": "¿Las consultas médicas también ayudan con el desarrollo emocional?",
+        "respuesta": "Sí, al observar interacciones y dar consejos sobre apego, vínculo y crianza respetuosa."
+      }
+    },
+    "estimulación_sensorial": {
+      "0": {
+        "pregunta": "¿Qué es la estimulación sensorial en bebés?",
+        "respuesta": "Es el conjunto de actividades que despiertan y fortalecen los sentidos del bebé a través del juego y la exploración."
+      },
+      "1": {
+        "pregunta": "¿Por qué es importante la estimulación sensorial?",
+        "respuesta": "Porque potencia el desarrollo cognitivo, motor, emocional y del lenguaje desde los primeros meses de vida."
+      },
+      "2": {
+        "pregunta": "¿Cómo estimular el sentido del tacto?",
+        "respuesta": "Ofrece objetos de diferentes texturas como peluches, telas suaves, alfombras y juguetes de goma."
+      },
+      "3": {
+        "pregunta": "¿Qué colores son mejores para estimular la vista?",
+        "respuesta": "Colores contrastantes como blanco y negro al principio, luego rojo, amarillo y azul brillante."
+      },
+      "4": {
+        "pregunta": "¿Cómo estimular el sentido del oído?",
+        "respuesta": "Con sonidos suaves, música, sonajeros, canciones y la voz del cuidador."
+      },
+      "5": {
+        "pregunta": "¿Es recomendable el uso de luces para estimular la vista?",
+        "respuesta": "Sí, siempre que sean luces suaves y seguras, como móviles con luces o lámparas sensoriales."
+      },
+      "6": {
+        "pregunta": "¿Qué tipo de música beneficia al bebé?",
+        "respuesta": "Música clásica, de cuna, instrumental o canciones con ritmos suaves y repetitivos."
+      },
+      "7": {
+        "pregunta": "¿Cómo estimular el olfato de mi bebé?",
+        "respuesta": "Con olores naturales como frutas, flores o la leche materna. Evita perfumes fuertes."
+      },
+      "8": {
+        "pregunta": "¿Cómo estimular el gusto en bebés menores de 6 meses?",
+        "respuesta": "A través del sabor de la leche materna o fórmula. No se recomienda dar alimentos sólidos aún."
+      },
+      "9": {
+        "pregunta": "¿Qué juguetes sensoriales son recomendables?",
+        "respuesta": "Juguetes con sonidos, texturas, espejos seguros, mordederas y libros sensoriales."
+      },
+      "10": {
+        "pregunta": "¿Qué actividades combinan varios sentidos a la vez?",
+        "respuesta": "Masajes con aceites suaves, baños con juguetes, y juegos de música y movimiento."
+      },
+      "11": {
+        "pregunta": "¿Es bueno dejar que toque todo?",
+        "respuesta": "Sí, mientras sea seguro y esté supervisado. El tacto es clave para su aprendizaje."
+      },
+      "12": {
+        "pregunta": "¿Cómo saber si mi bebé reacciona bien a los estímulos?",
+        "respuesta": "Si sonríe, mueve sus extremidades, vocaliza o muestra interés visual y auditivo."
+      },
+      "13": {
+        "pregunta": "¿Puede la estimulación sensorial ayudar a calmar al bebé?",
+        "respuesta": "Sí, texturas suaves, música tranquila o masajes pueden reducir el estrés y calmarlo."
+      },
+      "14": {
+        "pregunta": "¿Qué hacer si parece que se sobreestimula?",
+        "respuesta": "Páralo todo, llévalo a un lugar tranquilo y reduce el nivel de estímulo poco a poco."
+      },
+      "15": {
+        "pregunta": "¿Qué sonidos le molestan a los bebés?",
+        "respuesta": "Ruidos fuertes o repentinos pueden asustarlos. Prefieren sonidos suaves y constantes."
+      },
+      "16": {
+        "pregunta": "¿Se puede estimular el sentido del equilibrio?",
+        "respuesta": "Sí, con movimientos suaves como mecerlo, cargarlo en fular o juegos de balanceo."
+      },
+      "17": {
+        "pregunta": "¿Es útil el uso de espejos?",
+        "respuesta": "Sí, los espejos ayudan a estimular la visión, el autoconocimiento y la curiosidad."
+      },
+      "18": {
+        "pregunta": "¿Qué texturas puedo usar en casa para estimularlo?",
+        "respuesta": "Toallas, esponjas, papel burbuja, telas suaves o rugosas y tapetes sensoriales."
+      },
+      "19": {
+        "pregunta": "¿Se puede estimular el gusto con alimentos sólidos?",
+        "respuesta": "Sí, a partir de los 6 meses, ofrece alimentos variados en sabor, color y textura."
+      },
+      "20": {
+        "pregunta": "¿Puedo estimular los sentidos durante el baño?",
+        "respuesta": "Sí, con agua tibia, juegos flotantes, aromas suaves y canciones relajantes."
+      },
+      "21": {
+        "pregunta": "¿Qué pasa si no se estimulan los sentidos a tiempo?",
+        "respuesta": "Puede retrasar algunos aspectos del desarrollo, aunque cada bebé tiene su ritmo."
+      },
+      "22": {
+        "pregunta": "¿Los juegos de sonidos favorecen el lenguaje?",
+        "respuesta": "Sí, imitar sonidos, ruidos de animales y palabras simples fortalece su comprensión auditiva."
+      },
+      "23": {
+        "pregunta": "¿Qué es un gimnasio sensorial para bebés?",
+        "respuesta": "Es una superficie con arcos que cuelgan juguetes de diferentes formas, colores y sonidos para estimular varios sentidos."
+      },
+      "24": {
+        "pregunta": "¿Cómo adaptar la estimulación si mi bebé tiene discapacidad visual o auditiva?",
+        "respuesta": "Consulta a un especialista y usa estímulos compensatorios como texturas, sonidos o rutinas repetitivas."
+      },
+      "25": {
+        "pregunta": "¿Cuándo se recomienda comenzar con estimulación sensorial?",
+        "respuesta": "Desde el nacimiento, con contacto piel con piel, voz suave, tacto y mirada directa."
+      },
+      "26": {
+        "pregunta": "¿Puedo usar aromaterapia con bebés?",
+        "respuesta": "Solo con aromas suaves y naturales como lavanda, y siempre con autorización médica."
+      },
+      "27": {
+        "pregunta": "¿Qué hacer si no reacciona a sonidos fuertes?",
+        "respuesta": "Consulta al pediatra para descartar problemas auditivos. La detección temprana es clave."
+      },
+      "28": {
+        "pregunta": "¿Es bueno dejar que camine descalzo?",
+        "respuesta": "Sí, estimula el tacto en los pies, el equilibrio y la percepción del entorno."
+      },
+      "29": {
+        "pregunta": "¿Qué importancia tiene la exploración sensorial en el juego?",
+        "respuesta": "Es la base del aprendizaje temprano, permitiéndole descubrir el mundo a través de sus sentidos."
       }
     }
   }

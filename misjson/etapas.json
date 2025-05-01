@@ -1,0 +1,80 @@
+{
+    "etapas": [
+      {
+        "edad": "0 - 6 meses",
+        "recomendacion": "Durante esta etapa, la alimentación debe ser exclusivamente con leche materna o fórmula infantil. No es necesario ofrecer agua u otros líquidos.",
+        "menu": [
+          "Lactancia materna a libre demanda",
+          "Fórmula infantil (si aplica)"
+        ],
+        "alertas": [
+          "❌ No introducir alimentos sólidos",
+          "❌ No ofrecer agua, tés ni jugos",
+          "💡 La lactancia materna cubre todas las necesidades nutricionales"
+        ]
+      },
+      {
+        "edad": "6 - 8 meses",
+        "recomendacion": "Es el momento de comenzar con la alimentación complementaria. Introduce alimentos uno a la vez y observa reacciones.",
+        "menu": [
+          "Papilla de plátano maduro",
+          "Puré de zanahoria cocida",
+          "Arroz o avena cocida",
+          "Agua hervida en pequeñas cantidades"
+        ],
+        "alertas": [
+          "❌ No dar miel (riesgo de botulismo)",
+          "⚠️ Evitar sal y azúcar",
+          "⚠️ No usar alimentos ultraprocesados",
+          "💡 Introducir nuevos alimentos de uno en uno, cada 2–3 días"
+        ]
+      },
+      {
+        "edad": "8 - 10 meses",
+        "recomendacion": "Se amplía la variedad de alimentos y se introducen texturas más gruesas. Se puede ofrecer comida triturada o en trozos blandos.",
+        "menu": [
+          "Frutas cocidas en trozos (manzana, pera)",
+          "Verduras cocidas en tiras",
+          "Pollo cocido desmenuzado",
+          "Yema de huevo cocido",
+          "Lentejas cocidas"
+        ],
+        "alertas": [
+          "⚠️ No introducir claras de huevo si hay antecedentes de alergias",
+          "❌ Evitar azúcar, sal, embutidos y dulces",
+          "💡 Supervisar siempre al bebé mientras come"
+        ]
+      },
+      {
+        "edad": "10 - 12 meses",
+        "recomendacion": "El bebé puede comer casi todo lo que come la familia, siempre que esté adaptado en textura y sin condimentos fuertes.",
+        "menu": [
+          "Sopa de verduras con pollo",
+          "Pescado cocido sin espinas",
+          "Tortilla de huevo en pedacitos",
+          "Frutas frescas blandas (plátano, mango)"
+        ],
+        "alertas": [
+          "⚠️ Evitar frutos secos enteros, uvas sin cortar y otros alimentos que atragantan",
+          "❌ No dar bebidas azucaradas ni postres comerciales",
+          "💡 Fomentar el uso de vasos entrenadores en lugar de biberones"
+        ]
+      },
+      {
+        "edad": "1 año en adelante",
+        "recomendacion": "El bebé puede integrarse plenamente a la dieta familiar saludable, con alimentos variados, naturales y en porciones pequeñas.",
+        "menu": [
+          "Desayuno: pan integral con aguacate + leche",
+          "Comida: arroz con verduras y carne magra",
+          "Cena: papilla de avena con plátano",
+          "Snacks: frutas, galletas sin azúcar, yogur natural"
+        ],
+        "alertas": [
+          "❌ Evitar alimentos muy azucarados o salados",
+          "💡 No forzar a comer, respetar su apetito",
+          "💡 Incluir al bebé en la mesa para fomentar hábitos saludables"
+        ]
+      }
+    ]
+  }
+  
