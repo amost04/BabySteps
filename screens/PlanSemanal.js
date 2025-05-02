@@ -21,7 +21,7 @@ function normalize(size) {
   return Math.round(PixelRatio.roundToNearestPixel(newSize));
 }
 
-const diasSemana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+const diasSemana = ['🐣 Lunes', '🧸 Martes', '🥣 Miércoles', ' 🎨 Jueves', '🎉 Viernes', '🌞 Sábado', '💤 Domingo'];
 
 export default function ModalPlanSemanal({ visible, onClose }) {
   const [plan, setPlan] = useState([]);
@@ -71,7 +71,7 @@ export default function ModalPlanSemanal({ visible, onClose }) {
           <ScrollView contentContainerStyle={styles.scroll}>
             {plan.map((dia, i) => (
               <View key={i} style={styles.card}>
-                <Text style={styles.cardTitulo}>{dia.dia}</Text>
+                <Text style={styles.cardTitulo}>{diasSemana[i] || dia.dia}</Text>
                 <TextInput
                   placeholder="Desayuno"
                   style={styles.input}
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     maxHeight: '95%',
     backgroundColor: '#f5f8ff',
     borderRadius: 15,
-    paddingTop: normalize(20),
+    marginTop: normalize(50),
     paddingHorizontal: normalize(15),
     paddingBottom: normalize(80),
   },
@@ -133,6 +133,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#3e4a89',
     textAlign: 'center',
+    marginTop: normalize(20),
     marginBottom: normalize(20),
   },
   scroll: {
@@ -173,7 +174,7 @@ const styles = StyleSheet.create({
     padding: normalize(15),
     borderRadius: 10,
     position: 'absolute',
-    bottom: normalize(50),
+    bottom: normalize(80),
     left: normalize(20),
     right: normalize(20),
     alignItems: 'center',
@@ -183,7 +184,7 @@ const styles = StyleSheet.create({
     padding: normalize(12),
     borderRadius: 10,
     position: 'absolute',
-    bottom: normalize(10),
+    bottom: normalize(30),
     left: normalize(20),
     right: normalize(20),
     alignItems: 'center',

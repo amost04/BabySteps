@@ -1,0 +1,58 @@
+{
+    "titulo": "🆘 ¿Qué hacer si tu bebé presenta una reacción alérgica?",
+    "introduccion": "Si tu bebé comienza a presentar síntomas extraños tras comer un alimento, mantén la calma. Aquí te decimos qué hacer paso a paso:",
+    "secciones": [
+      {
+        "titulo": "🔎 ¿Qué síntomas debo observar?",
+        "contenido": [
+          "Ronchas, sarpullido o piel roja.",
+          "Inflamación de labios, párpados o lengua.",
+          "Estornudos, mocos o tos repentina.",
+          "Diarrea o vómito sin razón aparente.",
+          "Llanto excesivo, quejido o inquietud repentina.",
+          "Dificultad para respirar o silbido al inhalar.",
+          "Cansancio extremo o dificultad para mantenerse despierto."
+        ]
+      },
+      {
+        "titulo": "🟢 Si es una reacción leve:",
+        "contenido": [
+          "Retira el alimento inmediatamente.",
+          "Limpia su boquita con agua.",
+          "Observa si los síntomas se mantienen o desaparecen.",
+          "Toma nota del alimento sospechoso y los síntomas.",
+          "No des ese alimento otra vez hasta consultar con tu pediatra."
+        ]
+      },
+      {
+        "titulo": "🟠 Si es una reacción moderada:",
+        "contenido": [
+          "Llama a tu pediatra o acude al centro médico más cercano.",
+          "No des ningún medicamento sin indicación médica.",
+          "Mantén al bebé despierto, en posición sentada o semiacostada.",
+          "Evita darle más comida o bebida hasta que sea valorado."
+        ]
+      },
+      {
+        "titulo": "🔴 Si es una emergencia (reacción grave):",
+        "contenido": [
+          "Llama al 911 o servicio de emergencias inmediatamente.",
+          "No intentes hacer vomitar al bebé.",
+          "Evita que se duerma o quede solo.",
+          "Si el pediatra ya te indicó medicamento de emergencia, úsalo.",
+          "Lleva al bebé al hospital aunque los síntomas parezcan mejorar."
+        ]
+      },
+      {
+        "titulo": "📝 Después del evento:",
+        "contenido": [
+          "Registra en esta app el alimento y lo que ocurrió.",
+          "Consulta con un pediatra o alergólogo.",
+          "Evita volver a ofrecer ese alimento hasta nuevo aviso.",
+          "Guarda fotos o notas para mostrar en la consulta médica.",
+          "Mantén un control de alergias actualizado en tu perfil."
+        ]
+      }
+    ]
+  }
+  
