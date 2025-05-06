@@ -7,6 +7,7 @@ import {
   deleteUser,
 } from "firebase/auth";
 
+// ✅ Solo obtener instancia ya inicializada
 const authInstance = getAuth(app);
 
 // Registro de usuario y verificación por correo
