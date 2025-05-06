@@ -18,6 +18,7 @@ import { getDatabase, ref, get } from 'firebase/database';
 import ModalPlanSemanal from './PlanSemanal';
 import BuscadorAlim from './BuscadorAlim';
 import RegistroAlergias from './RegistroAlergias';
+import ConsejosPediatra from './ConsejosPediatra';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const scale = SCREEN_WIDTH / 375;
@@ -33,6 +34,7 @@ export default function Nutricion({ setPantalla }) {
   const [modalPlanVisible, setModalPlanVisible] = useState(false);
   const [modalBuscadorVisible, setModalBuscadorVisible] = useState(false);
   const [modalAlergiasVisible, setModalAlergiasVisible] = useState(false);
+  const [modalConsejosVisible, setModalConsejosVisible] = useState(false);
   const [etapas, setEtapas] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [seleccionada, setSeleccionada] = useState(null);
@@ -107,17 +109,19 @@ export default function Nutricion({ setPantalla }) {
             <Text style={styles.cardTitle}>🚨 Registro de Alergias</Text>
           </TouchableOpacity>
 
-          <View style={styles.card}>
+          <TouchableOpacity
+            onPress={() => setModalConsejosVisible(true)}
+            style={styles.card}
+          >
             <Text style={styles.cardTitle}>👩‍⚕️ Consejos del Pediatra</Text>
-          </View>
+          </TouchableOpacity>
         </ScrollView>
       </View>
 
       <ModalPlanSemanal visible={modalPlanVisible} onClose={() => setModalPlanVisible(false)} />
-
       <BuscadorAlim visible={modalBuscadorVisible} onClose={() => setModalBuscadorVisible(false)} />
-
       <RegistroAlergias visible={modalAlergiasVisible} onClose={() => setModalAlergiasVisible(false)} />
+      <ConsejosPediatra visible={modalConsejosVisible} onClose={() => setModalConsejosVisible(false)} />
 
       <Modal
         animationType="slide"
