@@ -94,7 +94,7 @@ const BuscadorAlimentosModal = ({ visible, onClose }) => {
 
   return (
     <Modal visible={visible} animationType="slide" transparent={true}>
-      <View style={{ flex: 1, backgroundColor: 'rgba(0,0,0,0.4)', justifyContent: 'center', padding: 22 }}>
+      <View style={{ flex: 1, backgroundColor: 'rgba(250, 194, 53, 0.93)', justifyContent: 'center', padding: 22 }}>
         <View style={{ backgroundColor: '#fafafa', borderRadius: 26, padding: 22, flex: 1, marginTop: 40 }}>
           <Text style={{ fontSize: 26, fontWeight: 'bold', marginBottom: 10, textAlign: 'center' }}>
           🔎Buscador de Alimentos

@@ -15,20 +15,21 @@ import { getDatabase, ref, get, set } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 
 const capitalizar = (texto) =>
-    texto
-      .toLowerCase()
-      .split(' ')
-      .map(palabra =>
-        palabra.charAt(0).toLocaleUpperCase('es-MX') + palabra.slice(1)
-      )
-      .join(' ');
-  
+  texto
+    .toLowerCase()
+    .split(' ')
+    .map(palabra =>
+      palabra.charAt(0).toLocaleUpperCase('es-MX') + palabra.slice(1)
+    )
+    .join(' ');
+
 const RegistroAlergias = ({ visible, onClose }) => {
   const [alimentos, setAlimentos] = useState([]);
   const [respuestas, setRespuestas] = useState({});
   const [manual, setManual] = useState(null);
   const [busqueda, setBusqueda] = useState('');
   const [modalAuxilioVisible, setModalAuxilioVisible] = useState(false);
+  const [verSoloAlergias, setVerSoloAlergias] = useState(false);
   const uid = getAuth().currentUser?.uid;
 
   useEffect(() => {
@@ -44,6 +45,12 @@ const RegistroAlergias = ({ visible, onClose }) => {
       get(ref(db, 'nutricion/alergias')).then(snapshot => {
         if (snapshot.exists()) {
           setManual(snapshot.val());
+        }
+      });
+
+      get(ref(db, `usuarios/${uid}/alergias`)).then(snapshot => {
+        if (snapshot.exists()) {
+          setRespuestas(snapshot.val());
         }
       });
     }
@@ -101,9 +108,11 @@ const RegistroAlergias = ({ visible, onClose }) => {
     );
   };
 
-  const alimentosFiltrados = alimentos.filter(a =>
-    a.toLowerCase().includes(busqueda.toLowerCase())
-  );
+  const alimentosFiltrados = alimentos.filter(a => {
+    const coincideBusqueda = a.toLowerCase().includes(busqueda.toLowerCase());
+    const esAlergia = respuestas[a]?.reaccion === 'si';
+    return coincideBusqueda && (!verSoloAlergias || esAlergia);
+  });
 
   return (
     <Modal visible={visible} animationType="slide" transparent={true}>
@@ -119,6 +128,13 @@ const RegistroAlergias = ({ visible, onClose }) => {
             onChangeText={setBusqueda}
             style={styles.buscador}
           />
+
+          <TouchableOpacity activeOpacity={1}
+            style={[styles.botonAuxilio, { backgroundColor: verSoloAlergias ? '#10b981' : '#9ca3af' }]}
+            onPress={() => setVerSoloAlergias(!verSoloAlergias)}
+          >
+            <Text style={{ color: 'black', fontWeight: 'bold' }}>{verSoloAlergias ? '🔍 Ver Todos' : '📋 Mis Alergias'}</Text>
+          </TouchableOpacity>
 
           <ScrollView style={{ flex: 1 }}>
             {alimentosFiltrados.map(nombre => renderAlimento(nombre))}
@@ -163,7 +179,7 @@ const RegistroAlergias = ({ visible, onClose }) => {
 const styles = StyleSheet.create({
   fondo: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.4)',
+    backgroundColor: 'rgba(251, 172, 13, 0.89)',
     justifyContent: 'center',
     padding: 20,
     paddingTop: 60,
