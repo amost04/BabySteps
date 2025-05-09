@@ -9,6 +9,7 @@ import { leerCuenta } from '../FB/db_api';
 // Función para normalizar tamaños según la pantalla
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const scale = SCREEN_WIDTH / 375;
+const colores = ['#feca57', '#ca53fd', '#ff6b6b', '#1dd1a1', '#5f27cd', '#ff9ff3', '#00d2d3', '#ff6b81', '#54a0ff', '#c8d6e5'];
 
 function normalize(size) {
     const newSize = size * scale;
@@ -54,7 +55,10 @@ export default function Inicio({ setPantalla }) {
                         <Image source={require('../assets/return.png')} style={styles.returnIcon} />
                     </TouchableOpacity>
                     <Image source={require('../assets/bslogo.png')} style={styles.logo} />
-                    <Text style={styles.title}>Inicia Sesión</Text>
+                    <View style={{ flexDirection: 'row', marginBottom: normalize(20) }}>
+                      {['I','n','i','c','i','a',' ','S','e','s','i','ó','n'].map((letra, i) => (
+                        <Text key={i} style={[styles.title,{ color: colores[i % colores.length] }]} >{letra}</Text>))}
+                   </View>
                     <TextInput
                         style={styles.input}
                         placeholder="Correo Electrónico"
@@ -112,9 +116,9 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: normalize(40),
-        marginBottom: normalize(20),
+        marginBottom: normalize(15),
         fontWeight: 'bold',
-        fontFamily: 'Montserrat_500Medium_Italic'
+        
     },
     input: {
         width: '80%',
