@@ -27,8 +27,8 @@ export default function Prin({ setPantalla }) {
         <View style={styles.videoContainer}>
           <Video
             source={require('../assets/video.mp4')}
-            style={styles.video}
-            resizeMode="contain"
+            style={{ width: wW, height: wH }} // Ajustar al tamaño de la pantalla
+            resizeMode="cover" // Cambiar a "cover" para que ocupe toda la pantalla
             shouldPlay
             isLooping={false}
             onPlaybackStatusUpdate={(status) => {
@@ -86,8 +86,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   video: {
-    width: 400,
-    height: 400,
+    // Se eliminan las dimensiones fijas para evitar conflictos
   },
   overlay: {
     flex: 1,
