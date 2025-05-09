@@ -9,6 +9,7 @@ import Perfil from './screens/Perfil';
 import CitasCartilla from './screens/CitasCartilla';
 import FAQ from './screens/FAQ';
 import SuenoBebe from './screens/SuenoBebe';  
+import Musica from './Musica'; // Importa el componente de música
 
 // Fonts
 import { useFonts } from 'expo-font';
@@ -32,7 +33,6 @@ export default function App() {
 
   const [pantalla, setPantalla] = useState('prin');
 
-
   let contenido = <Prin setPantalla={setPantalla} />;
 
   if (pantalla === 'Inicio') contenido = <Inicio setPantalla={setPantalla} />;
@@ -45,5 +45,11 @@ export default function App() {
   else if (pantalla === 'FAQ') contenido = <FAQ setPantalla={setPantalla} />;
   else if (pantalla === 'SuenoBebe') contenido = <SuenoBebe setPantalla={setPantalla} />;
 
-  return <>{contenido}</>;
+  return (
+    <>
+      <Musica /> {/* Agrega el componente de música aquí */}
+      {contenido}
+    </>
+  );
 }
+
