@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
   View, Text, StyleSheet, ImageBackground, TouchableOpacity, Image,
-  ScrollView, useWindowDimensions, Dimensions, PixelRatio, TextInput
+  ScrollView, useWindowDimensions, Dimensions, PixelRatio, TextInput, Alert
 } from 'react-native';
 import { getAuth } from 'firebase/auth';
 import { get, ref, getDatabase } from 'firebase/database';
@@ -165,11 +165,24 @@ export default function SuenoBebe({ setPantalla }) {
             <Text style={styles.text}>{icono} Duración: {duracionTexto}</Text>
             <Text style={styles.text}>📝 Notas: {item.notas}</Text>
             <TouchableOpacity
-            onPress={() => eliminarRegistro(item.fecha, item.horaDormir)}
-             style={{ marginTop: normalize(8), backgroundColor: '#dc2626', padding: normalize(6), borderRadius: 6 }}>
-                <Text style={{ color: 'white', textAlign: 'center', fontWeight: 'bold' }}>Eliminar</Text>
-            </TouchableOpacity>
-
+            onPress={() => {
+             Alert.alert(
+             '¿Eliminar registro?',
+             'Esta acción no se puede deshacer. ¿Estás seguro?',
+              [
+                { text: 'Cancelar', style: 'cancel' },
+                {
+                 text: 'Eliminar',
+                style: 'destructive',
+                  onPress: () => eliminarRegistro(item.fecha, item.horaDormir),
+                },
+              ],
+              { cancelable: true }
+            );
+            }}
+          style={{marginTop: normalize(8),backgroundColor: '#dc2626',padding: normalize(6),borderRadius: 6,}}>
+          <Text style={{ color: 'white', textAlign: 'center', fontWeight: 'bold' }}>Eliminar</Text>
+          </TouchableOpacity>
           </View>
         );
       })}
