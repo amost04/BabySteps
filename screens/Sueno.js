@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
-  View, Text, StyleSheet, ImageBackground, TouchableOpacity, Image,
-  TextInput, Alert, useWindowDimensions, Dimensions, PixelRatio
+  View, Text, StyleSheet, Modal, TextInput, TouchableOpacity,
+  Dimensions, PixelRatio, useWindowDimensions, Alert
 } from 'react-native';
 import { getAuth } from 'firebase/auth';
 import { guardarSuenoAvanzado as guardarSueno } from '../FB/db_api';
@@ -13,14 +13,13 @@ function normalize(size) {
   return Math.round(PixelRatio.roundToNearestPixel(newSize));
 }
 
-
-export default function Sueno({ setPantalla }) {
+export default function ModalSueno({ visible, onClose }) {
   const { width: wW, height: wH } = useWindowDimensions();
   const [horaDormir, setHoraDormir] = useState('');
   const [horaDespertar, setHoraDespertar] = useState('');
   const [notas, setNotas] = useState('');
 
-  const calcularHoras = (inicio, fin) => {
+  const calcularDuracion = (inicio, fin) => {
     try {
       const [h1, m1] = inicio.split(':').map(Number);
       const [h2, m2] = fin.split(':').map(Number);
@@ -29,7 +28,10 @@ export default function Sueno({ setPantalla }) {
       d1.setHours(h1, m1, 0);
       d2.setHours(h2, m2, 0);
       if (d2 < d1) d2.setDate(d2.getDate() + 1);
-      return Math.round(((d2 - d1) / (1000 * 60 * 60)) * 100) / 100;
+      const diffMin = Math.floor((d2 - d1) / (1000 * 60));
+      const horas = Math.floor(diffMin / 60);
+      const minutos = diffMin % 60;
+      return `${horas}h ${minutos}m`;
     } catch {
       return null;
     }
@@ -44,121 +46,100 @@ export default function Sueno({ setPantalla }) {
       return;
     }
 
-    const horas = calcularHoras(horaDormir, horaDespertar);
-    if (horas === null || horas <= 0) {
+    const duracion = calcularDuracion(horaDormir, horaDespertar);
+    if (!duracion) {
       Alert.alert('Error', 'Verifica los horarios ingresados');
       return;
     }
 
     const fecha = new Date().toISOString().split('T')[0];
-    const exito = await guardarSueno(user.uid, fecha, horaDormir, horaDespertar, notas);
+    const exito = await guardarSueno(user.uid, fecha, horaDormir, horaDespertar, notas, duracion);
     if (exito) {
       setHoraDormir('');
       setHoraDespertar('');
       setNotas('');
-      setPantalla('SuenoBebe'); // Redirige automáticamente a SuenoBebe
+      onClose();
     } else {
       Alert.alert('Error', 'No se pudo guardar el registro');
     }
   };
 
   return (
-    <ImageBackground
-      source={require('../assets/bw.png')}
-      style={[styles.background, { width: wW, height: wH }]}
-      resizeMode="cover"
+    <Modal
+      visible={visible}
+      animationType="fade"
+      transparent
+      onRequestClose={onClose}
     >
-      <TouchableOpacity
-        onPress={() => setPantalla('SuenoBebe')}
-        style={styles.returnButton}
-      >
-        <Image
-          source={require('../assets/return.png')}
-          style={styles.returnIcon}
-        />
-      </TouchableOpacity>
-
-      <View style={styles.overlay}>
-        <Text style={styles.title}>Registrar Sueño</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Hora de dormir (HH:mm)"
-          value={horaDormir}
-          onChangeText={setHoraDormir}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Hora de despertar (HH:mm)"
-          value={horaDespertar}
-          onChangeText={setHoraDespertar}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Notas"
-          value={notas}
-          onChangeText={setNotas}
-        />
-        <TouchableOpacity style={styles.button} onPress={guardarRegistro}>
-          <Text style={styles.buttonText}>Confirmar</Text>
-        </TouchableOpacity>
+      <View style={[styles.background, { width: wW, height: wH }]}>
+        <View style={styles.overlay}>
+          <Text style={styles.title}>Registrar Sueño</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Hora de dormir (HH:mm)"
+            value={horaDormir}
+            onChangeText={setHoraDormir}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Hora de despertar (HH:mm)"
+            value={horaDespertar}
+            onChangeText={setHoraDespertar}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Notas"
+            value={notas}
+            onChangeText={setNotas}
+          />
+          <TouchableOpacity style={styles.button} onPress={guardarRegistro}>
+            <Text style={styles.buttonText}>Confirmar</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={onClose} style={[styles.button, { backgroundColor: '#ccc', marginTop: 10 }]}>
+            <Text style={[styles.buttonText, { color: '#333' }]}>Cancelar</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-    </ImageBackground>
+    </Modal>
   );
 }
+
 const styles = StyleSheet.create({
-  background: { flex: 1 },
+  background: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(237, 166, 13, 0.86)' },
   overlay: {
-    flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    padding: normalize(20),
+    width: '85%',
     alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.4)',
-    paddingHorizontal: normalize(20),
   },
   title: {
-    fontSize: normalize(32),
-    color: 'white',
+    fontSize: normalize(24),
     fontWeight: 'bold',
-    marginBottom: normalize(20),
-  },
-  returnButton: {
-    position: 'absolute',
-    top: normalize(40),
-    left: normalize(20),
-    zIndex: 10,
-  },
-  returnIcon: {
-    width: normalize(40),
-    height: normalize(40),
+    marginBottom: normalize(15),
+    color: '#e653fd',
   },
   input: {
-    width: '80%',
+    width: '100%',
     height: normalize(50),
-    borderColor: '#fff',
+    borderColor: '#ccc',
     borderWidth: 1,
     borderRadius: 10,
     paddingHorizontal: normalize(15),
     marginBottom: normalize(15),
     backgroundColor: '#fff',
-    fontSize: normalize(18),
+    fontSize: normalize(16),
   },
   button: {
-    backgroundColor: '#6499fa',
+    backgroundColor: '#219906',
     padding: normalize(12),
     borderRadius: 10,
-    marginTop: normalize(10),
+    width: '100%',
+    alignItems: 'center',
   },
   buttonText: {
     color: '#fff',
-    fontSize: normalize(18),
-    fontWeight: 'bold'
-  },
-  resumen: {
-    marginTop: normalize(30),
-    alignItems: 'center'
-  },
-  info: {
     fontSize: normalize(16),
-    color: 'white',
-    marginVertical: normalize(3),
-  }
+    fontWeight: 'bold',
+  },
 });

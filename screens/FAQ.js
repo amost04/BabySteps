@@ -11,6 +11,12 @@ function formatearCategoria(nombre) {
     .replace(/\b\w/g, l => l.toUpperCase()); // Capitaliza cada palabra
 }
 
+const coloresTitulo = [
+  '#FF6B6B', '#FBC531', '#4CD137', '#00A8FF', '#9C88FF',
+  '#E84118', '#44BD32', '#00A8FF', '#F368E0', '#FD7272',
+  '#1ABC9C', '#FDA7DF', '#A3CB38', '#00D2D3', '#ED4C67',
+  '#F8EFBA', '#C44569', '#3B3B98', '#BDC581'
+];
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const scale = SCREEN_WIDTH / 375;
@@ -73,7 +79,14 @@ export default function FAQ({ setPantalla }) {
       </TouchableOpacity>
 
       <View style={styles.overlay}>
-        <Text style={styles.title}>Preguntas Frecuentes</Text>
+      <View style={{ alignItems: 'center', marginTop: normalize(20), marginBottom: normalize(10) }}>
+         <View style={{ flexDirection: 'row' }}>{'Preguntas'.split('').map((letra, i) => (
+          <Text key={`p${i}`}style={{fontSize: normalize(36),fontWeight: 'bold',color: coloresTitulo[i % coloresTitulo.length], }}>{letra}</Text> ))}
+         </View>
+         <View style={{ flexDirection: 'row' }}>{'Frecuentes'.split('').map((letra, i) => (<Text key={`f${i}`}style={{fontSize: normalize(36),fontWeight: 'bold',color: coloresTitulo[i % coloresTitulo.length],}}>{letra}</Text> ))}
+         </View>
+      </View>
+
         <View style={styles.categorias}>
            <ScrollView horizontal style={styles.categorias} showsHorizontalScrollIndicator={false}>
              {categorias.map(cat => (
@@ -135,13 +148,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.4)'
   },
   title: {
-    fontSize: normalize(28),
+    fontSize: normalize(26),
     color: 'white',
     fontWeight: 'bold',
     marginBottom: normalize(10),
     marginTop: normalize(20),
     textAlign: 'center',
-    fontFamily: 'Montserrat_500Medium_Italic',
   },
   returnButton: {
     position: 'absolute',

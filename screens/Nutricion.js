@@ -61,61 +61,57 @@ export default function Nutricion({ setPantalla }) {
     if (indiceActual < etapas.length - 1) setSeleccionada(etapas[indiceActual + 1]);
   };
 
+  const tituloColorido = (texto) => {
+    const colores = ['#ff5f6d', '#ffc371', '#00c9ff', '#92fe9d', '#ff9a9e', '#c79081', '#f5576c', '#4facfe', '#43e97b', '#f9f586'];
+    return (
+      <Text style={styles.titleWrap}>
+        {texto.split('').map((letra, i) => (
+          <Text key={i} style={{ color: colores[i % colores.length], fontWeight: 'bold', fontSize: normalize(36) }}>{letra}</Text>
+        ))}
+      </Text>
+    );
+  };
+
   return (
     <ImageBackground
       source={require('../assets/bw.png')}
       style={[styles.background, { width: wW, height: wH }]}
       resizeMode="cover"
     >
-      <TouchableOpacity
-        onPress={() => setPantalla('Home')}
-        style={styles.returnButton}
-      >
-        <Image
-          source={require('../assets/return.png')}
-          style={styles.returnIcon}
-        />
+      <TouchableOpacity onPress={() => setPantalla('Home')} style={styles.returnButton}>
+        <Image source={require('../assets/return.png')} style={styles.returnIcon} />
       </TouchableOpacity>
 
       <View style={styles.overlay}>
-        <ScrollView contentContainerStyle={styles.scrollContent}>
-          <Text style={styles.title}>Nutrición del Bebé</Text>
+        {tituloColorido('Nutrición del Bebé')}
+        <View style={styles.circleWrapper}>
+          <View style={styles.circleRow}>
+            <TouchableOpacity onPress={() => setModalVisible(true)} style={styles.iconContainer}>
+              <Image source={require('../assets/nutricion/guia.png')} style={styles.circleImage} />
+              <Text style={styles.circleText}>Guía por Edad</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setModalPlanVisible(true)} style={styles.iconContainer}>
+              <Image source={require('../assets/nutricion/plan.png')} style={styles.circleImage} />
+              <Text style={styles.circleText}>Plan Semanal</Text>
+            </TouchableOpacity>
+          </View>
 
-          <TouchableOpacity
-            onPress={() => setModalVisible(true)}
-            style={styles.card}
-          >
-            <Text style={styles.cardTitle}>🍼 Guía por Edad</Text>
-          </TouchableOpacity>
+          <View style={styles.circleRow}>
+            <TouchableOpacity onPress={() => setModalBuscadorVisible(true)} style={styles.iconContainer}>
+              <Image source={require('../assets/nutricion/buscador.png')} style={styles.circleImage} />
+              <Text style={styles.circleText}>Buscador de Alimentos</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setModalAlergiasVisible(true)} style={styles.iconContainer}>
+              <Image source={require('../assets/nutricion/alergias.png')} style={styles.circleImage} />
+              <Text style={styles.circleText}>Registro de Alergias</Text>
+            </TouchableOpacity>
+          </View>
 
-          <TouchableOpacity
-            onPress={() => setModalPlanVisible(true)}
-            style={styles.card}
-          >
-            <Text style={styles.cardTitle}>📅 Plan Semanal</Text>
+          <TouchableOpacity onPress={() => setModalConsejosVisible(true)} style={styles.iconContainer}>
+            <Image source={require('../assets/nutricion/consejos.png')} style={styles.circleImage} />
+            <Text style={styles.circleText}>Consejos del Pediatra</Text>
           </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => setModalBuscadorVisible(true)}
-            style={styles.card}
-          >
-            <Text style={styles.cardTitle}>🔍 Buscador de Alimentos</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => setModalAlergiasVisible(true)}
-            style={styles.card}
-          >
-            <Text style={styles.cardTitle}>🚨 Registro de Alergias</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => setModalConsejosVisible(true)}
-            style={styles.card}
-          >
-            <Text style={styles.cardTitle}>👩‍⚕️ Consejos del Pediatra</Text>
-          </TouchableOpacity>
-        </ScrollView>
+        </View>
       </View>
 
       <ModalPlanSemanal visible={modalPlanVisible} onClose={() => setModalPlanVisible(false)} />
@@ -123,6 +119,7 @@ export default function Nutricion({ setPantalla }) {
       <RegistroAlergias visible={modalAlergiasVisible} onClose={() => setModalAlergiasVisible(false)} />
       <ConsejosPediatra visible={modalConsejosVisible} onClose={() => setModalConsejosVisible(false)} />
 
+      {/* Modal de selección por edad */}
       <Modal
         animationType="slide"
         transparent={true}
@@ -156,44 +153,24 @@ export default function Nutricion({ setPantalla }) {
       </Modal>
 
       {seleccionada && (
-        <Modal
-          animationType="fade"
-          transparent={true}
-          visible={true}
-          onRequestClose={() => setSeleccionada(null)}
-        >
+        <Modal animationType="fade" transparent={true} visible={true} onRequestClose={() => setSeleccionada(null)}>
           <View style={styles.modalContainer}>
             <View style={styles.modalContent}>
               <Text style={styles.modalTitle}>{seleccionada.edad}</Text>
               <Text style={styles.modalSub}>🧠 {seleccionada.recomendacion}</Text>
               <Text style={styles.modalSub}>🍽 Menú sugerido:</Text>
-              {seleccionada.menu &&
-                Object.values(seleccionada.menu).map((m, i) => (
-                  <Text key={i} style={styles.modalItem}>• {m}</Text>
-                ))}
+              {seleccionada.menu && Object.values(seleccionada.menu).map((m, i) => (
+                <Text key={i} style={styles.modalItem}>• {m}</Text>
+              ))}
               <Text style={styles.modalSub}>⚠️ Alertas:</Text>
-              {seleccionada.alertas &&
-                Object.values(seleccionada.alertas).map((a, i) => (
-                  <Text key={i} style={styles.modalItem}>• {a}</Text>
-                ))}
+              {seleccionada.alertas && Object.values(seleccionada.alertas).map((a, i) => (
+                <Text key={i} style={styles.modalItem}>• {a}</Text>
+              ))}
               <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: normalize(15) }}>
-                <Pressable
-                  onPress={etapaAnterior}
-                  style={[styles.modalClose, { flex: 0.45 }]}
-                >
-                  <Text style={{ color: 'white', fontWeight: 'bold' }}>Anterior</Text>
-                </Pressable>
-                <Pressable
-                  onPress={etapaSiguiente}
-                  style={[styles.modalClose, { flex: 0.45 }]}
-                >
-                  <Text style={{ color: 'white', fontWeight: 'bold' }}>Siguiente</Text>
-                </Pressable>
+                <Pressable onPress={etapaAnterior} style={[styles.modalClose, { flex: 0.45 }]}> <Text style={{ color: 'white', fontWeight: 'bold' }}>Anterior</Text></Pressable>
+                <Pressable onPress={etapaSiguiente} style={[styles.modalClose, { flex: 0.45 }]}> <Text style={{ color: 'white', fontWeight: 'bold' }}>Siguiente</Text></Pressable>
               </View>
-              <Pressable
-                style={[styles.modalClose, { marginTop: normalize(10) }]}
-                onPress={() => setSeleccionada(null)}
-              >
+              <Pressable style={[styles.modalClose, { marginTop: normalize(10) }]} onPress={() => setSeleccionada(null)}>
                 <Text style={{ color: 'white', fontWeight: 'bold' }}>Volver</Text>
               </Pressable>
             </View>
@@ -206,11 +183,14 @@ export default function Nutricion({ setPantalla }) {
 
 const styles = StyleSheet.create({
   background: { flex: 1 },
-  overlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.4)' },
+  overlay: { flex: 1, backgroundColor: 'rgba(0, 0, 0, 0.4)', paddingTop: normalize(60) },
+  circleWrapper: { alignItems: 'center', justifyContent: 'center', gap: normalize(15) },
+  circleRow: { flexDirection: 'row', gap: normalize(25), justifyContent: 'center' },
+  circleImage: { width: normalize(130), height: normalize(130), resizeMode: 'contain' },
+  circleText: { textAlign: 'center', color: '#f4fefe',fontSize:20, fontWeight: 'bold', marginTop: 4, maxWidth: normalize(300) },
+  iconContainer: { alignItems: 'center', width: normalize(140) },
+  titleWrap: { textAlign: 'center', marginBottom: normalize(35),marginTop: normalize(40) },
   scrollContent: { padding: normalize(20), paddingTop: normalize(70) },
-  title: { fontSize: normalize(28), color: 'white', fontWeight: 'bold', textAlign: 'center', marginBottom: normalize(20) },
-  card: { backgroundColor: '#ffffffdd', padding: normalize(15), borderRadius: 12, marginBottom: normalize(15) },
-  cardTitle: { fontSize: normalize(18), fontWeight: 'bold', marginBottom: normalize(5) },
   returnButton: { position: 'absolute', top: normalize(40), left: normalize(20), zIndex: 10 },
   returnIcon: { width: normalize(40), height: normalize(40) },
   modalContainer: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.5)' },

@@ -49,8 +49,14 @@ const ConsejosPediatra = ({ visible, onClose }) => {
           setTip(random);
         }
       });
-      get(ref(db, 'nutricion/advertencias')).then(snap => {
-        if (snap.exists()) setAdvertencias(Object.values(snap.val()));
+      get(ref(db, 'nutricion/advertencias/advertencias')).then(snap => {
+          if (snap.exists()) {
+            const data = snap.val();
+            const ordenadas = Object.keys(data)
+              .sort((a, b) => parseInt(a) - parseInt(b))
+              .map(key => data[key]);
+            setAdvertencias(ordenadas);
+          }
       });
       get(ref(db, `usuarios/${uid}/planesPediatra`)).then(snap => {
         if (snap.exists()) setPlanes(Object.entries(snap.val()).map(([id, data]) => ({ id, ...data })));
@@ -134,7 +140,7 @@ const ConsejosPediatra = ({ visible, onClose }) => {
   return (
     <>
       <Modal visible={visible} animationType="slide">
-        <ScrollView style={styles.container}>
+        <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 30 }}>
           <Text style={styles.title}>👩‍⚕️ Consejos del Pediatra</Text>
           <Text style={styles.sectionTitle}>✅ Checklist Pre-Comida</Text>
           {Object.entries({
@@ -149,66 +155,75 @@ const ConsejosPediatra = ({ visible, onClose }) => {
             </TouchableOpacity>
           ))}
 
-          <View style={styles.tipBox}>
-            <Text style={styles.sectionTitle}>💡 Tip del Día</Text>
-            <Text style={styles.tip}>{tip}</Text>
+          <View style={[styles.tipBox, { padding: 20, marginTop: 10 }]}>
+            <Text style={[styles.sectionTitle, { fontSize: 22 }]}>💡 Tip del Día</Text>
+            <Text style={[styles.tip, { marginTop: 5, fontSize: 16 }]}>{tip}</Text>
           </View>
 
-          <TouchableOpacity onPress={() => setVerAdvertencias(!verAdvertencias)} style={styles.btnToggleAdvertencias}>
-            <Text style={{ color: 'white', fontWeight: 'bold' }}>{verAdvertencias ? 'Ocultar ⚠️ Advertencias' : 'Mostrar ⚠️ Advertencias'}</Text>
-          </TouchableOpacity>
-          {verAdvertencias && advertencias.map((adv, i) => (
-            <Text key={i} style={styles.warning}>• {adv}</Text>
-          ))}
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10 }}>
+            <TouchableOpacity onPress={() => setVerAdvertencias(!verAdvertencias)} style={[styles.btnToggleAdvertencias, { flex: 1, marginRight: 5 }]}>
+              <Text style={{ color: 'white', fontWeight: 'bold', textAlign: 'center',fontSize:18 }}>{verAdvertencias ? 'Ocultar ⚠️ Advertencias' : 'Mostrar ⚠️ Advertencias'}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setMostrarModalPlanes(true)} style={[styles.btnUpload, { flex: 1, marginLeft: 5 }]}>
+              <Text style={{ color: 'white', fontWeight: 'bold', textAlign: 'center', fontSize:18,   justifyContent: 'center',  alignItems: 'center', }}>📁 Ver Planes del Pediatra</Text>
+            </TouchableOpacity>
+          </View>
 
-          <TouchableOpacity onPress={() => setMostrarModalPlanes(true)} style={styles.btnUpload}>
-            <Text style={{ color: 'white', fontWeight: 'bold' }}>📁 Ver Planes del Pediatra</Text>
-          </TouchableOpacity>
+          {verAdvertencias && (
+             <View style={styles.warningList}>
+               {advertencias.map((adv, i) => (
+                 <View key={i} style={styles.warningItem}>
+                 
+                   <Text style={styles.warningText}>{adv}</Text>
+                 </View>
+               ))}
+             </View>
+          )}
 
-          <Modal visible={mostrarModalPlanes} animationType="slide">
-            <View style={{ flex: 1 }}>
-              <ScrollView style={styles.container}>
-                <Text style={styles.sectionTitle}>📤 Subir nuevo plan</Text>
-                <TextInput placeholder="Fecha o nombre del plan" value={fecha} onChangeText={setFecha} style={styles.input} />
-                <TouchableOpacity onPress={subirPlan} style={styles.btnUpload}>
-                  <Text style={{ color: 'white', fontWeight: 'bold' }}>📎 Subir</Text>
-                </TouchableOpacity>
-                <TextInput placeholder="🔍 Buscar plan por fecha" value={busqueda} onChangeText={setBusqueda} style={styles.input} />
-                <Text style={styles.sectionTitle}>📅 Planes Subidos</Text>
-                {planesFiltrados.map((p, i) => (
-                  <View key={i}>
-                    <TouchableOpacity style={styles.etapaBtn} onPress={() => toggleImagen(p.id)}>
-                      <Text style={{ fontWeight: 'bold' }}>📅 {p.fecha}</Text>
-                      <TouchableOpacity onPress={() => eliminarPlan(p.id)}>
-                        <Text style={{ color: 'red' }}>🗑️</Text>
-                      </TouchableOpacity>
-                    </TouchableOpacity>
-                    {imagenPreviaId === p.id && (
-                      <TouchableOpacity onPress={() => { setImagenExpandida(p.uri); }}>
-                        <Image source={{ uri: p.uri }} style={styles.planImage} />
-                      </TouchableOpacity>
-                    )}
-                  </View>
-                ))}
-                <TouchableOpacity onPress={() => setMostrarModalPlanes(false)} style={styles.btnCerrar}>
-                  <Text style={{ color: 'white', fontWeight: 'bold' }}>❌ Cerrar</Text>
-                </TouchableOpacity>
-              </ScrollView>
-              {imagenExpandida && (
-                <VisorImagenes
-                  visible={true}
-                  imagenes={[{ uri: imagenExpandida }]}
-                  indexInicial={0}
-                  onClose={() => setImagenExpandida(null)}
-                />
-              )}
-            </View>
-          </Modal>
-
-          <TouchableOpacity onPress={onClose} style={styles.btnCerrar}>
+          <TouchableOpacity onPress={onClose} style={[styles.btnCerrar, { marginBottom: 40 }]}>
             <Text style={{ color: 'white', fontWeight: 'bold' }}>Cerrar</Text>
           </TouchableOpacity>
         </ScrollView>
+
+        <Modal visible={mostrarModalPlanes} animationType="slide">
+          <View style={{ flex: 1 }}>
+            <ScrollView style={styles.container}>
+              <Text style={styles.sectionTitle}>📤 Subir nuevo plan</Text>
+              <TextInput placeholder="Fecha o nombre del plan" value={fecha} onChangeText={setFecha} style={styles.input} placeholderTextColor="#666" />
+              <TouchableOpacity onPress={subirPlan} style={styles.btnUpload}>
+                <Text style={{ color: 'white', fontWeight: 'bold',fontSize:18 }}>📎 Subir</Text>
+              </TouchableOpacity>
+              <TextInput placeholder="🔍 Buscar plan por fecha" value={busqueda} onChangeText={setBusqueda} style={styles.input}   placeholderTextColor="#666" />
+              <Text style={styles.sectionTitle}>📅 Planes Subidos</Text>
+              {planesFiltrados.map((p, i) => (
+                <View key={i}>
+                  <TouchableOpacity style={styles.etapaBtn} onPress={() => toggleImagen(p.id)}>
+                    <Text style={{ fontWeight: 'bold', fontSize:18 }}>☀️ {p.fecha}</Text>
+                    <TouchableOpacity onPress={() => eliminarPlan(p.id)}>
+                      <Text style={{ color: 'red' }}>🗑️</Text>
+                    </TouchableOpacity>
+                  </TouchableOpacity>
+                  {imagenPreviaId === p.id && (
+                    <TouchableOpacity onPress={() => { setImagenExpandida(p.uri); }}>
+                      <Image source={{ uri: p.uri }} style={styles.planImage} />
+                    </TouchableOpacity>
+                  )}
+                </View>
+              ))}
+              <TouchableOpacity onPress={() => setMostrarModalPlanes(false)} style={styles.btnCerrar}>
+                <Text style={{ color: 'white', fontWeight: 'bold', fontSize:18 }}>❌ Cerrar</Text>
+              </TouchableOpacity>
+            </ScrollView>
+            {imagenExpandida && (
+              <VisorImagenes
+                visible={true}
+                imagenes={[{ uri: imagenExpandida }]}
+                indexInicial={0}
+                onClose={() => setImagenExpandida(null)}
+              />
+            )}
+          </View>
+        </Modal>
       </Modal>
     </>
   );
@@ -216,21 +231,57 @@ const ConsejosPediatra = ({ visible, onClose }) => {
 
 const styles = StyleSheet.create({
   container: { padding: 20, backgroundColor: '#e0f7fa', marginTop: normalize(50) },
-  title: { fontSize: 26, fontWeight: 'bold', textAlign: 'center', marginBottom: 20 },
-  sectionTitle: { fontSize: 20, fontWeight: 'bold', marginTop: 20, marginBottom: 10 },
-  checkItem: { marginVertical: 5 },
-  tipBox: { backgroundColor: '#d0f0ff', borderRadius: 10, padding: 10, marginBottom: 10 },
-  tip: { fontStyle: 'italic', color: '#333' },
-  warning: { marginBottom: 6 },
-  planImage: { width: 250, height: 250, resizeMode: 'contain', borderRadius: 10, alignSelf: 'center', marginTop: 10 },
+  title: { fontSize: 30, fontWeight: 'bold', textAlign: 'center', marginBottom: 20 },
+  sectionTitle: { fontSize: 28, fontWeight: 'bold', marginTop: 20, marginBottom: 10 },
+  checkItem: { marginVertical: 8 },
+  tipBox: { backgroundColor: '#f4c70f', borderRadius: 10, padding: 20, marginBottom: 10 },
+  tip: { fontStyle: 'italic', color: '#333', fontSize: 22 },
+  warning: { marginBottom: 6, fontSize: 25, color: '#333' },
+  planImage: { width: 300, height: 300, resizeMode: 'contain', borderRadius: 10, alignSelf: 'center', marginTop: 10 },
   input: { borderWidth: 1, borderColor: '#ccc', borderRadius: 8, padding: 10, marginBottom: 10, backgroundColor: 'white' },
-  btnUpload: { backgroundColor: '#00bcd4', padding: 12, borderRadius: 8, alignItems: 'center', marginVertical: 10 },
+  btnUpload: {  backgroundColor: '#00bcd4',
+    padding: 12,
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 10,
+    minHeight: 50,},
   btnCerrar: { backgroundColor: '#607d8b', padding: 12, borderRadius: 8, alignItems: 'center', marginTop: 20 },
-  btnToggleAdvertencias: { backgroundColor: '#f97316', padding: 10, borderRadius: 8, alignItems: 'center', marginVertical: 10 },
+  btnToggleAdvertencias: { backgroundColor: '#f97316',
+    padding: 12,
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 10,
+    minHeight: 150},
   etapaBtn: { backgroundColor: '#ffffff', padding: 10, marginVertical: 5, borderRadius: 8, alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between' },
   overlayImageContainer: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.95)', justifyContent: 'center', alignItems: 'center', zIndex: 9999 },
   overlayImage: { width: '95%', height: '90%', resizeMode: 'contain' },
-  overlayCloseBtn: { position: 'absolute', top: 40, right: 20, zIndex: 10000 },
+  overlayCloseBtn: { position: 'absolute', top: 40, right: 30, zIndex: 10000 },
+  warningList: {
+    marginTop: 10,
+    backgroundColor: '#fff3e0',
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+  },
+  
+  warningItem: {
+    marginBottom: 10,
+  backgroundColor: '#fff',
+  padding: 12,
+  borderRadius: 8,
+  borderLeftWidth: 5,
+  borderLeftColor: '#f97316',
+  },
+  
+  warningText: {
+    flex: 1,
+    fontSize: 16,
+    lineHeight: 20,
+    color: '#333',
+  },
+  
 });
 
 export default ConsejosPediatra;

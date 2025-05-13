@@ -115,7 +115,7 @@ export default function ModalPlanSemanal({ visible, onClose }) {
 const styles = StyleSheet.create({
   modalOverlay: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'rgb(247, 165, 13)',
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'top',
   },
   btnGuardar: {
-    backgroundColor: '#4a90e2',
+    backgroundColor: '#f76efc',
     padding: normalize(15),
     borderRadius: 10,
     position: 'absolute',
@@ -190,7 +190,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textoBtn: {
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
     fontSize: normalize(16),
   },

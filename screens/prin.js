@@ -14,6 +14,9 @@ function normalize(size) {
   return Math.round(PixelRatio.roundToNearestPixel(newSize));
 }
 
+// Colores suaves y llamativos para cada letra
+const colores = ['#ff6b6b', '#feca57', '#48dbfb', '#1dd1a1', '#5f27cd', '#ff9ff3', '#00d2d3', '#ff6b81', '#54a0ff', '#c8d6e5'];
+
 export default function Prin({ setPantalla }) {
   const { width: wW, height: wH } = useWindowDimensions();
   const [videoTerminado, setVideoTerminado] = useState(false);
@@ -40,7 +43,20 @@ export default function Prin({ setPantalla }) {
           resizeMode="cover"
         >
           <View style={styles.overlay}>
-            <Text style={styles.welcomeText}>Bienvenido</Text>
+            <View style={{ flexDirection: 'row' }}>
+              {['B','i','e','n','v','e','n','i','d','o'].map((letra, i) => (
+                <Text
+                  key={i}
+                  style={[
+                    styles.welcomeText,
+                    { color: colores[i % colores.length] }
+                  ]}
+                >
+                  {letra}
+                </Text>
+              ))}
+            </View>
+
             <TouchableOpacity onPress={() => setPantalla('Inicio')} activeOpacity={0.8}>
               <Animatable.Image
                 animation="bounceIn"
@@ -80,7 +96,6 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     fontSize: normalize(36),
-    color: '#fff',
     marginBottom: normalize(20),
     fontWeight: 'bold',
   },
