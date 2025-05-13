@@ -110,7 +110,7 @@ export default function RegistroBiome({ visible, onClose }) {
                   { data: datos.map(d => d.altura), color: () => '#34D399', strokeWidth: 2 },
                   { data: datos.map(d => d.temperatura), color: () => '#FBBF24', strokeWidth: 2 },
                 ],
-                legend: ['Peso', 'Altura', 'Temperatura']
+                legend: ['Peso (Kg)', 'Altura (cm)', 'Temperatura °C'],
               }}
               width={screenWidth - 40}
               height={220}
