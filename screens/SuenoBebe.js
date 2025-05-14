@@ -237,12 +237,14 @@ const styles = StyleSheet.create({
     marginVertical: 2,
   },
   button: {
-    backgroundColor: '#fdb053',
-    padding: normalize(12),
-    borderRadius: 10,
-    alignItems: 'center',
-    marginTop: normalize(10),
-    marginBottom: normalize(10),
+
+backgroundColor: '#fdb053',
+padding: normalize(20),
+borderRadius: 10,
+alignItems: 'center',
+marginTop: normalize(10),
+marginBottom: normalize(5), // Reducir el margen inferior para mover el botón hacia arriba
+
   },
   buttonText: {
     color: '#fff',
