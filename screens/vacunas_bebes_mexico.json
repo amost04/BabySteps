@@ -1,0 +1,38 @@
+[
+  {
+    "nombre": "BCG",
+    "descripcion": "Previene la tuberculosis meníngea y miliar."
+  },
+  {
+    "nombre": "Hepatitis B",
+    "descripcion": "Protege contra la hepatitis B, enfermedad del hígado causada por el virus VHB."
+  },
+  {
+    "nombre": "Hexavalente",
+    "descripcion": "Previene difteria, tétanos, tosferina, poliomielitis, infecciones graves por Haemophilus influenzae tipo b y hepatitis B."
+  },
+  {
+    "nombre": "DPT",
+    "descripcion": "Refuerzo contra difteria, tosferina y tétanos."
+  },
+  {
+    "nombre": "Rotavirus",
+    "descripcion": "Protege contra diarreas severas por rotavirus."
+  },
+  {
+    "nombre": "Neumocócica conjugada",
+    "descripcion": "Previene neumonía, meningitis y otras enfermedades causadas por neumococo."
+  },
+  {
+    "nombre": "SRP (Triple viral)",
+    "descripcion": "Previene sarampión, rubéola y parotiditis (paperas)."
+  },
+  {
+    "nombre": "Influenza",
+    "descripcion": "Protege contra neumonía por virus de la influenza A y B."
+  },
+  {
+    "nombre": "COVID-19",
+    "descripcion": "Previene formas graves de la COVID-19."
+  }
+]
