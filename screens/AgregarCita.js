@@ -11,7 +11,10 @@ import {
   Dimensions,
   PixelRatio,
   Alert,
-  Platform
+  Platform,
+  KeyboardAvoidingView,
+  Keyboard,
+  TouchableWithoutFeedback
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
@@ -47,61 +50,64 @@ const ModalAgregarCita = ({ visible, onClose, fechaSeleccionada, onGuardar }) =>
   };
 
   return (
-    <Modal
-      visible={visible}
-      transparent
-      animationType="fade"
-    >
-      <View style={styles.modalOverlay}>
-        <View style={styles.container}>
-          <Text style={styles.titulo}>Agendar Cita Médica</Text>
+    <Modal visible={visible} transparent animationType="fade">
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          style={styles.modalOverlay}
+        >
+          <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
+            <Text style={styles.titulo}>Agendar Cita Médica</Text>
 
-          <Text style={styles.label}>Fecha</Text>
-          <TextInput style={styles.input} value={fechaSeleccionada} editable={false} />
+            <Text style={styles.label}>Fecha</Text>
+            <TextInput style={styles.input} value={fechaSeleccionada} editable={false} />
 
-          <Text style={styles.label}>Hora</Text>
-          <TouchableOpacity style={styles.input} onPress={() => setShowHoraPicker(true)}>
-            <Text>{horaSeleccionada.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })}</Text>
-          </TouchableOpacity>
-          {showHoraPicker && (
-            <DateTimePicker
-              value={horaSeleccionada}
-              mode="time"
-              is24Hour={true}
-              display={Platform.OS === 'ios' ? 'spinner' : 'default'}
-              onChange={(event, selectedDate) => {
-                setShowHoraPicker(false);
-                if (selectedDate) setHoraSeleccionada(selectedDate);
-              }}
+            <Text style={styles.label}>Hora</Text>
+            <TouchableOpacity style={styles.input} onPress={() => setShowHoraPicker(true)}>
+              <Text>{horaSeleccionada.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })}</Text>
+            </TouchableOpacity>
+            {showHoraPicker && (
+              <DateTimePicker
+                value={horaSeleccionada}
+                mode="time"
+                is24Hour={true}
+                display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+                onChange={(event, selectedDate) => {
+                  setShowHoraPicker(false);
+                  if (selectedDate) setHoraSeleccionada(selectedDate);
+                }}
+              />
+            )}
+
+            <Text style={styles.label}>Lugar</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Nombre del consultorio o dirección"
+              value={lugar}
+              onChangeText={setLugar}
+              placeholderTextColor="#888"
             />
-          )}
 
-          <Text style={styles.label}>Lugar</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Nombre del consultorio o dirección"
-            value={lugar}
-            onChangeText={setLugar}
-          />
+            <Text style={styles.label}>Notas</Text>
+            <TextInput
+              style={[styles.input, { height: 80 }]}
+              multiline
+              placeholder="Motivo de la cita, indicaciones, etc."
+              value={notas}
+              onChangeText={setNotas}
+              placeholderTextColor="#888"
+            />
 
-          <Text style={styles.label}>Notas</Text>
-          <TextInput
-            style={[styles.input, { height: 80 }]}
-            multiline
-            placeholder="Motivo de la cita, indicaciones, etc."
-            value={notas}
-            onChangeText={setNotas}
-          />
+            <TouchableOpacity style={styles.btnGuardar} onPress={guardarCita}>
+              <Text style={styles.btnTexto}>Guardar Cita</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnGuardar} onPress={guardarCita}>
-            <Text style={styles.btnTexto}>Guardar Cita</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.btnCancelar} onPress={onClose}>
-            <Text style={styles.btnTexto}>Cancelar</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+            <TouchableOpacity style={styles.btnCancelar} onPress={onClose}>
+              <Text style={styles.btnTexto}>Cancelar</Text>
+            </TouchableOpacity>
+          </ScrollView>
+        </KeyboardAvoidingView>
+      </TouchableWithoutFeedback>
     </Modal>
   );
 };
@@ -111,16 +117,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'rgba(77, 128, 142, 0.87)',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   container: {
-    width: '90%',
+    width: '95%',
     backgroundColor: '#e3f9ff',
     borderRadius: 15,
     padding: normalize(20),
     elevation: 10,
+    marginTop: normalize(110),
   },
-  titulo: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
+  titulo: { fontSize: 24, fontWeight: 'bold', marginBottom: 20, textAlign: 'center' },
   label: { marginTop: 10, fontWeight: 'bold' },
   input: {
     borderWidth: 1,
@@ -128,6 +135,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 10,
     marginTop: 5,
+    color: '#000'
   },
   btnGuardar: {
     backgroundColor: '#4CAF50',

@@ -26,8 +26,8 @@ const ModalVisualizarFoto = ({ visible, imagen, onClose }) => {
           <Image
             source={{ uri: imagen }}
             style={{
-              width: 600,
-              height: 800,
+              width: '100%',
+              aspectRatio: 3 / 4,
               resizeMode: 'contain',
             }}
           />
@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
     padding: 10
   },
   imagenExpandida: {
-    width: 300,
-    height: 400,
+    width: '100%',
+    aspectRatio: 3/4,
     resizeMode: 'contain',
     borderRadius: 10
   },
