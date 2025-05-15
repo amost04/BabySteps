@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import { getAuth } from 'firebase/auth';
 import { guardarSuenoAvanzado as guardarSueno } from '../FB/db_api';
+import DateTimePicker from '@react-native-community/datetimepicker'; // <-- Agrega esto
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const scale = SCREEN_WIDTH / 375;
@@ -15,18 +16,16 @@ function normalize(size) {
 
 export default function ModalSueno({ visible, onClose }) {
   const { width: wW, height: wH } = useWindowDimensions();
-  const [horaDormir, setHoraDormir] = useState('');
-  const [horaDespertar, setHoraDespertar] = useState('');
+  const [horaDormir, setHoraDormir] = useState(new Date());
+  const [horaDespertar, setHoraDespertar] = useState(new Date());
   const [notas, setNotas] = useState('');
+  const [showDormirPicker, setShowDormirPicker] = useState(false);
+  const [showDespertarPicker, setShowDespertarPicker] = useState(false);
 
   const calcularDuracion = (inicio, fin) => {
     try {
-      const [h1, m1] = inicio.split(':').map(Number);
-      const [h2, m2] = fin.split(':').map(Number);
-      const d1 = new Date();
-      const d2 = new Date();
-      d1.setHours(h1, m1, 0);
-      d2.setHours(h2, m2, 0);
+      const d1 = new Date(inicio);
+      const d2 = new Date(fin);
       if (d2 < d1) d2.setDate(d2.getDate() + 1);
       const diffMin = Math.floor((d2 - d1) / (1000 * 60));
       const horas = Math.floor(diffMin / 60);
@@ -53,10 +52,13 @@ export default function ModalSueno({ visible, onClose }) {
     }
 
     const fecha = new Date().toISOString().split('T')[0];
-    const exito = await guardarSueno(user.uid, fecha, horaDormir, horaDespertar, notas, duracion);
+    const horaDormirStr = horaDormir.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: true });
+    const horaDespertarStr = horaDespertar.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+    const exito = await guardarSueno(user.uid, fecha, horaDormirStr, horaDespertarStr, notas, duracion);
     if (exito) {
-      setHoraDormir('');
-      setHoraDespertar('');
+      setHoraDormir(new Date());
+      setHoraDespertar(new Date());
       setNotas('');
       onClose();
     } else {
@@ -74,18 +76,51 @@ export default function ModalSueno({ visible, onClose }) {
       <View style={[styles.background, { width: wW, height: wH }]}>
         <View style={styles.overlay}>
           <Text style={styles.title}>Registrar Sueño</Text>
-          <TextInput
+
+          <Text style={{ alignSelf: 'flex-start', marginBottom: 5 }}>Hora de dormir</Text>
+          <TouchableOpacity
             style={styles.input}
-            placeholder="Hora de dormir (HH:mm)"
-            value={horaDormir}
-            onChangeText={setHoraDormir}
-          />
-          <TextInput
+            onPress={() => setShowDormirPicker(true)}
+          >
+            <Text style={{ color: '#000' }}>
+              {horaDormir.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: true })}
+            </Text>
+          </TouchableOpacity>
+          {showDormirPicker && (
+            <DateTimePicker
+              value={horaDormir}
+              mode="time"
+              is24Hour={false} // <-- 12h con AM/PM
+              display="default"
+              onChange={(event, selectedDate) => {
+                setShowDormirPicker(false);
+                if (selectedDate) setHoraDormir(selectedDate);
+              }}
+            />
+          )}
+
+          <Text style={{ alignSelf: 'flex-start', marginBottom: 5, marginTop: 10 }}>Hora de despertar</Text>
+          <TouchableOpacity
             style={styles.input}
-            placeholder="Hora de despertar (HH:mm)"
-            value={horaDespertar}
-            onChangeText={setHoraDespertar}
-          />
+            onPress={() => setShowDespertarPicker(true)}
+          >
+            <Text style={{ color: '#000' }}>
+              {horaDespertar.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: true })}
+            </Text>
+          </TouchableOpacity>
+          {showDespertarPicker && (
+            <DateTimePicker
+              value={horaDespertar}
+              mode="time"
+              is24Hour={false} // <-- 12h con AM/PM
+              display="default"
+              onChange={(event, selectedDate) => {
+                setShowDespertarPicker(false);
+                if (selectedDate) setHoraDespertar(selectedDate);
+              }}
+            />
+          )}
+
           <TextInput
             style={styles.input}
             placeholder="Notas"
@@ -129,6 +164,7 @@ const styles = StyleSheet.create({
     marginBottom: normalize(15),
     backgroundColor: '#fff',
     fontSize: normalize(16),
+    justifyContent: 'center',
   },
   button: {
     backgroundColor: '#219906',
