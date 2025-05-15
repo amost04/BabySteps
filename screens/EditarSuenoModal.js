@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
+
   Modal, View, Text, TextInput, TouchableOpacity, StyleSheet, useWindowDimensions, Alert
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -50,6 +51,7 @@ export default function EditarSuenoModal({ visible, onClose, registro, recargar 
     setHoraDespertar(registro?.horaDespertar ? stringToDate(registro.horaDespertar) : new Date());
   }, [registro]);
 
+
   const guardarCambios = async () => {
     const auth = getAuth();
     const user = auth.currentUser;
@@ -57,6 +59,7 @@ export default function EditarSuenoModal({ visible, onClose, registro, recargar 
 
     const horaDormirStr = horaDormir.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: true });
     const horaDespertarStr = horaDespertar.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: true });
+
     const duracion = calcularDuracion(horaDormir, horaDespertar);
 
     const db = getDatabase();
@@ -70,6 +73,7 @@ export default function EditarSuenoModal({ visible, onClose, registro, recargar 
 
     recargar();
     onClose();
+
     Alert.alert('Guardado', 'Cambios guardados correctamente.');
   };
 
@@ -142,6 +146,7 @@ export default function EditarSuenoModal({ visible, onClose, registro, recargar 
 }
 
 const styles = StyleSheet.create({
+
   background: {
     flex: 1,
     justifyContent: 'center',
@@ -181,4 +186,5 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold'
   }
+
 });

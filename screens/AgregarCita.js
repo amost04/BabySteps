@@ -41,7 +41,9 @@ const ModalAgregarCita = ({ visible, onClose, fechaSeleccionada, onGuardar }) =>
 
     const nuevaCita = {
       fecha: fechaSeleccionada,
+
       hora: horaSeleccionada.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: true }),
+
       lugar,
       notas
     };
@@ -77,15 +79,19 @@ const ModalAgregarCita = ({ visible, onClose, fechaSeleccionada, onGuardar }) =>
 
             <Text style={styles.label}>Hora</Text>
             <TouchableOpacity style={styles.input} onPress={() => setShowHoraPicker(true)}>
+
               <Text>
                 {horaSeleccionada.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: true })}
               </Text>
+
             </TouchableOpacity>
             {showHoraPicker && (
               <DateTimePicker
                 value={horaSeleccionada}
                 mode="time"
+
                 is24Hour={false} // Cambiado a 12 horas
+
                 display={Platform.OS === 'ios' ? 'spinner' : 'default'}
                 onChange={(event, selectedDate) => {
                   setShowHoraPicker(false);
