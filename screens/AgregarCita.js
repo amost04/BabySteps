@@ -17,6 +17,8 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { getAuth } from 'firebase/auth';
+import { getDatabase, ref, push } from 'firebase/database';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const scale = SCREEN_WIDTH / 375;
@@ -31,18 +33,29 @@ const ModalAgregarCita = ({ visible, onClose, fechaSeleccionada, onGuardar }) =>
   const [lugar, setLugar] = useState('');
   const [notas, setNotas] = useState('');
 
-  const guardarCita = () => {
+  const guardarCita = async () => {
     if (!horaSeleccionada || !lugar) {
       Alert.alert("Campos requeridos", "Por favor completa la hora y el lugar.");
       return;
     }
+
     const nuevaCita = {
       fecha: fechaSeleccionada,
       hora: horaSeleccionada.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' }),
       lugar,
       notas
     };
+
     onGuardar(nuevaCita);
+
+    // Guardar en Firebase
+    const user = getAuth().currentUser;
+    if (user) {
+      const db = getDatabase();
+      const refCitas = ref(db, `usuarios/${user.uid}/citasMedicas`);
+      await push(refCitas, nuevaCita);
+    }
+
     setHoraSeleccionada(new Date());
     setLugar('');
     setNotas('');

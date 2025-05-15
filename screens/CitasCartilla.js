@@ -1,6 +1,6 @@
 // CitasCartilla.js
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -15,6 +15,8 @@ import { Calendar, LocaleConfig } from 'react-native-calendars';
 import AgregarVacuna from './AgregarVacuna';
 import VisualizarFotoCartilla from './VisualizarFotoCartilla';
 import AgregarCita from './AgregarCita';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import { getAuth } from 'firebase/auth';
 import vacunasData from './vacunas_bebes_mexico.json';
 
 // Normalización responsiva
@@ -55,6 +57,30 @@ const CitasCartilla = ({ setPantalla }) => {
   const handleAgregarCita = (citaNueva) => {
     setCitas([...citas, citaNueva]);
   };
+
+  useEffect(() => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if (user) {
+      const db = getDatabase();
+
+      // Vacunas
+      const refVacunas = ref(db, `usuarios/${user.uid}/vacunas`);
+      onValue(refVacunas, (snapshot) => {
+        const data = snapshot.val();
+        const lista = data ? Object.values(data) : [];
+        setVacunas(lista);
+      });
+
+      // Citas
+      const refCitas = ref(db, `usuarios/${user.uid}/citasMedicas`);
+      onValue(refCitas, (snapshot) => {
+        const data = snapshot.val();
+        const lista = data ? Object.values(data) : [];
+        setCitas(lista);
+      });
+    }
+  }, []);
 
   return (
     <View style={styles.container}>

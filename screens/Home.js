@@ -6,6 +6,8 @@ import {
 } from 'react-native';
 import { getAuth } from 'firebase/auth';
 import { getDatabase, ref, get } from 'firebase/database';
+import RegistroBiome from './registroBiome';
+import GraficaBiometrica from './GraficaBiometrica';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const scale = SCREEN_WIDTH / 375;
@@ -19,7 +21,7 @@ export default function Home({ setPantalla }) {
   const { width: wW, height: wH } = useWindowDimensions();
   const [datosGrafica, setDatosGrafica] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
-  const [semanaActual, setSemanaActual] = useState(0); // Semana actual (0 = esta semana)
+  const [semanaActual, setSemanaActual] = useState(0);
 
   useEffect(() => {
     cargarDatosSueno();
@@ -78,7 +80,7 @@ export default function Home({ setPantalla }) {
       datasets: [
         {
           data: horasPorDia,
-          color: () => '#3b82f6',
+          color: () => '#fcaa61',
           strokeWidth: 2,
         },
       ],
@@ -100,41 +102,44 @@ export default function Home({ setPantalla }) {
       resizeMode="cover"
     >
       <View style={styles.overlay}>
-        <View style={styles.content}>
-          <View style={styles.chartContainer}>
-            <Text style={styles.chartTitle}>Horas de sueño semanal</Text>
-            {datosGrafica && (
-              <TouchableOpacity onPress={() => setModalVisible(true)}>
-                <LineChart
-                  data={datosGrafica}
-                  width={SCREEN_WIDTH - 40}
-                  height={220}
-                  chartConfig={{
-                    backgroundColor: '#ffffff',
-                    backgroundGradientFrom: '#ffffff',
-                    backgroundGradientTo: '#ffffff',
-                    decimalPlaces: 1,
-                    color: (opacity = 1) => `rgba(59, 130, 246, ${opacity})`,
-                    labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-                    style: {
-                      borderRadius: 16,
-                    },
-                    propsForDots: {
-                      r: '5',
-                      strokeWidth: '2',
-                      stroke: '#3b82f6',
-                    },
-                  }}
-                  bezier
-                  style={{
-                    marginVertical: 8,
-                    borderRadius: 16,
-                  }}
-                />
-              </TouchableOpacity>
-            )}
+        <ScrollView contentContainerStyle={{ paddingBottom: 150 }} horizontal>
+          <View style={styles.content}>
+            <View style={styles.chartContainer}>
+              <Text style={styles.chartTitle}>Horas de sueño semanal</Text>
+              {datosGrafica && (
+                <TouchableOpacity onPress={() => setModalVisible(true)}>
+                  <LineChart
+                    data={datosGrafica}
+                    width={SCREEN_WIDTH - 40}
+                    height={220}
+                    chartConfig={{
+                      backgroundColor: '#ffffff',
+                      backgroundGradientFrom: '#ffffff',
+                      backgroundGradientTo: '#ffffff',
+                      decimalPlaces: 1,
+                      color: (opacity = 1) => `rgba(249, 115, 22, ${opacity})`,
+                      labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                      style: { borderRadius: 16 },
+                      propsForDots: {
+                        r: '5',
+                        strokeWidth: '2',
+                        stroke: '#fcaa61',
+                      },
+                    }}
+                    bezier
+                    style={{ marginVertical: 8, borderRadius: 16 }}
+                  />
+                </TouchableOpacity>
+              )}
+            </View>
+
+            <View style={styles.chartContainer}>
+              <Text style={styles.chartTitle}>Evolución biométrica</Text>
+              <GraficaBiometrica />
+            </View>
           </View>
-        </View>
+        </ScrollView>
+
         <View style={styles.bottomBar}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             {botones.map((btn, index) => (
@@ -169,31 +174,33 @@ export default function Home({ setPantalla }) {
                   backgroundGradientFrom: '#ffffff',
                   backgroundGradientTo: '#ffffff',
                   decimalPlaces: 1,
-                  color: (opacity = 1) => `rgba(59, 130, 246, ${opacity})`,
+                  color: (opacity = 1) => `rgba(249, 115, 22, ${opacity})`,
                   labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-                  style: {
-                    borderRadius: 16,
-                  },
+                  style: { borderRadius: 16 },
                   propsForDots: {
                     r: '5',
                     strokeWidth: '2',
-                    stroke: '#3b82f6',
+                    stroke: '#fcaa61',
                   },
                 }}
                 bezier
-                style={{
-                  marginVertical: 8,
-                  borderRadius: 16,
-                }}
+                style={{ marginVertical: 8, borderRadius: 16 }}
               />
             )}
             <View style={styles.modalButtons}>
-              <Button title="Semana anterior" onPress={() => setSemanaActual(semanaActual + 1)} />
-              <Button title="Cerrar" onPress={() => setModalVisible(false)} />
+              <TouchableOpacity onPress={() => setSemanaActual(semanaActual + 1)}>
+                <Text style={styles.modalButtonText}>Semana anterior</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => setModalVisible(false)}>
+                <Text style={styles.modalButtonText}>Cerrar</Text>
+              </TouchableOpacity>
               {semanaActual > 0 && (
-                <Button title="Semana siguiente" onPress={() => setSemanaActual(semanaActual - 1)} />
+                <TouchableOpacity onPress={() => setSemanaActual(semanaActual - 1)}>
+                  <Text style={styles.modalButtonText}>Semana siguiente</Text>
+                </TouchableOpacity>
               )}
             </View>
+
           </View>
         </View>
       </Modal>
@@ -211,28 +218,38 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.3)',
   },
   content: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'row',
+    marginTop: normalize(120), // bajarlas más
+    paddingHorizontal: normalize(20),
+    gap: normalize(20), // espacio horizontal entre tarjetas (usa gap si tu versión de RN lo permite)
   },
   chartContainer: {
-    backgroundColor: '#fff',
-    borderRadius: 16,
-    padding: 10,
-    marginHorizontal: 20,
-    marginBottom: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    elevation: 5,
+    // reemplaza el style chartContainer por este
+
+    chartContainer: {
+      backgroundColor: '#fff',
+      borderRadius: normalize(16),
+      padding: normalize(10),
+      marginHorizontal: normalize(20),
+      marginBottom: normalize(10),
+      marginTop: normalize(10),
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2,
+      shadowRadius: 4,
+      elevation: 5,
+      width: normalize(300),
+      height: normalize(280),
+      justifyContent: 'flex-start',
+    },
+
   },
   chartTitle: {
     fontSize: normalize(18),
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: 10,
-    color: '#3b82f6',
+    marginBottom: 0,
+    color: 'Black',
   },
   bottomBar: {
     height: normalize(100),
@@ -264,24 +281,40 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.79)',
   },
   modalContent: {
-    backgroundColor: '#fff',
-    borderRadius: 16,
-    padding: 20,
-    width: '90%',
+    bbackgroundColor: '#fff',
+    borderRadius: normalize(20),
+    padding: normalize(20),
+    width: normalize(350),
+    height: normalize(400),
+    justifyContent: 'center',
     alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+    elevation: 6,
   },
   modalTitle: {
     fontSize: normalize(18),
     fontWeight: 'bold',
     marginBottom: 10,
-    color: '#3b82f6',
+    color: '#eb61fc',
   },
   modalButtons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 20,
+    color: '#eb61fc',
   },
+  modalButtonText: {
+    color: '#ec4899',
+    fontSize: normalize(16),
+    fontWeight: 'bold',
+    marginHorizontal: normalize(10),
+  },
+
+
 });

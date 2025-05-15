@@ -16,6 +16,8 @@ import {
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { getAuth } from 'firebase/auth';
+import { getDatabase, ref, push } from 'firebase/database';
 import vacunasData from './vacunas_bebes_mexico.json';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -52,7 +54,11 @@ const AgregarVacuna = ({ visible, onClose, onGuardar, fechaPredeterminada }) => 
   const [showPicker, setShowPicker] = useState(false);
 
   const elegirImagen = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ImagePicker.MediaTypeOptions.Images, allowsEditing: true, quality: 1 });
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      quality: 1
+    });
     if (!result.canceled) setImagen(result.assets[0].uri);
   };
 
@@ -62,14 +68,43 @@ const AgregarVacuna = ({ visible, onClose, onGuardar, fechaPredeterminada }) => 
       Alert.alert("Permiso requerido", "Se necesita permiso para usar la cámara.");
       return;
     }
-    const result = await ImagePicker.launchCameraAsync({ mediaTypes: ImagePicker.MediaTypeOptions.Images, allowsEditing: true, quality: 1 });
+    const result = await ImagePicker.launchCameraAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      quality: 1
+    });
     if (!result.canceled) setImagen(result.assets[0].uri);
   };
 
   const guardar = async () => {
-    if (!nombre || !descripcion || !fecha) return Alert.alert("Campos incompletos", "Por favor llena todos los campos obligatorios");
-    onGuardar({ nombre, descripcion, fecha: getFechaLocal(fecha), notas, imagen });
-    setNombre(''); setDescripcion(''); setFecha(new Date()); setNotas(''); setImagen(null);
+    if (!nombre || !descripcion || !fecha) {
+      Alert.alert("Campos incompletos", "Por favor llena todos los campos obligatorios");
+      return;
+    }
+
+    const vacuna = {
+      nombre,
+      descripcion,
+      fecha: getFechaLocal(fecha),
+      notas,
+      imagen
+    };
+
+    onGuardar(vacuna);
+
+    // Guardar en Firebase
+    const user = getAuth().currentUser;
+    if (user) {
+      const db = getDatabase();
+      const refVacunas = ref(db, `usuarios/${user.uid}/vacunas`);
+      await push(refVacunas, vacuna);
+    }
+
+    setNombre('');
+    setDescripcion('');
+    setFecha(new Date());
+    setNotas('');
+    setImagen(null);
     onClose();
   };
 
@@ -80,91 +115,92 @@ const AgregarVacuna = ({ visible, onClose, onGuardar, fechaPredeterminada }) => 
           <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.titulo}>Registrar Vacuna</Text>
 
-          <Text style={styles.label}>Nombre de la vacuna</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Selecciona o escribe"
-            value={nombre}
-            onChangeText={setNombre}
-          />
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.opcionesScroll}>
-            {vacunasOficiales.map((v, i) => (
-              <TouchableOpacity
-                key={i}
-                onPress={() => {
-                  setNombre(v);
-                  const vacunaInfo = vacunasData.find(vac => vac.nombre === v);
-                  if (vacunaInfo) {
-                    setDescripcion(vacunaInfo.descripcion);
-                  } else {
-                    setDescripcion('');
+            <Text style={styles.label}>Nombre de la vacuna</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Selecciona o escribe"
+              value={nombre}
+              onChangeText={setNombre}
+            />
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.opcionesScroll}>
+              {vacunasOficiales.map((v, i) => (
+                <TouchableOpacity
+                  key={i}
+                  onPress={() => {
+                    setNombre(v);
+                    const vacunaInfo = vacunasData.find(vac => vac.nombre === v);
+                    if (vacunaInfo) {
+                      setDescripcion(vacunaInfo.descripcion);
+                    } else {
+                      setDescripcion('');
+                    }
+                  }}
+                  style={styles.opcionVacuna}
+                >
+                  <Text>{v}</Text>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+
+            <Text style={styles.label}>Descripción breve</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Ej. Previene tuberculosis..."
+              value={descripcion}
+              onChangeText={setDescripcion}
+            />
+
+            <Text style={styles.label}>Fecha</Text>
+            <TouchableOpacity style={styles.input} onPress={() => setShowPicker(true)}>
+              <Text>{fecha.toLocaleDateString('es-MX')}</Text>
+            </TouchableOpacity>
+            {showPicker && (
+              <DateTimePicker
+                value={fecha}
+                mode="date"
+                display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+                onChange={(event, selectedDate) => {
+                  setShowPicker(false);
+                  if (selectedDate) {
+                    const fixedDate = new Date(
+                      selectedDate.getFullYear(),
+                      selectedDate.getMonth(),
+                      selectedDate.getDate()
+                    );
+                    setFecha(fixedDate);
                   }
                 }}
-                style={styles.opcionVacuna}
-              >
-                <Text>{v}</Text>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
+              />
+            )}
 
-          <Text style={styles.label}>Descripción breve</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Ej. Previene tuberculosis..."
-            value={descripcion}
-            onChangeText={setDescripcion}
-          />
-
-          <Text style={styles.label}>Fecha</Text>
-          <TouchableOpacity style={styles.input} onPress={() => setShowPicker(true)}>
-            <Text>{fecha.toLocaleDateString('es-MX')}</Text>
-          </TouchableOpacity>
-          {showPicker && (
-            <DateTimePicker
-              value={fecha}
-              mode="date"
-              display={Platform.OS === 'ios' ? 'spinner' : 'default'}
-              onChange={(event, selectedDate) => {
-                setShowPicker(false);
-                if (selectedDate) {
-                  const fixedDate = new Date(
-                    selectedDate.getFullYear(),
-                    selectedDate.getMonth(),
-                    selectedDate.getDate()
-                  );
-                  setFecha(fixedDate);
-                }
-              }}
+            <Text style={styles.label}>Notas</Text>
+            <TextInput
+              style={[styles.input, { height: 80 }]}
+              multiline
+              placeholder="Observaciones, Numero de Dosis..."
+              value={notas}
+              onChangeText={setNotas}
             />
-          )}
 
-          <Text style={styles.label}>Notas</Text>
-          <TextInput
-            style={[styles.input, { height: 80 }]} multiline
-            placeholder="Observaciones, Numero de Dosis..."
-            value={notas}
-            onChangeText={setNotas}
-          />
+            <TouchableOpacity style={styles.btnImagen} onPress={elegirImagen}>
+              <Text style={styles.btnTexto}>Elegir de Galería</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnImagen} onPress={elegirImagen}>
-            <Text style={styles.btnTexto}>Elegir de Galería</Text>
-          </TouchableOpacity>
+            <TouchableOpacity style={styles.btnImagen} onPress={tomarFoto}>
+              <Text style={styles.btnTexto}>Tomar Foto</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnImagen} onPress={tomarFoto}>
-            <Text style={styles.btnTexto}>Tomar Foto</Text>
-          </TouchableOpacity>
+            {imagen && <Image source={{ uri: imagen }} style={styles.imagen} />}
 
-          {imagen && <Image source={{ uri: imagen }} style={styles.imagen} />}
+            <TouchableOpacity style={styles.btnGuardar} onPress={guardar}>
+              <Text style={styles.btnTexto}>Guardar Vacuna</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnGuardar} onPress={guardar}>
-            <Text style={styles.btnTexto}>Guardar Vacuna</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.btnCancelar} onPress={onClose}>
-            <Text style={styles.btnTexto}>Cancelar</Text>
-          </TouchableOpacity>
-        </ScrollView>
-      </View>
+            <TouchableOpacity style={styles.btnCancelar} onPress={onClose}>
+              <Text style={styles.btnTexto}>Cancelar</Text>
+            </TouchableOpacity>
+          </ScrollView>
+        </View>
       </View>
     </Modal>
   );
