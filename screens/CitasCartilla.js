@@ -29,10 +29,10 @@ function normalize(size) {
 
 // Calendario en español
 LocaleConfig.locales['es'] = {
-  monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
-  monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
-  dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
-  dayNamesShort: ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],
+  monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+  monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+  dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+  dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
   today: 'Hoy'
 };
 LocaleConfig.defaultLocale = 'es';
@@ -44,6 +44,10 @@ const CitasCartilla = ({ setPantalla }) => {
   const [citas, setCitas] = useState([]);
   const [fechaSeleccionada, setFechaSeleccionada] = useState('');
   const [modalFoto, setModalFoto] = useState({ visible: false, imagen: null });
+  const [mostrarVacunas, setMostrarVacunas] = useState(false);
+  const [mostrarCitas, setMostrarCitas] = useState(false);
+  const [fechasMarcadas, setFechasMarcadas] = useState({});
+
 
   const handleDayPress = (day) => {
     setFechaSeleccionada(day.dateString);
@@ -64,7 +68,6 @@ const CitasCartilla = ({ setPantalla }) => {
     if (user) {
       const db = getDatabase();
 
-      // Vacunas
       const refVacunas = ref(db, `usuarios/${user.uid}/vacunas`);
       onValue(refVacunas, (snapshot) => {
         const data = snapshot.val();
@@ -72,16 +75,25 @@ const CitasCartilla = ({ setPantalla }) => {
         setVacunas(lista);
       });
 
-      // Citas
       const refCitas = ref(db, `usuarios/${user.uid}/citasMedicas`);
       onValue(refCitas, (snapshot) => {
         const data = snapshot.val();
         const lista = data ? Object.values(data) : [];
         setCitas(lista);
+
+        // ✅ Marcar fechas en el calendario
+        const citasMarcadas = {};
+        lista.forEach(cita => {
+          citasMarcadas[cita.fecha] = {
+            marked: true,
+            dotColor: 'red',
+            selectedColor: '#ff7f7f',
+          };
+        });
+        setFechasMarcadas(citasMarcadas);
       });
     }
   }, []);
-
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => setPantalla('Home')} style={styles.returnButton}>
@@ -91,41 +103,67 @@ const CitasCartilla = ({ setPantalla }) => {
       <Text style={styles.title}>Citas Medicas y Cartilla de Vacunación</Text>
 
       <View style={styles.calendarioContainer}>
-        <Calendar onDayPress={handleDayPress} />
+        <Calendar
+          onDayPress={handleDayPress}
+          markedDates={{
+            ...fechasMarcadas,
+            [fechaSeleccionada]: {
+              ...(fechasMarcadas[fechaSeleccionada] || {}),
+              selected: true,
+              selectedColor: '#81d4fa',
+            },
+          }}
+        />
       </View>
 
-      <TouchableOpacity
-        onPress={() => setModalVisible(true)}
-        style={styles.btnAgregar}
-      >
+      <TouchableOpacity onPress={() => setModalVisible(true)} style={styles.btnAgregar}>
         <Text style={styles.txtBtn}>Agregar Vacuna</Text>
       </TouchableOpacity>
 
-      <ScrollView>
-        <Text style={styles.subtitulo}>Vacunas Registradas:</Text>
-        {vacunas.map((v, index) => (
-          <View key={index} style={styles.card}>
-            <Text style={styles.nombreVacuna}>{v.nombre}</Text>
-            <Text style={styles.descripcion}>{v.descripcion}</Text>
-            <Text style={styles.fecha}>Fecha: {v.fecha}</Text>
-            {v.notas && <Text style={styles.notas}>Notas: {v.notas}</Text>}
-            {v.imagen && (
-              <TouchableOpacity onPress={() => setModalFoto({ visible: true, imagen: v.imagen })}>
-                <Text style={styles.verFoto}>Ver Foto</Text>
-              </TouchableOpacity>
-            )}
-          </View>
-        ))}
+      <View style={styles.botonesFila}>
+        <TouchableOpacity style={styles.botonToggle} onPress={() => setMostrarVacunas(!mostrarVacunas)}>
+          <Image source={require('../assets/faq/vacunas.png')} style={styles.iconoBoton} />
+          <Text style={styles.txtBotonToggle}>Vacunas</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.botonToggle} onPress={() => setMostrarCitas(!mostrarCitas)}>
+          <Image source={require('../assets/faq/citas.png')} style={styles.iconoBoton} />
+          <Text style={styles.txtBotonToggle}>Citas</Text>
+        </TouchableOpacity>
+      </View>
 
-        <Text style={styles.subtitulo}>Citas Médicas:</Text>
-        {citas.map((c, index) => (
-          <View key={index} style={styles.card}>
-            <Text style={styles.nombreVacuna}>📅 {c.fecha}</Text>
-            <Text style={styles.descripcion}>🕒 {c.hora}</Text>
-            <Text style={styles.descripcion}>📍 {c.lugar}</Text>
-            {c.notas && <Text style={styles.notas}>📝 {c.notas}</Text>}
-          </View>
-        ))}
+      <ScrollView>
+        {mostrarVacunas && (
+          <>
+            <Text style={styles.subtitulo}>Vacunas Registradas:</Text>
+            {vacunas.map((v, index) => (
+              <View key={index} style={styles.card}>
+                <Text style={styles.nombreVacuna}>{v.nombre}</Text>
+                <Text style={styles.descripcion}>{v.descripcion}</Text>
+                <Text style={styles.fecha}>Fecha: {v.fecha}</Text>
+                {v.notas && <Text style={styles.notas}>Notas: {v.notas}</Text>}
+                {v.imagen && (
+                  <TouchableOpacity onPress={() => setModalFoto({ visible: true, imagen: v.imagen })}>
+                    <Text style={styles.verFoto}>Ver Foto</Text>
+                  </TouchableOpacity>
+                )}
+              </View>
+            ))}
+          </>
+        )}
+
+        {mostrarCitas && (
+          <>
+            <Text style={styles.subtitulo}>Citas Médicas:</Text>
+            {citas.map((c, index) => (
+              <View key={index} style={styles.card}>
+                <Text style={styles.nombreVacuna}>📅 {c.fecha}</Text>
+                <Text style={styles.descripcion}>🕒 {c.hora}</Text>
+                <Text style={styles.descripcion}>📍 {c.lugar}</Text>
+                {c.notas && <Text style={styles.notas}>📝 {c.notas}</Text>}
+              </View>
+            ))}
+          </>
+        )}
       </ScrollView>
 
       <AgregarVacuna
@@ -164,8 +202,8 @@ const styles = StyleSheet.create({
     height: normalize(40),
     resizeMode: 'contain',
   },
-  title: { fontSize: 22, fontWeight: 'bold', textAlign: 'center', marginBottom: 10 , marginTop:80},
-  calendarioContainer: { marginVertical: 10 },
+  title: { fontSize: 23, fontWeight: 'bold', textAlign: 'center', marginBottom: 10, marginTop: 75 },
+  calendarioContainer: { marginVertical: 8 },
   btnAgregar: {
     backgroundColor: '#AED581',
     padding: 10,
@@ -174,7 +212,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   txtBtn: { color: 'white', fontWeight: 'bold' },
-  subtitulo: { fontWeight: 'bold', fontSize: 16, marginVertical: 10 },
+  subtitulo: { fontWeight: 'bold', fontSize: 18, marginVertical: 10 },
   card: {
     backgroundColor: '#FFF',
     padding: 15,
@@ -182,14 +220,36 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     elevation: 2,
   },
-  nombreVacuna: { fontSize: 16, fontWeight: 'bold' },
-  descripcion: { fontSize: 14, marginTop: 5 },
-  fecha: { fontSize: 12, marginTop: 5, color: '#555' },
-  notas: { fontSize: 12, marginTop: 5, fontStyle: 'italic' },
+  nombreVacuna: { fontSize: 20, fontWeight: 'bold' },
+  descripcion: { fontSize: 18, marginTop: 5 },
+  fecha: { fontSize: 18, marginTop: 5, color: '#555' },
+  notas: { fontSize: 18, marginTop: 5, fontStyle: 'italic' },
   verFoto: {
     color: '#1E88E5',
     marginTop: 10,
     textDecorationLine: 'underline',
+  },
+  botonesFila: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginVertical: 10,
+  },
+  botonToggle: {
+    alignItems: 'center',
+    backgroundColor: '#E3F2FD',
+    borderRadius: 10,
+    padding: 10,
+    width: '45%',
+  },
+  iconoBoton: {
+    width: 50,
+    height: 50,
+    marginBottom: 5,
+    resizeMode: 'contain',
+  },
+  txtBotonToggle: {
+    fontWeight: 'bold',
+    fontSize: 14,
   },
 });
 

@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   input: {
     width: '100%',
     height: normalize(50),
-    borderColor: '#333',
+    borderColor: '#d1d0ce',
     borderWidth: 1,
     borderRadius: 10,
     paddingHorizontal: normalize(15),
@@ -137,13 +137,14 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: normalize(20),
-    backgroundColor: '#6499fa',
+    backgroundColor: '#fcaa61',
     padding: normalize(15),
     borderRadius: 10,
   },
   buttonText: {
     color: '#fff',
     fontSize: normalize(18),
+    fontWeight: 'bold',
   },
   linkText: {
     marginTop: normalize(15),

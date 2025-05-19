@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import {
-
   Modal, View, Text, TextInput, TouchableOpacity, StyleSheet, useWindowDimensions, Alert
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -14,13 +13,16 @@ function normalize(size, SCREEN_WIDTH) {
   return Math.round(newSize);
 }
 
-// Convierte string "10:30 a. m." a objeto Date
+// ✅ FUNCIÓN CORREGIDA: Convierte string tipo "10:30 a. m." a objeto Date
 function stringToDate(timeStr) {
-  if (!timeStr) return new Date();
+  if (!timeStr || typeof timeStr !== 'string') return new Date();
+  timeStr = timeStr.replace(/\s+/g, ' ').trim(); // limpia espacios raros
   const [time, period] = timeStr.split(' ');
+  if (!time || !period) return new Date();
   let [hour, minute] = time.split(':').map(Number);
-  if (period?.toLowerCase().includes('p') && hour < 12) hour += 12;
-  if (period?.toLowerCase().includes('a') && hour === 12) hour = 0;
+  if (isNaN(hour) || isNaN(minute)) return new Date();
+  if (period.toLowerCase().includes('p') && hour < 12) hour += 12;
+  if (period.toLowerCase().includes('a') && hour === 12) hour = 0;
   const d = new Date();
   d.setHours(hour, minute, 0, 0);
   return d;
@@ -31,7 +33,7 @@ function calcularDuracion(date1, date2) {
   let d1 = new Date(date1);
   let d2 = new Date(date2);
   if (d2 < d1) d2.setDate(d2.getDate() + 1);
-  const diff = (d2 - d1) / 60000; // minutos
+  const diff = (d2 - d1) / 60000;
   const horas = Math.floor(diff / 60);
   const minutos = Math.round(diff % 60);
   return `${horas}h ${minutos}m`;
@@ -50,7 +52,6 @@ export default function EditarSuenoModal({ visible, onClose, registro, recargar 
     setHoraDormir(registro?.horaDormir ? stringToDate(registro.horaDormir) : new Date());
     setHoraDespertar(registro?.horaDespertar ? stringToDate(registro.horaDespertar) : new Date());
   }, [registro]);
-
 
   const guardarCambios = async () => {
     const auth = getAuth();
@@ -84,10 +85,7 @@ export default function EditarSuenoModal({ visible, onClose, registro, recargar 
           <Text style={[styles.title, { fontSize: normalize(18, wW) }]}>Editar Registro de Sueño</Text>
 
           <Text style={{ alignSelf: 'flex-start', marginBottom: 5 }}>Hora de dormir</Text>
-          <TouchableOpacity
-            style={styles.input}
-            onPress={() => setShowDormirPicker(true)}
-          >
+          <TouchableOpacity style={styles.input} onPress={() => setShowDormirPicker(true)}>
             <Text style={{ color: '#000' }}>
               {horaDormir.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: true })}
             </Text>
@@ -106,10 +104,7 @@ export default function EditarSuenoModal({ visible, onClose, registro, recargar 
           )}
 
           <Text style={{ alignSelf: 'flex-start', marginBottom: 5, marginTop: 10 }}>Hora de despertar</Text>
-          <TouchableOpacity
-            style={styles.input}
-            onPress={() => setShowDespertarPicker(true)}
-          >
+          <TouchableOpacity style={styles.input} onPress={() => setShowDespertarPicker(true)}>
             <Text style={{ color: '#000' }}>
               {horaDespertar.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: true })}
             </Text>
@@ -146,7 +141,6 @@ export default function EditarSuenoModal({ visible, onClose, registro, recargar 
 }
 
 const styles = StyleSheet.create({
-
   background: {
     flex: 1,
     justifyContent: 'center',
@@ -186,5 +180,4 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold'
   }
-
 });

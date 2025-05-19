@@ -11,7 +11,7 @@ import {
   Alert,
   Modal,
 } from 'react-native';
-import { getDatabase, ref, get, set, update } from 'firebase/database';
+import { getDatabase, ref, get, set } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -21,12 +21,10 @@ function normalize(size) {
   return Math.round(PixelRatio.roundToNearestPixel(newSize));
 }
 
-const diasSemana = ['🐣 Lunes', '🧸 Martes', '🥣 Miércoles', ' 🎨 Jueves', '🎉 Viernes', '🌞 Sábado', '💤 Domingo'];
+const diasSemana = ['🐣 Lunes', '🧸 Martes', '🥣 Miércoles', '🎨 Jueves', '🎉 Viernes', '🌞 Sábado', '💤 Domingo'];
 
 export default function ModalPlanSemanal({ visible, onClose }) {
   const [plan, setPlan] = useState([]);
-  const [cargando, setCargando] = useState(true);
-
   const uid = getAuth().currentUser?.uid;
 
   useEffect(() => {
@@ -40,7 +38,6 @@ export default function ModalPlanSemanal({ visible, onClose }) {
       } else {
         setPlan(diasSemana.map(dia => ({ dia, desayuno: '', comida: '', cena: '', notas: '' })));
       }
-      setCargando(false);
     };
     fetchPlan();
   }, [uid]);
@@ -72,24 +69,32 @@ export default function ModalPlanSemanal({ visible, onClose }) {
             {plan.map((dia, i) => (
               <View key={i} style={styles.card}>
                 <Text style={styles.cardTitulo}>{diasSemana[i] || dia.dia}</Text>
+
+                <Text style={styles.etiqueta}>🍳 Desayuno</Text>
                 <TextInput
                   placeholder="Desayuno"
                   style={styles.input}
                   value={dia.desayuno}
                   onChangeText={text => actualizarCampo(i, 'desayuno', text)}
                 />
+
+                <Text style={styles.etiqueta}>🍽️ Comida</Text>
                 <TextInput
                   placeholder="Comida"
                   style={styles.input}
                   value={dia.comida}
                   onChangeText={text => actualizarCampo(i, 'comida', text)}
                 />
+
+                <Text style={styles.etiqueta}>🌙 Cena</Text>
                 <TextInput
                   placeholder="Cena"
                   style={styles.input}
                   value={dia.cena}
                   onChangeText={text => actualizarCampo(i, 'cena', text)}
                 />
+
+                <Text style={styles.etiqueta}>📝 Notas</Text>
                 <TextInput
                   placeholder="Notas (ej. no le gustó, repetir, etc.)"
                   style={styles.inputNota}
@@ -100,6 +105,7 @@ export default function ModalPlanSemanal({ visible, onClose }) {
               </View>
             ))}
           </ScrollView>
+
           <TouchableOpacity style={styles.btnGuardar} onPress={guardarPlan}>
             <Text style={styles.textoBtn}>Guardar Plan</Text>
           </TouchableOpacity>
@@ -117,7 +123,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'rgb(247, 165, 13)',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   container: {
     width: '90%',
@@ -151,6 +157,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#2c3e50',
     marginBottom: normalize(10),
+  },
+  etiqueta: {
+    fontWeight: 'bold',
+    marginBottom: 5,
+    marginTop: 8,
+    color: '#3e4a89',
+    fontSize: normalize(14),
   },
   input: {
     backgroundColor: '#fff',

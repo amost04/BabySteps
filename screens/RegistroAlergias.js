@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import { getDatabase, ref, get, set } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
+import { Linking } from 'react-native';
 
 const capitalizar = (texto) =>
   texto
@@ -145,6 +146,12 @@ const RegistroAlergias = ({ visible, onClose }) => {
             onPress={() => setModalAuxilioVisible(true)}
           >
             <Text style={{ color: 'white', fontWeight: 'bold' }}>🆘 Auxilio</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.botonAuxilio, { backgroundColor: '#ef4444' }]}
+            onPress={() => Linking.openURL('tel:911')}
+          >
+            <Text style={{ color: 'white', fontWeight: 'bold' }}>📞 Llamar al 911</Text>
           </TouchableOpacity>
 
           <Pressable style={styles.botonCerrar} onPress={onClose}>

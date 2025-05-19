@@ -14,6 +14,7 @@ export default function RegistroBiome({ visible, onClose }) {
   const [peso, setPeso] = useState('');
   const [altura, setAltura] = useState('');
   const [temperatura, setTemperatura] = useState('');
+  const [meses, setMeses] = useState('');
   const [datos, setDatos] = useState([]);
   const [modalFormVisible, setModalFormVisible] = useState(false);
   const [modoEdicion, setModoEdicion] = useState(false);
@@ -38,7 +39,7 @@ export default function RegistroBiome({ visible, onClose }) {
   }, [user]);
 
   const guardarRegistro = async () => {
-    if (!peso || !altura || !temperatura) return alert('Completa todos los campos');
+    if (!peso || !altura || !temperatura || !meses) return alert('Completa todos los campos');
     const db = getDatabase();
 
     if (modoEdicion && registroActualId) {
@@ -46,7 +47,8 @@ export default function RegistroBiome({ visible, onClose }) {
       await update(ref, {
         peso: parseFloat(peso),
         altura: parseFloat(altura),
-        temperatura: parseFloat(temperatura)
+        temperatura: parseFloat(temperatura),
+        meses: parseInt(meses)
       });
       alert('✏️ Registro actualizado');
     } else {
@@ -58,6 +60,7 @@ export default function RegistroBiome({ visible, onClose }) {
         peso: parseFloat(peso),
         altura: parseFloat(altura),
         temperatura: parseFloat(temperatura),
+        meses: parseInt(meses),
         fecha
       });
       alert('✅ Registro guardado');
@@ -66,6 +69,7 @@ export default function RegistroBiome({ visible, onClose }) {
     setPeso('');
     setAltura('');
     setTemperatura('');
+    setMeses('');
     setModalFormVisible(false);
     setModoEdicion(false);
     setRegistroActualId(null);
@@ -85,6 +89,7 @@ export default function RegistroBiome({ visible, onClose }) {
     setPeso(registro.peso.toString());
     setAltura(registro.altura.toString());
     setTemperatura(registro.temperatura.toString());
+    setMeses(registro.meses?.toString() || '');
     setRegistroActualId(id);
     setModoEdicion(true);
     setModalFormVisible(true);
@@ -101,47 +106,57 @@ export default function RegistroBiome({ visible, onClose }) {
           </TouchableOpacity>
 
           <Text style={styles.subtitulo}>📊 Evolución Semanal</Text>
-          {datos.length > 0 && (
-            <LineChart
-              data={{
-                labels: datos.map(d => d.fecha),
-                datasets: [
-                  { data: datos.map(d => d.peso), color: () => '#60A5FA', strokeWidth: 2 },
-                  { data: datos.map(d => d.altura), color: () => '#34D399', strokeWidth: 2 },
-                  { data: datos.map(d => d.temperatura), color: () => '#FBBF24', strokeWidth: 2 },
-                ],
-                legend: ['Peso (Kg)', 'Altura (cm)', 'Temperatura °C'],
-              }}
-              width={screenWidth - 40}
-              height={220}
-              chartConfig={{
-                backgroundColor: '#fff',
-                backgroundGradientFrom: '#f0f0f0',
-                backgroundGradientTo: '#fff',
-                decimalPlaces: 1,
-                color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-                labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-              }}
-              style={{ borderRadius: 10, marginBottom: 10 }}
-            />
-          )}
+          {datos.length > 0 && (() => {
+            const ordenados = [...datos].sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+            return (
+              <LineChart
+                data={{
+                  labels: ordenados.map(d => `${d.meses || '?'}m`),
+                  datasets: [
+                    { data: ordenados.map(d => d.peso), color: () => '#60A5FA', strokeWidth: 2 },
+                    { data: ordenados.map(d => d.altura), color: () => '#34D399', strokeWidth: 2 },
+                    { data: ordenados.map(d => d.temperatura), color: () => '#FBBF24', strokeWidth: 2 },
+                  ],
+                  legend: ['Peso (Kg)', 'Altura (cm)', 'Temperatura °C'],
+                }}
+                width={screenWidth - 40}
+                height={220}
+                chartConfig={{
+                  backgroundColor: '#fff',
+                  backgroundGradientFrom: '#f0f0f0',
+                  backgroundGradientTo: '#fff',
+                  decimalPlaces: 1,
+                  color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                  labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                }}
+                style={{ borderRadius: 10, marginBottom: 10 }}
+              />
+            );
+          })()}
         </View>
 
         <View style={styles.inferior}>
           <Text style={styles.subtitulo}>📄 Registros</Text>
           <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
-            {datos.map((d, i) => (
+            {[...datos].sort((a, b) => {
+              const [da, ma, ya] = a.fecha.split('/');
+              const [db, mb, yb] = b.fecha.split('/');
+              const fechaA = new Date(`${ya}-${ma.padStart(2, '0')}-${da.padStart(2, '0')}`);
+              const fechaB = new Date(`${yb}-${mb.padStart(2, '0')}-${db.padStart(2, '0')}`);
+              return fechaB - fechaA;
+            }).map((d, i) => (
               <View key={i} style={[styles.card, { backgroundColor: i % 2 === 0 ? '#eea2f3' : '#FEF9C3' }]}>
                 <Text style={styles.cardText}>📅 {d.fecha}</Text>
+                <Text style={styles.cardText}>👶 Edad: {d.meses} meses</Text>
                 <Text style={styles.cardText}>📦 Peso: {d.peso} kg</Text>
                 <Text style={styles.cardText}>📏 Altura: {d.altura} cm</Text>
                 <Text style={styles.cardText}>🌡️ Temperatura: {d.temperatura} °C</Text>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 8 }}>
                   <TouchableOpacity onPress={() => editarRegistro(d.id)} style={{ padding: 4 }}>
-                    <Text style={{ fontSize:18, color: '#0284C7' }}>✏️ Editar</Text>
+                    <Text style={{ fontSize: 18, color: '#0284C7' }}>✏️ Editar</Text>
                   </TouchableOpacity>
                   <TouchableOpacity onPress={() => eliminarRegistro(d.id)} style={{ padding: 4 }}>
-                    <Text style={{ fontSize:18, color: 'red' }}>🗑️ Eliminar</Text>
+                    <Text style={{ fontSize: 18, color: 'red' }}>🗑️ Eliminar</Text>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -161,7 +176,8 @@ export default function RegistroBiome({ visible, onClose }) {
               </Text>
               <TextInput placeholder="Peso (kg)" placeholderTextColor="#888" keyboardType="numeric" style={styles.input} value={peso} onChangeText={setPeso} />
               <TextInput placeholder="Altura (cm)" placeholderTextColor="#888" keyboardType="numeric" style={styles.input} value={altura} onChangeText={setAltura} />
-              <TextInput placeholder="Temperatura (°C)" placeholderTextColor="#888"  keyboardType="numeric" style={styles.input} value={temperatura} onChangeText={setTemperatura} />
+              <TextInput placeholder="Temperatura (°C)" placeholderTextColor="#888" keyboardType="numeric" style={styles.input} value={temperatura} onChangeText={setTemperatura} />
+              <TextInput placeholder="Edad en meses" placeholderTextColor="#888" keyboardType="numeric" style={styles.input} value={meses} onChangeText={setMeses} />
               <TouchableOpacity style={styles.boton} onPress={guardarRegistro}>
                 <Text style={styles.textoBoton}>Guardar</Text>
               </TouchableOpacity>
@@ -234,7 +250,7 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   cardText: {
-    fontSize: 16,  // o prueba con 18 o 20 si quieres más grande
+    fontSize: 16,
     color: '#000',
     marginBottom: 5,
   },
